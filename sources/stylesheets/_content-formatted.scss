@@ -1,0 +1,132 @@
+.content-formatted {
+  .custom-btn {
+    display: inline-block;
+    padding: 16px;
+    border: 1px solid $black;
+  }
+
+  .edy-texteditor-container {
+    margin: 8px;
+  }
+
+  .edy-texteditor-container-wrapper {
+    margin-bottom: 1em;
+  }
+
+  .edy-texteditor-container-wrapper-left, .edy-texteditor-container-left {
+    margin-right: 1em;
+  }
+
+  .edy-texteditor-container-wrapper-right, .edy-texteditor-container-right {
+    margin-left: 1em;
+  }
+
+  // Content area image title
+  .edy-image-container-with-title:after {
+    display: block;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 1.3em;
+    content: attr(data-title);
+  }
+
+  // Forms
+
+  form {
+    max-width: 100%;
+    margin-top: 24px;
+    clear: both;
+  }
+
+  .form_field,
+  .edy-fe-label {
+    font-size: 14px;
+  }
+
+  .form_field {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .form_field_required {
+    .form_field_label:after {
+      content: '*';
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  .form_field_label,
+  .edy-fe-label {
+    font-weight: $bold-weight;
+    font-family: inherit;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea,
+  .form_field_select,
+  .form_field_file,
+  .form_submit input {
+    font-family: inherit;
+    font-size: 14px;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea,
+  .form_field_select,
+  .form_field_file {
+    max-width: 100%;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea {
+    width: 280px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .form_field_textarea {
+    min-height: 96px;
+  }
+
+  .form_field_size_medium {
+    width: 416px;
+  }
+
+  .form_field_size_large {
+    width: 576px;
+  }
+
+  .form_submit {
+    margin-top: 8px;
+  }
+
+  .form_error,
+  .form_field_error {
+    color: $red;
+  }
+
+  .form_field_with_errors {
+    .form_field_textfield,
+    .form_field_textarea {
+      border: 1px solid $red;
+    }
+  }
+
+  .form_notice {
+    color: $green;
+  }
+}

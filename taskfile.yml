@@ -1,0 +1,134 @@
+version: '3'
+silent: true
+
+env:
+  CSS_SRC_FOLDER: sources/stylesheets
+  CSS_OUT_FOLDER: stylesheets
+  CSS_ENTRIES: main
+  SASS_FLAGS: -I node_modules/ --no-source-map
+
+  ## JS
+  JS_SRC_FOLDER: sources/javascripts
+  JS_OUT_FOLDER: javascripts
+  JS_ENTRIES: application editmode
+  ROLLUP_FLAGS: --format=umd -p @rollup/plugin-node-resolve
+
+  ## ASSETS
+  ASSETS_SRC_FOLDER: sources/assets
+  ASSETS_MINIFY_FOLDER: minify
+  ASSETS_COPY_FOLDER: copy
+  ASSETS_OUT_FOLDER: assets
+
+  ## IMAGES
+  IMAGES_SRC_FOLDER: sources/images
+  IMAGES_MINIFY_FOLDER: minify
+  IMAGES_COPY_FOLDER: copy
+  IMAGES_OUT_FOLDER: images
+
+tasks:
+  build-css:
+    cmds:
+      - |
+        echo "Building CSS"
+        for entry in $CSS_ENTRIES; do
+          npx sass $SASS_FLAGS $CSS_SRC_FOLDER/$entry.scss:$CSS_OUT_FOLDER/$entry.css
+        done
+
+  minify-css:
+    cmds:
+      - |
+        echo "Minifying CSS"
+        for entry in $CSS_ENTRIES; do
+          npx sass $SASS_FLAGS --style=compressed $CSS_SRC_FOLDER/$entry.scss:$CSS_OUT_FOLDER/$entry.min.css
+        done
+
+  css:
+    cmds:
+      - task: build-css
+      - task: minify-css
+      - echo "CSS build done"
+
+  watch-css:
+    cmds:
+      - npx chokidar $CSS_SRC_FOLDER/* -c "npx task css"
+
+  build-js:
+    cmds:
+      - |
+        echo "Building JS"
+        npx rollup -c
+        for entry in $JS_ENTRIES; do
+          npx rollup $ROLLUP_FLAGS $JS_SRC_FOLDER/$entry.temp.js --file $JS_OUT_FOLDER/$entry.js
+        done
+
+  minify-js:
+    cmds:
+      - |
+        echo "Minifying JS"
+        npx rollup -c
+        for entry in $JS_ENTRIES; do
+          npx rollup $ROLLUP_FLAGS $JS_SRC_FOLDER/$entry.temp.js --file $JS_OUT_FOLDER/$entry.min.js --plugin terser
+        done
+
+  cleanup-temp-js:
+    cmds:
+      - del-cli $JS_SRC_FOLDER/*.temp.js $JS_SRC_FOLDER/temp.js
+
+  js:
+    cmds:
+      - task: build-js
+      - task: minify-js
+      - task: cleanup-temp-js
+
+  watch-js:
+    cmds:
+      - npx chokidar $JS_SRC_FOLDER/* -c "npx task js"
+
+  process-assets:
+    cmds:
+      - |
+        echo "Processing assets"
+        npx imagemin $ASSETS_SRC_FOLDER/$ASSETS_MINIFY_FOLDER/* --out-dir $ASSETS_OUT_FOLDER
+        echo "Copying assets"
+        cpy $ASSETS_SRC_FOLDER/$ASSETS_COPY_FOLDER/* $ASSETS_OUT_FOLDER --flat
+
+  process-images:
+    cmds:
+      - |
+        echo "Processing images"
+        npx imagemin $IMAGES_SRC_FOLDER/$IMAGES_MINIFY_FOLDER/* --out-dir $IMAGES_OUT_FOLDER
+        echo "Copying images"
+        cpy $IMAGES_SRC_FOLDER/$IMAGES_COPY_FOLDER/* $IMAGES_OUT_FOLDER --flat
+
+  watch-assets:
+    cmds:
+      - npx chokidar $ASSETS_SRC_FOLDER/* -c "npx task process-assets"
+
+  watch-images:
+    cmds:
+      - npx chokidar $IMAGES_SRC_FOLDER/* -c "npx task process-images"
+
+  dev:
+    cmds:
+      - echo "Running dev workflow"
+      - npx task watch-css &
+        npx task watch-js &
+        npx task watch-assets &
+        npx task watch-images
+
+  dev-kit:
+    cmds:
+      - echo "Running dev kit workflow"
+      - npx task watch-css &
+        npx task watch-js &
+        npx task watch-assets &
+        npx task watch-images &
+        kit watch
+
+  prod:
+    cmds:
+      - echo "Running prod workflow"
+      - task: css
+      - task: js
+      - task: process-assets
+      - task: process-images

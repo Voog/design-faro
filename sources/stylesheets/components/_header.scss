@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-right {
+  .search .search-form {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
