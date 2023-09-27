@@ -402,3 +402,11 @@
 .content-formatted .form_notice {
   color: #2F5D4B;
 }
+
+.body-bg-color {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}

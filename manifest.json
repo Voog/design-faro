@@ -8,6 +8,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/bg-picker-scripts.tpl",
+      "layout_name": "bg-picker-scripts",
+      "title": "bg-picker-scripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/header.tpl",
       "layout_name": "header",
       "title": "header"
@@ -67,6 +74,20 @@
       "file": "components/template-settings.tpl",
       "layout_name": "template-settings",
       "title": "template-settings"
+    },
+    {
+      "title": "template-styles",
+      "layout_name": "template-styles",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-styles.tpl"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-variables.tpl",
+      "layout_name": "template-variables",
+      "title": "template-variables"
     },
     {
       "content_type": "page",
