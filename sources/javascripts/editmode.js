@@ -47,7 +47,8 @@
         data.colorData && data.colorData !== '' ? data.colorData.lightness : 1,
       colorExtractImage = $('<img>'),
       colorExtractCanvas = $('<canvas>'),
-      colorExtractImageUrl = data.image && data.image !== '' ? data.image : null;
+      colorExtractImageUrl = data.image && data.image !== '' ? data.image : null,
+      colorRgb;
 
     if (colorExtractImageUrl) {
       if (bgPickerImageSizesContains(bgPickerImageSizes, bgPickerImagePrevious)) {
@@ -73,12 +74,15 @@
       bgPickerContentLightnessClass(bgPickerArea, bgPicker.combinedLightness);
     }
 
+    if (data.colorData) {
+      colorRgb = data.colorData.r + ',' + data.colorData.g + ',' + data.colorData.b;
+    } else {
+      colorRgb = '255,255,255';
+    }
+
     // Updates the bgPickerContent background image and background color.
     $(':root').css(`--${data.variableName}`, bgPickerColor);
-    $(':root').css(
-      `--${data.variableName}-rgb`,
-      `${data.colorData.r}, ${data.colorData.g}, ${data.colorData.b}`
-    );
+    $(':root').css(`--${data.variableName}-rgb`, colorRgb);
     $(bgPickerArea).find('.js-background-image').first().css({'background-image': bgPickerImage});
   };
 
