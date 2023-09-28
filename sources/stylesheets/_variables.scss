@@ -2,41 +2,23 @@
 // Custom variables to use in every .scss files.
 // Comment out the "_variables.scss" partial in the "main.scss" file if not used.
 
-// General colors
-$primary-color: rgb(0,0,0);
-$secondary-color: rgb(141,144,145);
-$third-color: #D5AFB6;
-
 // Specific colors
 $black: #000000;
-$white: #ffffff;
-$grey: #2a2a2a;
-$editor-grey: #1B2124;
+$white: #FFFFFF;
+
+$grey-1: #F7F7F2;
+$grey-2: #888888;
+$grey-3: #727272;
+$grey-4: #1C1C1C;
 
 $red: #C5292A;
 $green: #2F5D4B;
-$yellow: #f9ec5a;
-$blue-1: #0066bb;
-$blue-2: #c7e5ff;
-$science-blue: #06b;
-$voog-blue: #443df6;
-$orange: #DD6229;
-
-$grey-1:#8D9091;
-$grey-2: #C4C4C4;
-$grey-3: #FBFBFB;
-$grey-4: #F9F9F9;
-$grey-5: #383A3A;
-$grey-bg: #F2F2F2;
-
-$disabled: #dadada;
+$warning: #191489;
 
 // Sign out button
 $color-common-gray: rgb(27,33,36);
 $color-toolbar-bg: rgb(238,238,238);
 $color-silver-2: rgb(196,196,196);
-
-$site-width: 992px;
 
 $normal-weigth: 400;
 $bold-weight: 700;

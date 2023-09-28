@@ -1,8 +1,27 @@
 .content-formatted {
   .custom-btn {
     display: inline-block;
-    padding: 16px;
+    padding: 12px 40px;
+    background-color: $black;
     border: 1px solid $black;
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      border-color: $grey-2;
+      background-color: $grey-2;
+    }
+
+    &:active {
+      border-color: $grey-3;
+      background-color: $grey-3;
+    }
+
+    &.custom-btn-disabled {
+      border-color: $grey-1;
+      background-color: $grey-1;
+      color: $grey-2;
+    }
   }
 
   .edy-texteditor-container {
@@ -93,7 +112,7 @@
     width: 280px;
     margin: 0;
     padding: 8px;
-    border: 1px solid $grey;
+    border: 1px solid $grey-1;
     border-radius: 4px;
     box-sizing: border-box;
   }

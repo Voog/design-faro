@@ -387,8 +387,24 @@
 
 .content-formatted .custom-btn {
   display: inline-block;
-  padding: 16px;
+  padding: 12px 40px;
+  background-color: #000000;
   border: 1px solid #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.content-formatted .custom-btn:hover {
+  border-color: #888888;
+  background-color: #888888;
+}
+.content-formatted .custom-btn:active {
+  border-color: #727272;
+  background-color: #727272;
+}
+.content-formatted .custom-btn.custom-btn-disabled {
+  border-color: #F7F7F2;
+  background-color: #F7F7F2;
+  color: #888888;
 }
 .content-formatted .edy-texteditor-container {
   margin: 8px;
@@ -458,7 +474,7 @@
   width: 280px;
   margin: 0;
   padding: 8px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #F7F7F2;
   border-radius: 4px;
   box-sizing: border-box;
 }
