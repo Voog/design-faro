@@ -1,37 +1,48 @@
 <nav class="menu-main">
-  <ul class="menu">
+  <div class="menu{% if editmode %} show-overflow{% endif %}">
     {% unless site.root_item.hidden? -%}
-      {% menulink site.root_item wrapper-tag="li" %}
+      <div class="menu-item-wrapper">
+        {% menulink site.root_item wrapper-tag="div" wrapper-class="menu-item" %}
+      </div>
     {%- endunless %}
 
     {% for item in site.visible_menuitems %}
-      {%- menulink item wrapper-tag="li" %}
-      {%- if item.selected? %}
+      <div class="menu-item-wrapper">
+        {%- menulink item wrapper-tag="div" wrapper-class="menu-item" %}
+
         {%- if item.children? %}
-          <ul>
+          <div class="menu-item-children">
             {%- for child in item.visible_children %}
-              {% menulink child wrapper-tag="li" %}
+              {% menulink child wrapper-tag="div" wrapper-class="menu-child" %}
             {%- endfor %}
-          </ul>
+
+            {%- if editmode %}
+              {%- if item.hidden_children.size > 0 %}
+                <div class="menu-child">
+                  {% menubtn item.hidden_children %}
+                </div>
+              {%- endif %}
+
+              <div class="menu-child">
+                {% menuadd parent=item %}
+              </div>
+            {% endif %}
+          </div>
+
         {%- endif -%}
-        {%- if editmode %}
-          <ul>
-            {%- if item.hidden_children.size > 0 %}
-              <li>{% menubtn item.hidden_children %}</li>
-            {%- endif %}
-            <li>{% menuadd parent=item %}</li>
-          </ul>
-        {% endif %}
-      {%- endif -%}
+      </div>
     {%- endfor -%}
-  </ul>
-  {% if editmode -%}
-    <ul class="menu">
+
+    {% if editmode -%}
       {%- if site.hidden_menuitems.size > 0 -%}
-        <li>{% menubtn site.hidden_menuitems %}</li>
+        <div class="menu-item-wrapper">
+          {% menubtn site.hidden_menuitems %}
+        </div>
       {%- endif %}
 
-      <li>{% menuadd %}</li>
-    </ul>
-  {% endif -%}
+      <div class="menu-item-wrapper">
+        {% menuadd %}
+      </div>
+    {% endif -%}
+  </div>
 </nav>

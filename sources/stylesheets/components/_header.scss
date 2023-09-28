@@ -1,11 +1,20 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-}
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-header;
+  border-bottom: 1px solid rgba($black, .1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(var(--body-bg-color-rgb), .8);
 
-.header-right {
-  .search .search-form {
-    display: flex;
-    justify-content: flex-end;
+  .header {
+    padding: 16px 12px;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 16px;
+    min-height: 64px;
   }
 }

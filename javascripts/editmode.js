@@ -78,8 +78,12 @@
       }
 
       // Updates the bgPickerContent background image and background color.
+      $(':root').css(`--${data.variableName}`, bgPickerColor);
+      $(':root').css(
+        `--${data.variableName}-rgb`,
+        `${data.colorData.r}, ${data.colorData.g}, ${data.colorData.b}`
+      );
       $(bgPickerArea).find('.js-background-image').first().css({'background-image': bgPickerImage});
-      $(bgPickerArea).find('.js-background-color').first().css({'background-color': bgPickerColor});
     };
 
     var normalizeValue = function (value) {

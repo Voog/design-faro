@@ -19,7 +19,14 @@
         showAlpha: true,
         target_width: pickerOpts.width,
         preview: function(data) {
-          site.bgPickerPreview(pickerArea, data, bgPicker);
+          site.bgPickerPreview(
+            pickerArea,
+            {
+              ...data,
+              variableName: pickerOpts.variable_name || 'body-bg-color'
+            },
+            bgPicker
+          );
         },
         commit: function(data) {
           site.bgPickerCommit(pickerOpts.bg_key, data, bgPicker, pickerOpts.entity);

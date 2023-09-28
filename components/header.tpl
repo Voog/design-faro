@@ -1,11 +1,13 @@
-<div class="header">
-  {% include "menu-main" %}
+<div class="header-wrapper">
+  <div class="header">
+    {% include "menu-main" %}
 
-  <div class="header-right">
-    {% include "menu-lang" %}
+    <div class="content">
+      {% content name="header" %}
+    </div>
 
-    {% if site.search.enabled %}
-      {% include "search" %}
-    {% endif %}
+    <div class="header-right">
+
+    </div>
   </div>
 </div>
