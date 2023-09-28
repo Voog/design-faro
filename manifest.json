@@ -76,11 +76,11 @@
       "title": "template-settings"
     },
     {
-      "title": "template-styles",
-      "layout_name": "template-styles",
       "content_type": "component",
       "component": true,
-      "file": "components/template-styles.tpl"
+      "file": "components/template-styles.tpl",
+      "layout_name": "template-styles",
+      "title": "template-styles"
     },
     {
       "content_type": "component",
@@ -90,11 +90,39 @@
       "title": "template-variables"
     },
     {
+      "content_type": "product",
+      "component": false,
+      "file": "layouts/auto_generated_product.tpl",
+      "layout_name": "auto_generated_product",
+      "title": "Auto-generated product"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/categories.tpl",
+      "layout_name": "categories",
+      "title": "Categories"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/common_page.tpl",
+      "layout_name": "page_default",
+      "title": "Common page"
+    },
+    {
       "content_type": "page",
       "component": false,
       "file": "layouts/front_page.tpl",
-      "layout_name": "page_default",
+      "layout_name": "page_front",
       "title": "Front page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product_list.tpl",
+      "layout_name": "product_list",
+      "title": "Product list"
     }
   ],
   "assets": [
