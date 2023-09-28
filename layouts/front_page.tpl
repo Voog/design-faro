@@ -9,7 +9,7 @@
   <body class="front-page body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
-    <div class="container-wrap">
+    <main class="front-page-content" role="main" data-search-indexing-allowed="true">
       {%- if editmode -%}
         <button
           class="voog-bg-picker-btn bg-picker {{ body_bg_key }}-picker"
@@ -22,14 +22,21 @@
           data-bg-color="{{ body_bg_color }}"
         ></button>
       {%- endif -%}
-      <div class="container">
-        <main class="content" role="main" data-search-indexing-allowed="true">
+      <div class="hero">
+        <div class="content-formatted">
+          {% content name="front-page-hero" %}
+        </div>
+      </div>
+      <div class="split-section">
+        <div class="section">
           <div class="content-formatted">
             {% content %}
           </div>
-        </main>
+        </div>
+        <div class="section image-section">
+        </div>
       </div>
-    </div>
+    </main>
 
     {%- include "javascripts" -%}
   </body>

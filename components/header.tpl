@@ -2,8 +2,8 @@
   <div class="header">
     {% include "menu-main" %}
 
-    <div class="content">
-      {% content name="header" %}
+    <div class="header-content">
+      {% xcontent name="header" %}
     </div>
 
     <div class="header-right">
