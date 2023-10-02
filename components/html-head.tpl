@@ -36,7 +36,7 @@
 {% include "template-meta" %}
 
 {%- comment -%}BREADCRUMBS{%- endcomment -%}
-{%- capture breadcrumbsScript -%}
+{%- capture breadcrumbs_script -%}
   {%- sd_breadcrumbs -%}
 {%- endcapture -%}
 

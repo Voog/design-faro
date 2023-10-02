@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header-wrapper {
   position: sticky;
   top: 0;
@@ -102,6 +103,37 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+.product-list-page .voog-bg-picker-btn {
+  position: relative;
+}
+.product-list-page .subheader {
+  padding: 12px 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.product-list-page .product-list-content {
+  padding: 32px;
+}
+.product-list-page .product-list-content .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-flex-wrap {
+  text-align: center;
+}
+.product-list-page .product-list-content .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-flex-wrap .edy-product-widget-item-btn {
+  width: 100%;
+}
+.product-list-page .product-list-content .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-details-inner,
+.product-list-page .product-list-content .edy-product-widget-catalogue .edy-product-widget-item .edy-product-widget-item-details-inner {
+  text-align: center;
+  width: 100%;
+}
+
+.menu-breadcrumbs .menu-item {
+  text-transform: uppercase;
+}
+.menu-breadcrumbs .menu-item.divider:after {
+  content: "·";
+  margin: 0 4px;
 }
 
 .menu-lang {
@@ -542,6 +574,10 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+main {
+  position: relative;
 }
 
 .body-bg-color {
