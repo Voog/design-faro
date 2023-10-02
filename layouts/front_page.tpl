@@ -1,3 +1,7 @@
+{%- comment -%}
+Possible front page layouts: "split" (default), "column" and "column-split".
+Layout is applied by assigning according classname to "front-page-container" element.
+{%- endcomment -%}
 <!DOCTYPE html>
 {% include "template-settings" %}
 {% include "template-variables" %}
@@ -9,7 +13,7 @@
   <body class="front-page full-height-body body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
-    <main class="front-page-content" role="main" data-search-indexing-allowed="true">
+    <main class="front-page-content {{ front_page_layout }}" role="main" data-search-indexing-allowed="true">
       {%- if editmode -%}
         <button
           class="voog-bg-picker-btn bg-picker {{ body_bg_key }}-picker"
@@ -32,8 +36,13 @@
           <div class="content-formatted">
             {% content %}
           </div>
+
+          <div class="content-formatted">
+            {% content name="column-right" %}
+          </div>
         </div>
-        <div class="section image-section">
+
+        <div class="image-section">
         </div>
       </div>
     </main>

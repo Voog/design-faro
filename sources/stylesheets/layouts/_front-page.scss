@@ -1,4 +1,5 @@
 $front-page-container-padding: 56px;
+$front-page-width: 992px;
 
 .front-page {
   .front-page-content {
@@ -6,11 +7,18 @@ $front-page-container-padding: 56px;
     flex-direction: column;
     flex: 1;
     position: relative;
-    padding: $front-page-container-padding $front-page-container-padding 0 $front-page-container-padding;
+    width: $front-page-width;
+    padding-bottom: $front-page-container-padding;
+    align-self: center;
+
+    &.split {
+      width: auto;
+      align-self: auto;
+      padding: $front-page-container-padding $front-page-container-padding 0 $front-page-container-padding;
+    }
   }
 
   .hero {
-    width: 50%;
     min-height: 432px;
     display: flex;
     align-items: center;
@@ -21,29 +29,65 @@ $front-page-container-padding: 56px;
     }
   }
 
-  .split-section {
-    display: flex;
-    position: relative;
-    flex: 1;
-    align-items: center;
+  .section {
+    padding-bottom: $front-page-container-padding;
+  }
 
-    .section {
+  .image-section {
+    // TODO: Image should be user-defined
+    background-image: url('http://static.voog.construction/voogstock/burano-italy-00001.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    // TODO: Image should not have fixed aspect ratio
+    aspect-ratio: 3/2;
+  }
+
+  .split,
+  .column-split {
+    .hero {
       width: 50%;
+    }
+
+    .split-section {
+      display: flex;
+      position: relative;
+      align-items: center;
+    }
+  }
+
+  .split {
+    .split-section {
+      flex: 1;
+      gap: 16px;
+
+      .section {
+        width: 50%;
+      }
 
       .content-formatted {
         width: 66.7%;
-        padding-bottom: $front-page-container-padding;
       }
 
-      &.image-section {
-        // TODO: Image should be user-defined
-        background-image: url('http://static.voog.construction/voogstock/burano-italy-00001.jpg');
-        background-position: center;
-        background-size: cover;
+      .image-section {
         position: absolute;
         right: -$front-page-container-padding;
         height: 100%;
         bottom: 0;
+        width: 50%;
+      }
+    }
+  }
+
+  .column-split {
+    .split-section {
+      flex-direction: column;
+
+      .section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
       }
     }
   }

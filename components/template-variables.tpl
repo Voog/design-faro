@@ -1,7 +1,10 @@
 {% capture dont_render %}
   {%- assign body_bg_key = template_settings.page.body_bg.key -%}
+  {%- assign front_page_settings_key = template_settings.page.front_page_settings.key -%}
 
   {%- assign body_bg = page.data[body_bg_key] -%}
+  {%- assign front_page_settings = page.data[front_page_settings_key] -%}
+
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% assign body_bg_color = body_bg.color %}
   {%- if body_bg_color == blank -%}
@@ -32,5 +35,10 @@
   {% else %}
     {% assign body_bg_type = "light-background" %}
   {% endif %}
+
+  {% assign front_page_layout =
+    front_page_settings.layout
+    | default: template_settings.page.front_page_settings.value.layout
+  %}
 
 {% endcapture %}

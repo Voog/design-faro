@@ -39,10 +39,16 @@
   flex-direction: column;
   flex: 1;
   position: relative;
+  width: 992px;
+  padding-bottom: 56px;
+  align-self: center;
+}
+.front-page .front-page-content.split {
+  width: auto;
+  align-self: auto;
   padding: 56px 56px 0 56px;
 }
 .front-page .hero {
-  width: 50%;
   min-height: 432px;
   display: flex;
   align-items: center;
@@ -51,27 +57,51 @@
 .front-page .hero .content-formatted {
   width: 100%;
 }
-.front-page .split-section {
-  display: flex;
-  position: relative;
-  flex: 1;
-  align-items: center;
-}
-.front-page .split-section .section {
-  width: 50%;
-}
-.front-page .split-section .section .content-formatted {
-  width: 66.7%;
+.front-page .section {
   padding-bottom: 56px;
 }
-.front-page .split-section .section.image-section {
+.front-page .image-section {
   background-image: url("http://static.voog.construction/voogstock/burano-italy-00001.jpg");
   background-position: center;
   background-size: cover;
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+.front-page .split .hero,
+.front-page .column-split .hero {
+  width: 50%;
+}
+.front-page .split .split-section,
+.front-page .column-split .split-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.front-page .split .split-section {
+  flex: 1;
+  gap: 16px;
+}
+.front-page .split .split-section .section {
+  width: 50%;
+}
+.front-page .split .split-section .content-formatted {
+  width: 66.7%;
+}
+.front-page .split .split-section .image-section {
   position: absolute;
   right: -56px;
   height: 100%;
   bottom: 0;
+  width: 50%;
+}
+.front-page .column-split .split-section {
+  flex-direction: column;
+}
+.front-page .column-split .split-section .section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .menu-lang {
