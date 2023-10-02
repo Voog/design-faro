@@ -1,0 +1,14 @@
+.categories-page {
+  .categories-page-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+
+    .content-formatted {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+}

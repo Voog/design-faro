@@ -6,7 +6,7 @@
     {%- include "html-head" -%}
     {%- include "template-styles" -%}
   </head>
-  <body class="front-page body-bg-picker-area js-background-type {{ body_bg_type }}">
+  <body class="front-page full-height-body body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
     <main class="front-page-content" role="main" data-search-indexing-allowed="true">
