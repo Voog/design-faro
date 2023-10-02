@@ -21,6 +21,7 @@
 .header-wrapper .header-content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .categories-page .categories-page-content {
