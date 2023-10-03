@@ -143,6 +143,12 @@
     {
       "content_type": "image/svg+xml",
       "kind": "assets",
+      "file": "assets/chevron.svg",
+      "filename": "chevron.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
       "file": "assets/ico-placeholder.svg",
       "filename": "ico-placeholder.svg"
     },

@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 {% include "template-settings" %}
-{% include "template-variables" %}
+{% include "template-variables" product_page: true %}
+
+{%- capture footnote_content_html -%}
+  {%- unless editmode -%}
+    {%- content bind=product name="footnote" -%}
+  {%- endunless -%}
+{%- endcapture -%}
+
+{%- capture footnote_content_size -%}
+  {{- footnote_content_html | size | minus: 1 -}}
+{%- endcapture -%}
+
+{%- unless footnote_content_size contains "-" -%}
+  {%- assign footnote_content_has_content = true -%}
+{%- endunless -%}
 
 {% capture bottom_content_html %}
   {%- unless editmode -%}
@@ -8,13 +22,13 @@
   {%- endunless -%}
 {% endcapture %}
 
-{% capture bottom_content_size %}
+{%- capture bottom_content_size -%}
   {{- bottom_content_html | size | minus: 1 -}}
-{% endcapture %}
+{%- endcapture -%}
 
-{% unless bottom_content_size contains "-" %}
-  {% assign bottom_content_has_content = true %}
-{% endunless %}
+{%- unless bottom_content_size contains "-" -%}
+  {%- assign bottom_content_has_content = true -%}
+{%- endunless -%}
 
 {%- capture product_social_html -%}
   {%- unless editmode -%}
@@ -30,10 +44,25 @@
     {%- include "template-styles" -%}
   </head>
 
-  <body class="product-page">
+  <body class="product-page body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
+    <div class="body-bg-color js-background-color"></div>
 
     <main class="product-page-content" role="main" data-search-indexing-allowed="true">
+      {%- if editmode -%}
+        <button
+          class="voog-bg-picker-btn bg-picker {{ product_body_bg_key }}-picker"
+          data-bg_key="{{ product_body_bg_key }}"
+          data-type_picture="false"
+          data-type_color="true"
+          data-color_elem=".body-bg-color"
+          data-picker_area_elem=".body-bg-picker-area"
+          data-picker_elem =".{{ product_body_bg_key }}-picker"
+          data-bg-color="{{ body_bg_color }}"
+          data-entity="productPage"
+        ></button>
+      {%- endif -%}
+
       <div class="split-section">
         <div class="product-image-section">
           {%- if product.image != blank %}
@@ -49,7 +78,7 @@
           </div>
         </div>
         <div class="product-information">
-          <div class="content-formatted">
+          <div class="content-formatted information-section">
             <h3 class="product-name">
               {% editable product.name %}
             </h3>
@@ -108,6 +137,12 @@
             {%- assign content_title_tooltip = "content_tooltip_specific_page" | lce -%}
             {% content bind=product title=content_title title_tooltip=content_title_tooltip  %}
           </div>
+
+          {% if footnote_content_has_content or editmode %}
+            <div class="product-footnote">
+              {% content bind=product name="footnote" %}
+            </div>
+          {% endif %}
         </div>
       </div>
 

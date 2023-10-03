@@ -1,8 +1,14 @@
 {% capture dont_render %}
   {%- assign body_bg_key = template_settings.page.body_bg.key -%}
   {%- assign front_page_settings_key = template_settings.page.front_page_settings.key -%}
+  {%- assign product_body_bg_key = template_settings.product.body_bg.key -%}
 
-  {%- assign body_bg = page.data[body_bg_key] -%}
+  {%- if product_page -%}
+    {%- assign body_bg = site.data[product_body_bg_key] -%}
+  {%- else -%}
+    {%- assign body_bg = page.data[body_bg_key] -%}
+  {%- endif -%}
+
   {%- assign front_page_settings = page.data[front_page_settings_key] -%}
 
   {% comment %}Assign variables based on page type.{% endcomment %}

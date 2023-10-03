@@ -1,10 +1,6 @@
 .menu-breadcrumbs {
-  .menu-item {
-    text-transform: uppercase;
-
-    &.divider:after {
-      content: '·';
-      margin: 0 4px;
-    }
+  .menu-item.divider:after {
+    content: '·';
+    margin: 0 4px;
   }
 }

@@ -3,31 +3,7 @@
     position: relative;
   }
 
-  .subheader {
-    padding: 12px 32px;
-    border-bottom: 1px solid rgba($black, .1);
-    position: relative;
-  }
-
   .product-list-content {
     padding: 32px;
-
-    .edy-product-widget-grid {
-      .edy-product-widget-item .edy-product-widget-item-details-flex-wrap {
-        text-align: center;
-
-        .edy-product-widget-item-btn {
-          width: 100%;
-        }
-      }
-    }
-
-    .edy-product-widget-masonry .edy-product-widget-item-content,
-    .edy-product-widget-catalogue .edy-product-widget-item  {
-      .edy-product-widget-item-details-inner {
-        text-align: center;
-        width: 100%;
-      }
-    }
   }
 }

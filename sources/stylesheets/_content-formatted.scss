@@ -149,11 +149,36 @@
     color: $green;
   }
 
+  .edy-product-widget-grid {
+    .edy-product-widget-item .edy-product-widget-item-details-flex-wrap {
+      text-align: center;
+
+      .edy-product-widget-item-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .edy-product-widget-masonry .edy-product-widget-item-content,
+  .edy-product-widget-catalogue .edy-product-widget-item  {
+    .edy-product-widget-item-details-inner {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .edy-buy-button .edy-buy-button-title,
+  .edy-js-buy-button {
+    &:before {
+      content: '+';
+      margin-right: 4px;
+    }
+  }
+
   .edy-buy-button-variants {
     display: flex;
     flex-direction: column;
     padding-bottom: 48px;
-    max-width: 416px;
 
     .form_field {
       display: grid;
@@ -177,5 +202,19 @@
         border: none;
       }
     }
+  }
+
+  .edy-buy-button-align-center .form_field {
+    grid-template-columns: repeat(4, 1fr);
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+    }
+  }
+
+  .edy-buy-button-align-right .form_field {
+    grid-template-columns: 3fr 1fr;
   }
 }

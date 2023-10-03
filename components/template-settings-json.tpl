@@ -11,5 +11,11 @@
       }
     }
   },
+  "product": {
+    "body_bg": {
+      "key": "PREFIX_product_body_bg",
+      "value": {}
+    }
+  },
   "version": "faro-1.0.0"
 }

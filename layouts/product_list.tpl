@@ -11,10 +11,6 @@
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
 
-    <div class="subheader">
-      {% include "menu-breadcrumbs" %}
-    </div>
-
     <main class="product-list-content" role="main" data-search-indexing-allowed="true">
       {%- if editmode -%}
         <button
