@@ -1,0 +1,48 @@
+.product-page {
+  .product-page-content {
+    padding: 40px;
+  }
+
+  .split-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .product-image {
+    &.without-image {
+      background-image: url('../assets/ico-placeholder.svg');
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: center;
+      aspect-ratio: 1/1;
+      border: 1px solid rgba($black, .1);
+    }
+  }
+
+  .product-information {
+    max-width: 416px;
+
+    .product-name {
+      padding-bottom: 8px;
+    }
+
+    .product-price,
+    .product-social {
+      padding-bottom: 32px;
+    }
+
+    .product-description {
+      padding-bottom: 24px;
+      word-wrap: break-word;
+    }
+
+    .product-buy-button {
+      padding-bottom: 24px;
+    }
+  }
+
+  .product-additional-content {
+    padding-top: 32px;
+  }
+}

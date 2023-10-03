@@ -24,6 +24,43 @@
   flex-direction: column;
 }
 
+.product-page .product-page-content {
+  padding: 40px;
+}
+.product-page .split-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.product-page .product-image.without-image {
+  background-image: url("../assets/ico-placeholder.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 1/1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product-page .product-information {
+  max-width: 416px;
+}
+.product-page .product-information .product-name {
+  padding-bottom: 8px;
+}
+.product-page .product-information .product-price,
+.product-page .product-information .product-social {
+  padding-bottom: 32px;
+}
+.product-page .product-information .product-description {
+  padding-bottom: 24px;
+  word-wrap: break-word;
+}
+.product-page .product-information .product-buy-button {
+  padding-bottom: 24px;
+}
+.product-page .product-additional-content {
+  padding-top: 32px;
+}
+
 .categories-page .categories-page-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -570,6 +607,31 @@
 }
 .content-formatted .form_notice {
   color: #2F5D4B;
+}
+.content-formatted .edy-buy-button-variants {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
+  max-width: 416px;
+}
+.content-formatted .edy-buy-button-variants .form_field {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  gap: 8px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+.content-formatted .edy-buy-button-variants .form_field + .form_field {
+  border-top: none;
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_label:after {
+  content: ":";
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_select {
+  border: none;
 }
 
 body {

@@ -13,6 +13,13 @@
       "title": "bg-picker-scripts"
     },
     {
+      "title": "buy-button",
+      "layout_name": "buy-button",
+      "content_type": "component",
+      "component": true,
+      "file": "components/buy-button.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/header.tpl",
@@ -133,6 +140,12 @@
     }
   ],
   "assets": [
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-placeholder.svg",
+      "filename": "ico-placeholder.svg"
+    },
     {
       "content_type": "image/png",
       "file": "images/ico-flags.png",
