@@ -34,6 +34,13 @@
       "title": "html-head"
     },
     {
+      "title": "ico-ellipsis",
+      "layout_name": "ico-ellipsis",
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-ellipsis.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/javascripts.tpl",
@@ -145,6 +152,12 @@
       "kind": "assets",
       "file": "assets/chevron.svg",
       "filename": "chevron.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-ellipsis.svg",
+      "filename": "ico-ellipsis.svg"
     },
     {
       "content_type": "image/svg+xml",

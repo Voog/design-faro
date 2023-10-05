@@ -2,7 +2,7 @@
   // ===========================================================================
   // Binds site search functionality.
   // ===========================================================================
-  const bindSiteSearch = (searchForm, languageCode, noResultsString) => {
+  var bindSiteSearch = function (searchForm, languageCode, noResultsString) {
     if (searchForm) {
       const search = new VoogSearch(searchForm, {
         // This defines the number of results per query.
@@ -53,8 +53,50 @@
     });
   };
 
+  const handleMenuContent = () => {
+    console.log('running');
+    var $mainMenu = $('.js-menu-main');
+    var $dropdownMenu = $mainMenu.find('.dropdown-menu, .dropdown-menu-visible');
+    var $dropdownContent = $dropdownMenu.find('.dropdown-menu-children');
+
+    var $menu = $mainMenu.find('.menu').append($dropdownContent.children());
+    var $menuItems = $menu.find('.menu-item-wrapper');
+    var items = [];
+
+    $menuItems.each(function (idx, item) {
+      var isOverflowing =
+        item.offsetHeight < item.scrollHeight || item.offsetWidth < item.scrollWidth;
+
+      if (isOverflowing) {
+        // Push last visible item to dropdown to make room for dropdown icon
+        if (items.length === 0) {
+          items.push($menuItems[idx - 1]);
+        }
+        items.push($(item));
+      }
+    });
+
+    if (items.length > 0) {
+      $dropdownContent.append(items);
+      $dropdownMenu.append($dropdownContent);
+      $menu.append($dropdownMenu);
+      $dropdownMenu.removeClass('dropdown-menu').addClass('dropdown-menu-visible')
+    }
+  };
+
+  const handleWindowResize = () => {
+    $(document).ready(function () {
+      handleMenuContent();
+    });
+
+    $(window).resize(debounce(function () {
+      handleMenuContent();
+    }, 250));
+  }
+
   const init = () => {
     bindSideClicks();
+    handleWindowResize();
   };
 
   window.site = $.extend(window.site || {}, {
