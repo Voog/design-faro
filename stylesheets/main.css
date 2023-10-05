@@ -23,6 +23,14 @@
   justify-content: center;
   flex-direction: column;
 }
+.header-wrapper .header-right {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  justify-content: end;
+  gap: 32px;
+  align-items: center;
+  text-wrap: nowrap;
+}
 
 .product-page .voog-bg-picker-btn {
   position: relative;
@@ -167,11 +175,6 @@
 .menu-breadcrumbs .menu-item.divider:after {
   content: "·";
   margin: 0 4px;
-}
-
-.menu-lang {
-  display: flex;
-  gap: 8px;
 }
 
 .lang-flag {
@@ -501,6 +504,13 @@
 }
 .menu-main a.untranslated {
   color: #C5292A;
+}
+
+.menu-lang {
+  position: relative;
+}
+.menu-lang .menu-item-children {
+  right: 0;
 }
 
 .content-formatted .custom-btn {

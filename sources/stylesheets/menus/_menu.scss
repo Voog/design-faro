@@ -64,3 +64,11 @@
     color: $red;
   }
 }
+
+.menu-lang {
+  position: relative;
+
+  .menu-item-children {
+    right: 0;
+  }
+}

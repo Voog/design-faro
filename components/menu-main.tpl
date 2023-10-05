@@ -1,5 +1,5 @@
 <nav class="menu-main js-menu-main">
-  <div class="menu{% if editmode %} show-overflow{% endif %}">
+  <div class="menu">
     {% unless site.root_item.hidden? -%}
       <div class="menu-item-wrapper">
         {% menulink site.root_item wrapper-tag="div" wrapper-class="menu-item" %}

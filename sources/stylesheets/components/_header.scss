@@ -23,4 +23,13 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  .header-right {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    justify-content: end;
+    gap: 32px;
+    align-items: center;
+    text-wrap: nowrap;
+  }
 }
