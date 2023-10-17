@@ -44,6 +44,86 @@
   grid-template-columns: 1fr 40%;
 }
 
+body .edy-ecommerce-shopping-cart-button {
+  display: none;
+  max-height: 0;
+  position: relative;
+  top: unset;
+  bottom: 0;
+}
+body.edy-checkout-button-visible {
+  padding-top: 0;
+}
+
+.cart-popover {
+  position: fixed;
+  top: 48px;
+  right: 32px;
+  width: 100%;
+  opacity: 0;
+  max-width: 360px;
+  pointer-events: none;
+  z-index: 11020;
+  background-color: #FFFFFF;
+  transition: opacity 400ms;
+  cursor: pointer;
+}
+.cart-popover .wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cart-popover.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.cart-popover.visible .content {
+  transform: translateX(0);
+}
+.cart-popover.visible:hover {
+  opacity: 0.7;
+}
+.cart-popover .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  min-height: 40px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  margin-left: 72px;
+  transition: transform 400ms;
+  transform: translateX(-72px);
+}
+.cart-popover .content .info {
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.cart-popover .content .view-cart {
+  color: #888888;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+.cart-popover .icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  background-color: #000000;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  z-index: 11021;
+}
+.cart-popover .icon path {
+  fill: #FFFFFF;
+}
+
 .header-wrapper {
   position: sticky;
   top: 0;
@@ -55,7 +135,7 @@
   background-color: rgba(var(--body-bg-color-rgb), 0.8);
 }
 .header-wrapper .header {
-  padding: 16px 12px;
+  padding: 16px 24px;
   display: grid;
   justify-content: space-between;
   align-items: center;
@@ -75,6 +155,16 @@
   gap: 32px;
   align-items: center;
   text-wrap: nowrap;
+}
+.header-wrapper .header-right .cart-btn {
+  cursor: not-allowed;
+}
+.header-wrapper .header-right .cart-btn.active {
+  cursor: pointer;
+}
+.header-wrapper .header-right .cart-btn .cart-btn-count:not(:empty)::before {
+  content: "·";
+  margin: 0 4px;
 }
 
 .product-page .voog-bg-picker-btn {

@@ -1,0 +1,93 @@
+body {
+  // Hide system shopping cart button
+
+  .edy-ecommerce-shopping-cart-button {
+    display: none;
+    max-height: 0;
+    position: relative;
+    top: unset;
+    bottom: 0;
+  }
+
+  &.edy-checkout-button-visible {
+    padding-top: 0;
+  }
+}
+
+.cart-popover {
+  position: fixed;
+  top: 48px;
+  right: 32px;
+  width: 100%;
+  opacity: 0;
+  max-width: 360px;
+  pointer-events: none;
+  z-index: $zindex-cart-popover;
+  background-color: $white;
+  transition: opacity 400ms;
+  cursor: pointer;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+
+    .content {
+      transform: translateX(0);
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    min-height: 40px;
+    box-shadow: $box-shadow;
+    width: 100%;
+    margin-left: 72px;
+    transition: transform 400ms;
+    transform: translateX(-72px);
+
+    .info {
+      color: $black;
+      font-weight: $medium-weight;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .view-cart {
+      color: $grey-2;
+      font-weight: $demi-weight;
+      font-size: 12px;
+      line-height: 16px;
+      white-space: nowrap;
+      margin-left: 8px;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    background-color: $black;
+    box-shadow: $box-shadow;
+    z-index: $zindex-cart-popover + 1;
+
+    path {
+      fill: $white;
+    }
+  }
+}

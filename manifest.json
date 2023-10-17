@@ -27,6 +27,13 @@
       "file": "components/buy-button.tpl"
     },
     {
+      "title": "cart-popover",
+      "layout_name": "cart-popover",
+      "content_type": "component",
+      "component": true,
+      "file": "components/cart-popover.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/header.tpl",
@@ -39,6 +46,13 @@
       "file": "components/html-head.tpl",
       "layout_name": "html-head",
       "title": "html-head"
+    },
+    {
+      "title": "ico-cart",
+      "layout_name": "ico-cart",
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-cart.tpl"
     },
     {
       "title": "ico-ellipsis",
@@ -159,6 +173,12 @@
       "kind": "assets",
       "file": "assets/chevron.svg",
       "filename": "chevron.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-cart.svg",
+      "filename": "ico-cart.svg"
     },
     {
       "content_type": "image/svg+xml",

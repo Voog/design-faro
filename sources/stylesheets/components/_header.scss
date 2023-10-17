@@ -9,7 +9,7 @@
   background-color: rgba(var(--body-bg-color-rgb), .8);
 
   .header {
-    padding: 16px 12px;
+    padding: 16px 24px;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -31,5 +31,18 @@
     gap: 32px;
     align-items: center;
     text-wrap: nowrap;
+
+    .cart-btn {
+      cursor: not-allowed;
+
+      &.active {
+        cursor: pointer;
+      }
+
+      .cart-btn-count:not(:empty)::before {
+        content: '·';
+        margin: 0 4px;
+      }
+    }
   }
 }
