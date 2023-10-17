@@ -1,10 +1,15 @@
 .product-page {
   .voog-bg-picker-btn {
     position: relative;
+    margin-bottom: 12px;
   }
 
   .product-page-content {
     padding: 40px;
+    max-width: $max-page-width;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .split-section {

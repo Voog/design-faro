@@ -13,8 +13,8 @@ $front-page-width: 992px;
 
     &.split {
       width: auto;
-      align-self: auto;
       padding: $front-page-container-padding $front-page-container-padding 0 $front-page-container-padding;
+      max-width: $max-page-width;
     }
   }
 

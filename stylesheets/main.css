@@ -34,9 +34,14 @@
 
 .product-page .voog-bg-picker-btn {
   position: relative;
+  margin-bottom: 12px;
 }
 .product-page .product-page-content {
   padding: 40px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 .product-page .split-section {
   display: grid;
@@ -106,8 +111,8 @@
 }
 .front-page .front-page-content.split {
   width: auto;
-  align-self: auto;
   padding: 56px 56px 0 56px;
+  max-width: 1440px;
 }
 .front-page .hero {
   min-height: 432px;
@@ -167,9 +172,14 @@
 
 .product-list-page .voog-bg-picker-btn {
   position: relative;
+  margin-bottom: 12px;
 }
 .product-list-page .product-list-content {
   padding: 32px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-breadcrumbs .menu-item.divider:after {
