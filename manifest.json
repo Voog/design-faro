@@ -13,6 +13,13 @@
       "title": "bg-picker-scripts"
     },
     {
+      "title": "block",
+      "layout_name": "block",
+      "content_type": "component",
+      "component": true,
+      "file": "components/block.tpl"
+    },
+    {
       "title": "buy-button",
       "layout_name": "buy-button",
       "content_type": "component",

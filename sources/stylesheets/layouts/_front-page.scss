@@ -12,7 +12,6 @@ $front-page-width: 992px;
     align-self: center;
 
     &.split {
-      width: auto;
       padding: $front-page-container-padding $front-page-container-padding 0 $front-page-container-padding;
       max-width: $max-page-width;
     }

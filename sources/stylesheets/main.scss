@@ -1,9 +1,11 @@
 @import 'variables';
 
+@import 'components/block';
 @import 'components/header';
 
 @import 'layouts/auto-generated-product';
 @import 'layouts/categories';
+@import 'layouts/common-page';
 @import 'layouts/front-page';
 @import 'layouts/product-list';
 
