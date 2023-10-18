@@ -1,6 +1,20 @@
 .block {
   min-height: 100vh;
   padding: 32px;
+  position: relative;
+
+  .voog-bg-picker-btn {
+    top: 32px;
+    left: 32px;
+  }
+}
+
+.block-bg-color {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  left: 0;
 }
 
 .block-1,
@@ -16,7 +30,11 @@
     grid-template-columns: 40% 1fr;
     gap: 80px;
     align-items: center;
+    align-self: center;
     justify-content: space-between;
+    max-width: $max-page-width;
+    width: 100%;
+    z-index: 1;
   }
 }
 
@@ -28,6 +46,8 @@
   .wrapper {
     max-width: 560px;
     flex: 1;
+    z-index: 1;
+    width: 100%;
   }
 }
 

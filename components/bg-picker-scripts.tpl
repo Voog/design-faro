@@ -8,8 +8,11 @@
     id: '{{ page.id }}'
   });
 
+  var pageBlockData = '{{ common_page_blocks | json }}';
+  var parsedBlockData = JSON.parse(pageBlockData || '{}');
+
   $(function() {
-    $('.body-bg-picker-area').each(function(index, pickerArea) {
+    $('.bg-picker-area').each(function(index, pickerArea) {
       var $picker = $(pickerArea).find('.bg-picker');
       var pickerOpts = $picker.data();
 
@@ -29,7 +32,18 @@
           );
         },
         commit: function(data) {
-          site.bgPickerCommit(pickerOpts.bg_key, data, bgPicker, pickerOpts.entity);
+          var commitData = site.bgPickerCommit({
+            dataBgKey: pickerOpts.bg_key,
+            data,
+            bgPicker,
+            pageType: pickerOpts.entity,
+            dataKey: pickerOpts.data_key,
+            blockData: parsedBlockData
+          });
+
+          if (commitData) {
+            parsedBlockData = commitData;
+          }
         }
       });
     });

@@ -728,9 +728,11 @@
         handleMenuContent();
       });
 
-      $(window).resize(debounce(() => {
-        handleMenuContent();
-      }, 250));
+      $(window).resize(
+        debounce(() => {
+          handleMenuContent();
+        }, 250)
+      );
     };
 
     const init = () => {

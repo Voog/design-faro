@@ -83,6 +83,7 @@
     // Updates the bgPickerContent background image and background color.
     $(':root').css(`--${data.variableName}`, bgPickerColor);
     $(':root').css(`--${data.variableName}-rgb`, colorRgb);
+
     $(bgPickerArea).find('.js-background-image').first().css({'background-image': bgPickerImage});
   };
 
@@ -95,12 +96,18 @@
   };
 
   // Header background image and color save logic function.
-  var bgPickerCommit = function (dataBgKey, data, bgPicker, pageType) {
+  var bgPickerCommit = function ({dataBgKey, data, dataKey, bgPicker, pageType, blockData}) {
     var commitData = $.extend(true, {}, data);
     commitData.image = data.image || '';
     commitData.imageSizes = normalizeValue(data.imageSizes);
     commitData.color = data.color || '';
     commitData.combinedLightness = bgPicker.combinedLightness;
+
+    if (dataBgKey === 'faro_common_page_blocks' && dataKey) {
+      blockData[dataKey] = blockData[dataKey] || {};
+      blockData[dataKey].background = commitData;
+      commitData = blockData;
+    };
 
     if (pageType === 'articlePage') {
       Edicy.articles.currentArticle.setData(dataBgKey, commitData);
@@ -109,6 +116,8 @@
     } else {
       pageData.set(dataBgKey, commitData);
     }
+
+    return commitData;
   };
 
   var colorSum = function (bgColor, fgColor) {

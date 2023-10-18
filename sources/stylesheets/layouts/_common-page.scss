@@ -1,12 +1,7 @@
 .common-page {
   .common-page-content {
-    max-width: $max-page-width;
     display: flex;
     flex-direction: column;
     margin: auto;
-
-    .top-content {
-      padding: 32px;
-    }
   }
 }

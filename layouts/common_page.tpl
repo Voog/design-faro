@@ -11,15 +11,17 @@
     {% include "header" %}
 
     <main class="common-page-content" role="main" data-search-indexing-allowed="true">
-      <div class="top-content content-formatted">
-        {% content %}
-      </div>
-
-      {% include "block", block_type: 1, block_id: 1 %}
-      {% include "block", block_type: 2, block_id: 2 %}
-      {% include "block", block_type: 3, block_id: 3 %}
-      {% include "block", block_type: 4, block_id: 4 %}
+      {% for block_data in common_page_blocks %}
+        {%- assign block_key = block_data[0] -%}
+        {%- assign block_value = block_data[1] -%}
+        {% include "block",
+          id: block_key,
+          layout: block_value.layout,
+          background: block_value.background
+        %}
+      {% endfor %}
     </main>
+
     {%- include "javascripts" -%}
   </body>
 </html>

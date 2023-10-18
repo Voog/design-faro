@@ -44,7 +44,7 @@
     {%- include "template-styles" -%}
   </head>
 
-  <body class="product-page body-bg-picker-area js-background-type {{ body_bg_type }}">
+  <body class="product-page bg-picker-area body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
 

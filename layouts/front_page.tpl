@@ -10,7 +10,7 @@ Layout is applied by assigning according classname to "front-page-container" ele
     {%- include "html-head" -%}
     {%- include "template-styles" -%}
   </head>
-  <body class="front-page full-height-body body-bg-picker-area js-background-type {{ body_bg_type }}">
+  <body class="front-page full-height-body bg-picker-area body-bg-picker-area js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
     <main class="front-page-content {{ front_page_layout }}" role="main" data-search-indexing-allowed="true">
