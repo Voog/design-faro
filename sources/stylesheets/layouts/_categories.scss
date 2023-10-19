@@ -45,3 +45,11 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .categories-page {
+    .categories-page-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}

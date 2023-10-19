@@ -349,6 +349,11 @@ body.edy-checkout-button-visible {
   z-index: 2;
 }
 
+@media screen and (max-width: 900px) {
+  .categories-page .categories-page-content {
+    grid-template-columns: 1fr;
+  }
+}
 .common-page .common-page-content {
   display: flex;
   flex-direction: column;
