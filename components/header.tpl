@@ -1,6 +1,6 @@
 {% include "cart-popover" %}
 
-<div class="header-wrapper">
+<div class="header-wrapper{% if fixed %} fixed{% endif %}">
   <div class="header">
     {% include "menu-main" %}
 

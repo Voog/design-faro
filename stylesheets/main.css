@@ -153,6 +153,9 @@ body.edy-checkout-button-visible {
   backdrop-filter: blur(10px);
   background-color: rgba(var(--body-bg-color-rgb), 0.8);
 }
+.header-wrapper.fixed {
+  position: fixed;
+}
 .header-wrapper .header {
   padding: 16px 24px;
   display: grid;
@@ -252,6 +255,7 @@ body.edy-checkout-button-visible {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-height: calc(100vh - 96px);
 }
 
 .common-page .common-page-content {

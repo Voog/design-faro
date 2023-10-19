@@ -8,15 +8,23 @@
   </head>
 
   <body class="categories-page full-height-body">
-    {% include "header" %}
+    {% include "header", fixed: true %}
 
-    <main class="categories-page-content split-content">
-      <div class="content-formatted">
-        {% content name="categories-left" %}
-      </div>
-      <div class="content-formatted">
-        {% content name="categories-right" %}
-      </div>
+    <main class="categories-page-content">
+      {% for section in categories_page_sections %}
+        {%- assign section_id = section[0] -%}
+        {%- assign section_data = section[1] -%}
+
+        {%- assign left_content_name = "categories-left-" | append: section_id -%}
+        {%- assign right_content_name = "categories-right-" | append: section_id -%}
+
+        <div class="content-formatted">
+          {% content name=left_content_name %}
+        </div>
+        <div class="content-formatted">
+          {% content name=right_content_name %}
+        </div>
+      {% endfor %}
     </main>
     {%- include "javascripts" -%}
   </body>

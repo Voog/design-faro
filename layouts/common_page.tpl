@@ -8,7 +8,7 @@
   </head>
 
   <body class="common-page">
-    {% include "header" %}
+    {% include "header", fixed: true %}
 
     <main class="common-page-content" role="main" data-search-indexing-allowed="true">
       {% for block_data in common_page_blocks %}

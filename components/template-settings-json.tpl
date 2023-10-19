@@ -30,6 +30,15 @@
           "background": {}
         }
       }
+    },
+    "categories_page_sections": {
+      "key": "PREFIX_categories_page_sections",
+      "value": {
+        "1": {
+          "left_background": {},
+          "right_background": {}
+        }
+      }
     }
   },
   "product": {
