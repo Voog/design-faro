@@ -93,8 +93,13 @@
     });
   };
 
-  const getCartItemsCount = () =>
-    Voog.ShoppingCart.getContents().items.reduce((acc, item) => acc + item.quantity, 0);
+  const getCartItemsCount = () => {
+    const shoppingCart = Voog.ShoppingCart;
+
+    return shoppingCart
+      ? shoppingCart.getContents().items.reduce((acc, item) => acc + item.quantity, 0)
+      : 0;
+  };
 
   const handleProductCountChange = (e, addProduct) => {
     const itemsCount = getCartItemsCount();
@@ -183,7 +188,7 @@
     const $categoriesPageContent = $('.js-category-section');
 
     $categoriesPageContent.css('height', 'calc(calc(100vh - 96px) - ' + headerHeight + 'px)');
-  }
+  };
 
   const handleWindowResize = () => {
     $(document).ready(() => {
