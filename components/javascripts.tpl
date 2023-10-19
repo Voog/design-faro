@@ -2,7 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="{{ javascripts_path }}/application.min.js?v={{ template_settings.version }}"></script>
 {% if editmode -%}
-  <script src="{{ javascripts_path }}/editmode.js?v={{ template_settings.version }}"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?v={{ template_settings.version }}"></script>
 {%- endif %}
 
 {% sitejs_include %}
