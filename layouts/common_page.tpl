@@ -8,7 +8,7 @@
   </head>
 
   <body class="common-page">
-    {% include "header", fixed: true %}
+    {% include "header" %}
 
     <main class="common-page-content" role="main" data-search-indexing-allowed="true">
       {% for block_data in common_page_blocks %}
@@ -22,6 +22,6 @@
       {% endfor %}
     </main>
 
-    {%- include "javascripts" -%}
+    {%- include "javascripts", blocks_data: common_page_blocks -%}
   </body>
 </html>

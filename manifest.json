@@ -13,25 +13,32 @@
       "title": "bg-picker-scripts"
     },
     {
-      "title": "block",
+      "content_type": "component",
+      "component": true,
+      "file": "components/block.tpl",
       "layout_name": "block",
-      "content_type": "component",
-      "component": true,
-      "file": "components/block.tpl"
+      "title": "block"
     },
     {
-      "title": "buy-button",
+      "content_type": "component",
+      "component": true,
+      "file": "components/buy-button.tpl",
       "layout_name": "buy-button",
-      "content_type": "component",
-      "component": true,
-      "file": "components/buy-button.tpl"
+      "title": "buy-button"
     },
     {
-      "title": "cart-popover",
-      "layout_name": "cart-popover",
       "content_type": "component",
       "component": true,
-      "file": "components/cart-popover.tpl"
+      "file": "components/cart-popover.tpl",
+      "layout_name": "cart-popover",
+      "title": "cart-popover"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/category.tpl",
+      "layout_name": "category",
+      "title": "category"
     },
     {
       "content_type": "component",
@@ -48,18 +55,18 @@
       "title": "html-head"
     },
     {
-      "title": "ico-cart",
-      "layout_name": "ico-cart",
       "content_type": "component",
       "component": true,
-      "file": "components/ico-cart.tpl"
+      "file": "components/ico-cart.tpl",
+      "layout_name": "ico-cart",
+      "title": "ico-cart"
     },
     {
-      "title": "ico-ellipsis",
-      "layout_name": "ico-ellipsis",
       "content_type": "component",
       "component": true,
-      "file": "components/ico-ellipsis.tpl"
+      "file": "components/ico-ellipsis.tpl",
+      "layout_name": "ico-ellipsis",
+      "title": "ico-ellipsis"
     },
     {
       "content_type": "component",
@@ -170,26 +177,20 @@
   "assets": [
     {
       "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/chevron.svg",
-      "filename": "chevron.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
       "file": "assets/ico-cart.svg",
+      "kind": "assets",
       "filename": "ico-cart.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "kind": "assets",
       "file": "assets/ico-ellipsis.svg",
+      "kind": "assets",
       "filename": "ico-ellipsis.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "kind": "assets",
       "file": "assets/ico-placeholder.svg",
+      "kind": "assets",
       "filename": "ico-placeholder.svg"
     },
     {

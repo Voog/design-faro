@@ -8,7 +8,7 @@
     id: '{{ page.id }}'
   });
 
-  var pageBlockData = '{{ common_page_blocks | json }}';
+  var pageBlockData = '{{ blocks_data | json }}';
   var parsedBlockData = JSON.parse(pageBlockData || '{}');
 
   $(function() {

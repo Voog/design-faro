@@ -35,8 +35,10 @@
       "key": "PREFIX_categories_page_sections",
       "value": {
         "1": {
-          "left_background": {},
-          "right_background": {}
+          "background": {}
+        },
+        "2": {
+          "background": {}
         }
       }
     }

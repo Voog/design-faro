@@ -19,6 +19,6 @@
 {% if editmode %}
   {% editorjsblock %}
     <script src="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js"></script>
-    {%- include "bg-picker-scripts" -%}
+    {%- include "bg-picker-scripts" blocks_data: blocks_data -%}
   {% endeditorjsblock %}
 {% endif %}

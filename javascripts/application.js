@@ -723,6 +723,13 @@
       });
     };
 
+    const handleCategoriesPageContent = () => {
+      const headerHeight = $('.js-header').height();
+      const $categoriesPageContent = $('.js-category-section');
+
+      $categoriesPageContent.css('height', 'calc(calc(100vh - 96px) - ' + headerHeight + 'px)');
+    };
+
     const handleWindowResize = () => {
       $(document).ready(() => {
         handleMenuContent();
@@ -744,6 +751,7 @@
 
     window.site = $.extend(window.site || {}, {
       bindSiteSearch: bindSiteSearch,
+      handleCategoriesPageContent: handleCategoriesPageContent,
     });
 
     init();

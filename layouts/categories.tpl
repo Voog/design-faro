@@ -8,24 +8,25 @@
   </head>
 
   <body class="categories-page full-height-body">
-    {% include "header", fixed: true %}
+    {% include "header" %}
 
     <main class="categories-page-content">
       {% for section in categories_page_sections %}
         {%- assign section_id = section[0] -%}
         {%- assign section_data = section[1] -%}
 
-        {%- assign left_content_name = "categories-left-" | append: section_id -%}
-        {%- assign right_content_name = "categories-right-" | append: section_id -%}
-
-        <div class="content-formatted">
-          {% content name=left_content_name %}
-        </div>
-        <div class="content-formatted">
-          {% content name=right_content_name %}
-        </div>
+        {% include "category",
+          id: section_id,
+          background: section_data.background
+        %}
       {% endfor %}
     </main>
-    {%- include "javascripts" -%}
+    {%- include "javascripts", blocks_data: categories_page_sections -%}
+
+    <script>
+      if (site) {
+        site.handleCategoriesPageContent();
+      }
+    </script>
   </body>
 </html>

@@ -250,12 +250,38 @@ body.edy-checkout-button-visible {
   grid-template-columns: 1fr 1fr;
   flex: 1;
 }
-.categories-page .categories-page-content .content-formatted {
+.categories-page .categories-page-content .category-section {
+  position: relative;
+}
+.categories-page .categories-page-content .category-section .category-bg-color,
+.categories-page .categories-page-content .category-section .category-bg-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.categories-page .categories-page-content .category-section .category-bg-color {
+  z-index: 1;
+}
+.categories-page .categories-page-content .category-section .category-bg-image {
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.categories-page .categories-page-content .category-section .voog-bg-picker-btn {
+  top: 32px;
+  left: 32px;
+}
+.categories-page .categories-page-content .category-section:nth-child(odd):last-of-type {
+  grid-column: 1/-1;
+}
+.categories-page .categories-page-content .category-section .content-formatted {
   padding: 48px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: calc(100vh - 96px);
+  min-height: 50vh;
+  position: relative;
+  z-index: 2;
 }
 
 .common-page .common-page-content {

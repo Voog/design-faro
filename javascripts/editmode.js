@@ -107,7 +107,9 @@
       commitData.color = data.color || '';
       commitData.combinedLightness = bgPicker.combinedLightness;
 
-      if (dataBgKey === 'faro_common_page_blocks' && dataKey) {
+      var nestedDataKeys = ['faro_common_page_blocks', 'faro_categories_page_sections'];
+
+      if (nestedDataKeys.includes(dataBgKey) && dataKey) {
         blockData[dataKey] = blockData[dataKey] || {};
         blockData[dataKey].background = commitData;
         commitData = blockData;
