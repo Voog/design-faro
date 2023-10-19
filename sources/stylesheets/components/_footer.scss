@@ -18,3 +18,17 @@
     gap: 5%;
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .footer {
+    padding: 24px;
+
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+
+      .content-formatted:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

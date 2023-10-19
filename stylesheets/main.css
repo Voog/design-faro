@@ -177,6 +177,17 @@ body.edy-checkout-button-visible {
   gap: 5%;
 }
 
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 24px;
+  }
+  .footer .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer .footer-content .content-formatted:first-child {
+    grid-column: 1/-1;
+  }
+}
 .header-wrapper {
   position: sticky;
   top: 0;
