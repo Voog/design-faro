@@ -1,13 +1,12 @@
-$front-page-container-padding: 56px;
-
 .front-page {
   .front-page-content {
     display: grid;
     flex: 1;
     position: relative;
-    padding: $front-page-container-padding;
+    padding: 56px;
     align-self: center;
     max-width: $max-page-width;
+    gap: 32px;
   }
 
   .hero {
@@ -22,7 +21,7 @@ $front-page-container-padding: 56px;
   }
 
   .section {
-    padding-bottom: $front-page-container-padding;
+    padding-bottom: 56px;
   }
 
   .split,
@@ -75,6 +74,49 @@ $front-page-container-padding: 56px;
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .front-page {
+    .front-page-content {
+      padding: 24px;
+    }
+
+    .split {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      .split-section .content-formatted {
+        width: 100%;
+      }
+    }
+
+    .column-split {
+      .split-section .section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .split,
+    .column-split {
+      .hero {
+        width: 100%;
+      }
+    }
+
+    .hero {
+      order: 2;
+    }
+
+    .split-section {
+      order: 3;
+    }
+
+    .image-section {
+      order: 1;
+      margin: -24px;
     }
   }
 }

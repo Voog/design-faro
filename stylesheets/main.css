@@ -317,6 +317,7 @@ body.edy-checkout-button-visible {
   padding: 56px;
   align-self: center;
   max-width: 1440px;
+  gap: 32px;
 }
 .front-page .hero {
   min-height: 432px;
@@ -371,6 +372,35 @@ body.edy-checkout-button-visible {
   gap: 16px;
 }
 
+@media screen and (max-width: 900px) {
+  .front-page .front-page-content {
+    padding: 24px;
+  }
+  .front-page .split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .front-page .split .split-section .content-formatted {
+    width: 100%;
+  }
+  .front-page .column-split .split-section .section {
+    grid-template-columns: 1fr;
+  }
+  .front-page .split .hero,
+  .front-page .column-split .hero {
+    width: 100%;
+  }
+  .front-page .hero {
+    order: 2;
+  }
+  .front-page .split-section {
+    order: 3;
+  }
+  .front-page .image-section {
+    order: 1;
+    margin: -24px;
+  }
+}
 .product-list-page .voog-bg-picker-btn {
   position: relative;
   margin-bottom: 12px;
