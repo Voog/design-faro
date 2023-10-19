@@ -28,22 +28,22 @@ Layout is applied by assigning according classname to "front-page-container" ele
       {%- endif -%}
       <div class="hero">
         <div class="content-formatted">
-          {% content name="front-page-hero" %}
+          {% content %}
         </div>
       </div>
       <div class="split-section">
         <div class="section">
           <div class="content-formatted">
-            {% content %}
+            {% content name="column-left" %}
           </div>
 
           <div class="content-formatted">
             {% content name="column-right" %}
           </div>
         </div>
-
-        <div class="image-section">
-        </div>
+      </div>
+      <div class="image-section">
+        {% content name="image-section" %}
       </div>
     </main>
 
