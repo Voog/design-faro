@@ -63,6 +63,20 @@
   grid-template-columns: 1fr 40%;
 }
 
+@media screen and (max-width: 640px) {
+  .block {
+    padding: 24px;
+  }
+  .block.block-1 .wrapper, .block.block-3 .wrapper, .block.block-4 .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .block.block-3 .wrapper .content-formatted:first-child {
+    order: 2;
+  }
+  .block.block-3 .wrapper .content-formatted:last-child {
+    order: 1;
+  }
+}
 body .edy-ecommerce-shopping-cart-button {
   display: none;
   max-height: 0;

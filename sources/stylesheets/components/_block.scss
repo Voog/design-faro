@@ -67,3 +67,29 @@
     grid-template-columns: 1fr 40%;
   }
 }
+
+@media screen and (max-width: $mobile-width-small) {
+  .block {
+    padding: 24px;
+
+    &.block-1,
+    &.block-3,
+    &.block-4 {
+      .wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &.block-3 {
+      .wrapper {
+        .content-formatted:first-child {
+          order: 2;
+        }
+
+        .content-formatted:last-child {
+          order: 1;
+        }
+      }
+    }
+  }
+}
