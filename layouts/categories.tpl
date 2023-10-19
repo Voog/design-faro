@@ -21,7 +21,10 @@
         %}
       {% endfor %}
     </main>
-    {%- include "javascripts", blocks_data: categories_page_sections -%}
+
+    {% include "footer" %}
+
+    {% include "javascripts", blocks_data: categories_page_sections %}
 
     <script>
       if (site) {

@@ -160,6 +160,8 @@
       {%- endif -%}
     </main>
 
-    {%- include "javascripts" -%}
+    {% include "footer" %}
+
+    {% include "javascripts" %}
   </body>
 </html>

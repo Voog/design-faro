@@ -22,6 +22,8 @@
       {% endfor %}
     </main>
 
-    {%- include "javascripts", blocks_data: common_page_blocks -%}
+    {% include "footer" %}
+
+    {% include "javascripts", blocks_data: common_page_blocks %}
   </body>
 </html>

@@ -47,6 +47,8 @@ Layout is applied by assigning according classname to "front-page-container" ele
       </div>
     </main>
 
+    {% include "footer" %}
+
     {%- include "javascripts" -%}
   </body>
 </html>
