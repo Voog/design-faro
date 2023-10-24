@@ -195,8 +195,17 @@ body.edy-checkout-button-visible {
   width: 100%;
   z-index: 11000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+}
+.header-wrapper:not(.menu-active) {
   background-color: rgba(var(--body-bg-color-rgb), 0.8);
+}
+.header-wrapper:not(.menu-active):before {
+  content: "";
+  backdrop-filter: blur(10px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10999;
 }
 .header-wrapper.fixed {
   position: fixed;
@@ -209,6 +218,8 @@ body.edy-checkout-button-visible {
   grid-template-columns: 2fr 1fr 2fr;
   gap: 16px;
   min-height: 64px;
+  position: relative;
+  z-index: 11000;
 }
 .header-wrapper .header-content {
   display: flex;
@@ -222,6 +233,7 @@ body.edy-checkout-button-visible {
   gap: 32px;
   align-items: center;
   text-wrap: nowrap;
+  z-index: 1;
 }
 .header-wrapper .header-right .cart-btn {
   cursor: not-allowed;
@@ -234,6 +246,17 @@ body.edy-checkout-button-visible {
   margin: 0 4px;
 }
 
+@media screen and (max-width: 900px) {
+  .header-wrapper .header {
+    grid-template-columns: 1fr auto;
+  }
+  .header-wrapper .header .menu-main {
+    order: 2;
+  }
+  .header-wrapper .header .header-content {
+    order: 1;
+  }
+}
 .product-page .voog-bg-picker-btn {
   position: relative;
   margin-bottom: 12px;
@@ -752,6 +775,8 @@ body.edy-checkout-button-visible {
 }
 .menu-main .menu-item-wrapper {
   padding: 12px;
+  z-index: 1;
+  position: relative;
 }
 .menu-main .menu-item-children,
 .menu-main .dropdown-menu-children {
@@ -784,14 +809,6 @@ body.edy-checkout-button-visible {
 .menu-main .dropdown-menu-visible .dropdown-menu-icon {
   height: 100%;
 }
-.menu-main .menu-item-wrapper .menu-item:hover + .menu-item-children,
-.menu-main .dropdown-menu-visible .dropdown-menu-icon:hover + .dropdown-menu-children,
-.menu-main .menu-item-children:hover,
-.menu-main .dropdown-menu-children:hover {
-  display: flex;
-  flex-direction: column;
-  z-index: 11015;
-}
 .menu-main a.untranslated {
   color: #C5292A;
 }
@@ -803,6 +820,66 @@ body.edy-checkout-button-visible {
   right: 0;
 }
 
+@media screen and (min-width: 900px) {
+  .menu-main .menu-item-wrapper .menu-item:hover + .menu-item-children,
+  .menu-main .dropdown-menu-visible .dropdown-menu-icon:hover + .dropdown-menu-children,
+  .menu-main .menu-item-children:hover,
+  .menu-main .dropdown-menu-children:hover {
+    display: flex;
+    flex-direction: column;
+    z-index: 11015;
+  }
+}
+@media screen and (max-width: 900px) {
+  .menu-main .mobile-menu-button {
+    display: block;
+    position: relative;
+    max-width: max-content;
+    height: 32px;
+    z-index: 1;
+  }
+  .menu-main .mobile-menu-button .stripe {
+    display: block;
+    height: 1px;
+    width: 32px;
+    background-color: #000000;
+    transition: transform 1s ease-in-out;
+  }
+  .menu-main .mobile-menu-button .stripe:first-of-type {
+    margin: 50% 0 8px;
+  }
+  .menu-active .menu-main .mobile-menu-button .stripe:first-of-type {
+    transform: rotate(-45deg) translate(-3.5px, 2.5px);
+  }
+  .menu-active .menu-main .mobile-menu-button .stripe:last-of-type {
+    transform: rotate(45deg) translate(-3.5px, -3.5px);
+  }
+  .menu-main .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(var(--body-bg-color-rgb), 0.8);
+    transition: height 1s ease-in-out;
+  }
+  .menu-main .menu .dropdown-menu-visible {
+    display: none;
+  }
+  .menu-active .menu-main .menu {
+    height: 100vh;
+  }
+  .menu-main .menu:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(20px);
+  }
+}
 .content-formatted .custom-btn {
   display: inline-block;
   padding: 12px 40px;

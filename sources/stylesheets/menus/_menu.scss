@@ -10,6 +10,8 @@
 
   .menu-item-wrapper {
     padding: 12px;
+    z-index: 1;
+    position: relative;
   }
 
   .menu-item-children,
@@ -50,15 +52,6 @@
     }
   }
 
-  .menu-item-wrapper .menu-item:hover + .menu-item-children,
-  .dropdown-menu-visible .dropdown-menu-icon:hover + .dropdown-menu-children,
-  .menu-item-children:hover,
-  .dropdown-menu-children:hover {
-    display: flex;
-    flex-direction: column;
-    z-index: $z-index-dropdown;
-  }
-
   a.untranslated {
     color: $red;
   }
@@ -69,5 +62,81 @@
 
   .menu-item-children {
     right: 0;
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .menu-main {
+    .menu-item-wrapper .menu-item:hover + .menu-item-children,
+    .dropdown-menu-visible .dropdown-menu-icon:hover + .dropdown-menu-children,
+    .menu-item-children:hover,
+    .dropdown-menu-children:hover {
+      display: flex;
+      flex-direction: column;
+      z-index: $z-index-dropdown;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .menu-main {
+    .mobile-menu-button {
+      display: block;
+      position: relative;
+      max-width: max-content;
+      height: 32px;
+      z-index: 1;
+
+      .stripe {
+        display: block;
+        height: 1px;
+        width: 32px;
+        background-color: $black;
+        transition: transform 1s ease-in-out;
+
+        &:first-of-type {
+          margin: 50% 0 8px;
+        }
+
+        .menu-active & {
+          &:first-of-type {
+            transform: rotate(-45deg) translate(-3.5px, 2.5px);
+          }
+
+          &:last-of-type {
+            transform: rotate(45deg) translate(-3.5px, -3.5px);
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: rgba(var(--body-bg-color-rgb), .8);
+      transition: height 1s ease-in-out;
+
+      .dropdown-menu-visible {
+        display: none;
+      }
+
+      .menu-active & {
+        height: 100vh;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        backdrop-filter: blur(20px);
+      }
+    }
   }
 }

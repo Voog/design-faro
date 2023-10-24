@@ -83,6 +83,15 @@
     }
   };
 
+  const handleMobileMenuContent = () => {
+    const $menu = $('.js-menu-main .menu');
+    const $menuItems = $menu.find('.menu-item-wrapper');
+
+    $menuItems.each((_, item) => {
+      $menu.append(item);
+    });
+  };
+
   const buildCustomShoppingCartIcon = () => {
     // Emitted when the shopping cart button element is added to the DOM.
     $(document).on('voog:shoppingcart:button:created', () => {
@@ -190,14 +199,52 @@
     $categoriesPageContent.css('height', 'calc(calc(100vh - 96px) - ' + headerHeight + 'px)');
   };
 
+  const handleHeaderContent = callback => {
+    const $header = $('.js-header .header');
+    const $headerRight = $header.find('.header-right');
+    const $menuMain = $header.find('.js-menu-main .menu');
+
+    if ($(window).width() > 900) {
+      $header.append($headerRight);
+    } else {
+      $menuMain.append($headerRight);
+    }
+
+    callback();
+  };
+
+  const handleMenus = () => {
+    if ($(window).width() > 900) {
+      handleMenuContent();
+    } else {
+      handleMobileMenuContent();
+    }
+  };
+
+  const handleMenuPadding = () => {
+    if ($(window).width() > 900) {
+      $('.js-menu-main .menu').css('padding-top', '0px');
+    } else {
+      $('.js-menu-main .menu').css('padding-top', $('.js-header').height() + 'px');
+    }
+  };
+
+  const bindMobileMenuBtnClick = () => {
+    $('.js-menu-main .mobile-menu-button').click(() => {
+      $('.js-header').toggleClass('menu-active');
+    });
+  };
+
   const handleWindowResize = () => {
     $(document).ready(() => {
-      handleMenuContent();
+      handleMenus();
+      handleHeaderContent(handleMenuPadding);
     });
 
     $(window).resize(
       debounce(() => {
-        handleMenuContent();
+        handleMenus();
+        handleHeaderContent(handleMenuPadding);
       }, 250)
     );
   };
@@ -207,6 +254,7 @@
     handleWindowResize();
     handleShoppingCartEvents();
     buildCustomShoppingCartIcon();
+    bindMobileMenuBtnClick();
   };
 
   window.site = $.extend(window.site || {}, {

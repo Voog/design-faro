@@ -1,4 +1,8 @@
 <nav class="menu-main js-menu-main">
+  <div class="mobile-menu-button">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+  </div>
   <div class="menu">
     {% unless site.root_item.hidden? -%}
       <div class="menu-item-wrapper">
@@ -31,20 +35,21 @@
         {%- endif -%}
       </div>
     {%- endfor -%}
+
+    {% if editmode -%}
+      {%- if site.hidden_menuitems.size > 0 -%}
+        <div class="menu-item-wrapper">
+          {% menubtn site.hidden_menuitems %}
+        </div>
+      {%- endif %}
+
+      <div class="menu-item-wrapper">
+        {% menuadd %}
+      </div>
+    {% endif -%}
     <div class="dropdown-menu">
       {% include "ico-ellipsis" classname: "dropdown-menu-icon" %}
       <div class="dropdown-menu-children"></div>
     </div>
   </div>
-  {% if editmode -%}
-    {%- if site.hidden_menuitems.size > 0 -%}
-      <div class="menu-item-wrapper">
-        {% menubtn site.hidden_menuitems %}
-      </div>
-    {%- endif %}
-
-    <div class="menu-item-wrapper">
-      {% menuadd %}
-    </div>
-  {% endif -%}
 </nav>
