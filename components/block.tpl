@@ -1,24 +1,8 @@
-{% assign left_content_name = "block-content-left-" | append: id %}
-{% assign right_content_name = "block-content-right-" | append: id %}
-
-{%- capture block_content_html -%}
-  {%- unless editmode -%}
-    {%- content name=left_content_name -%}
-    {%- content name=right_content_name -%}
-  {%- endunless -%}
-{%- endcapture -%}
-
-{%- capture block_content_size -%}
-  {{- block_content_html | size | minus: 1 -}}
-{%- endcapture -%}
-
-{%- assign block_has_content = false -%}
-
-{%- unless block_content_size contains "-" -%}
-  {%- assign block_has_content = true -%}
-{%- endunless -%}
+{% assign content_area_count = layout_data.content_areas | default: 1 %}
 
 {% assign bg_color = background.color %}
+{% assign bg_image = background.image %}
+
 {%- if bg_color == blank -%}
   {%- assign bg_color = 'none' -%}
 {%- endif -%}
@@ -48,43 +32,48 @@
   {% assign bg_type = "light-background" %}
 {% endif %}
 
-{% if editmode or block_has_content -%}
-  <style>
-    :root {
-      --block-{{ id }}-bg-color: {{ bg_color }};
-      --block-{{ id }}-bg-color-rgb:  {{- bg_color.r | default: 255 -}},
-                                      {{- bg_color.g | default: 255 -}},
-                                      {{- bg_color.b | default: 255 -}};
-    }
+<style>
+  :root {
+    --block-{{ id }}-bg-color: {{ bg_color }};
+    --block-{{ id }}-bg-color-rgb:  {{- bg_color.r | default: 255 -}},
+                                    {{- bg_color.g | default: 255 -}},
+                                    {{- bg_color.b | default: 255 -}};
+  }
 
-    .block-{{ id }}-bg-color {
-      background-color: var(--block-{{ id }}-bg-color);
-    }
-  </style>
+  .block-{{ id }}-bg-color {
+    background-color: var(--block-{{ id }}-bg-color);
+  }
 
-  <div class="block block-{{ layout }} bg-picker-area block-{{ id }}-picker-area js-background-type {{ bg_type }}">
-    <div class="block-bg-color block-{{ id }}-bg-color js-background-color"></div>
-    {%- if editmode -%}
-      <button
-        class="voog-bg-picker-btn bg-picker block-{{ id }}-picker"
-        data-bg_key="{{ body_blocks_key }}"
-        data-data_key="{{ id }}"
-        data-type_picture="false"
-        data-type_color="true"
-        data-color_elem=".block-{{ id }}-bg-color"
-        data-picker_area_elem=".block-{{ id }}-picker-area"
-        data-picker_elem =".block-{{ id }}-picker"
-        data-bg-color="{{ bg_color }}"
-        data-variable_name="block-{{ id }}-bg-color"
-      ></button>
-    {%- endif -%}
-    <div class="wrapper">
+  .block-{{ id }}-background-image {
+    background-image: url("{{ background.image }}");
+  }
+</style>
+
+<div class="block {{ layout_name }} bg-picker-area block-{{ id }}-picker-area js-background-type {{ bg_type }}">
+  <div class="block-bg-color block-{{ id }}-bg-color js-background-color"></div>
+  <div class="block-bg-image block-{{ id }}-background-image js-background-image"></div>
+
+  {%- if editmode -%}
+    <button
+      class="voog-bg-picker-btn bg-picker block-{{ id }}-picker"
+      data-bg_key="{{ body_blocks_key }}"
+      data-data_key="{{ id }}"
+      data-type_picture="true"
+      data-type_color="true"
+      data-color_elem=".block-{{ id }}-bg-color"
+      data-picker_area_elem=".block-{{ id }}-picker-area"
+      data-picker_elem =".block-{{ id }}-picker"
+      data-bg-color="{{ bg_color }}"
+      data-variable_name="block-{{ id }}-bg-color"
+    ></button>
+  {%- endif -%}
+  <div class="wrapper{% if content_class_name %} {{ content_class_name }}{% endif %}">
+    {%- for index in (1..content_area_count) -%}
+      {%- assign content_area_name = "block-" | append: id | append: "col-" | append: index -%}
+
       <div class="content-formatted">
-        {% content name=left_content_name %}
+        {% content name=content_area_name %}
       </div>
-      <div class="content-formatted">
-        {% content name=right_content_name %}
-      </div>
-    </div>
+    {%- endfor -%}
   </div>
-{% endif -%}
+</div>

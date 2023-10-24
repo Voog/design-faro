@@ -36,13 +36,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/category.tpl",
-      "layout_name": "category",
-      "title": "category"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/footer.tpl",
       "layout_name": "footer",
       "title": "footer"

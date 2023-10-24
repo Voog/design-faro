@@ -11,10 +11,21 @@
     {% include "header" %}
 
     <main class="categories-page-content">
-      {% for block in body_blocks %}
-        {% include "category",
-          id: block.key,
-          background: block.background
+      {% for block_data in body_blocks %}
+        {% if template_settings.common_page_block_layouts[block_data.layout] == blank %}
+          {% assign layout_name = template_settings.default_block_layouts.categories_page %}
+        {% else %}
+          {% assign layout_name = block_data.layout %}
+        {% endif %}
+
+        {% assign layout_data = template_settings.categories_page_block_layouts[layout_name] %}
+
+        {% include "block",
+          id: block_data.key,
+          background: block_data.background,
+          layout_name: layout_name,
+          layout_data: layout_data,
+          content_class_name: "js-category-section"
         %}
       {% endfor %}
     </main>
