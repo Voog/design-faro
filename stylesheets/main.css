@@ -775,8 +775,6 @@ body.edy-checkout-button-visible {
 }
 .menu-main .menu-item-wrapper {
   padding: 12px;
-  z-index: 1;
-  position: relative;
 }
 .menu-main .menu-item-children,
 .menu-main .dropdown-menu-children {
@@ -788,6 +786,7 @@ body.edy-checkout-button-visible {
   padding: 32px;
   gap: 24px;
   background-color: rgba(var(--body-bg-color-rgb), 0.95);
+  backdrop-filter: blur(10px);
 }
 .menu-main .dropdown-item-children .menu-item-children {
   right: calc(-100% + 64px);
@@ -864,6 +863,10 @@ body.edy-checkout-button-visible {
     height: 0;
     background-color: rgba(var(--body-bg-color-rgb), 0.8);
     transition: height 1s ease-in-out;
+  }
+  .menu-main .menu .menu-item-wrapper {
+    z-index: 1;
+    position: relative;
   }
   .menu-main .menu .dropdown-menu-visible {
     display: none;

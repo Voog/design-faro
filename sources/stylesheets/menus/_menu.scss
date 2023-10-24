@@ -10,8 +10,6 @@
 
   .menu-item-wrapper {
     padding: 12px;
-    z-index: 1;
-    position: relative;
   }
 
   .menu-item-children,
@@ -24,6 +22,7 @@
     padding: 32px;
     gap: 24px;
     background-color: rgba(var(--body-bg-color-rgb), .95);
+    backdrop-filter: blur(10px);
   }
 
   .dropdown-item-children .menu-item-children {
@@ -120,6 +119,11 @@
       height: 0;
       background-color: rgba(var(--body-bg-color-rgb), .8);
       transition: height 1s ease-in-out;
+
+      .menu-item-wrapper {
+        z-index: 1;
+        position: relative;
+      }
 
       .dropdown-menu-visible {
         display: none;
