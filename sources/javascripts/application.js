@@ -66,10 +66,12 @@
       const isOverflowing =
         item.offsetHeight < item.scrollHeight || item.offsetWidth < item.scrollWidth;
 
-      if (isOverflowing) {
+      // Make sure that atleast 1 menu element is visuble in addition to dropdown icon
+      if (idx >= 1 && isOverflowing) {
+
         // Push last visible item to dropdown to make room for dropdown icon
-        if (items.length === 0) {
-          items.push($menuItems[idx - 1]);
+        if (items.length === 0 && idx >= 2) {
+          items.push($($menuItems[idx - 1]));
         }
         items.push($(item));
       }
