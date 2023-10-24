@@ -248,13 +248,18 @@ body.edy-checkout-button-visible {
 
 @media screen and (max-width: 900px) {
   .header-wrapper .header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr auto;
   }
   .header-wrapper .header .menu-main {
     order: 2;
   }
   .header-wrapper .header .header-content {
     order: 1;
+    z-index: 1;
+  }
+  .header-wrapper .header:after {
+    content: "";
+    width: 32px;
   }
 }
 .product-page .voog-bg-picker-btn {

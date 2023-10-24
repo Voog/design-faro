@@ -68,7 +68,7 @@
 @media screen and (max-width: $mobile-width) {
   .header-wrapper {
     .header {
-      grid-template-columns: 1fr auto;
+      grid-template-columns: auto 1fr auto;
 
       .menu-main {
         order: 2;
@@ -76,6 +76,12 @@
 
       .header-content {
         order: 1;
+        z-index: 1;
+      }
+
+      &:after {
+        content: '';
+        width: 32px;
       }
     }
   }
