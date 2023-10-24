@@ -1,7 +1,6 @@
 {% capture dont_render %}
   {%- assign body_bg_key = template_settings.page.body_bg.key -%}
-  {%- assign categories_page_sections_key = template_settings.page.categories_page_sections.key -%}
-  {%- assign common_page_blocks_key = template_settings.page.common_page_blocks.key -%}
+  {%- assign body_blocks_key = template_settings.page.body_blocks.key -%}
   {%- assign front_page_settings_key = template_settings.page.front_page_settings.key -%}
   {%- assign product_body_bg_key = template_settings.product.body_bg.key -%}
 
@@ -11,14 +10,9 @@
     {%- assign body_bg = page.data[body_bg_key] -%}
   {%- endif -%}
 
-  {%- assign categories_page_sections =
-    page.data[categories_page_sections_key]
-    | default: template_settings.page.categories_page_sections.value
-  -%}
-
-  {%- assign common_page_blocks =
-    page.data[common_page_blocks_key]
-    | default: template_settings.page.common_page_blocks.value
+  {%- assign body_blocks =
+    page.data[body_blocks_key]
+    | default: template_settings.page.body_blocks.value
   -%}
 
   {%- assign front_page_settings = page.data[front_page_settings_key] -%}

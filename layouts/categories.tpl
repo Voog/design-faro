@@ -11,20 +11,17 @@
     {% include "header" %}
 
     <main class="categories-page-content">
-      {% for section in categories_page_sections %}
-        {%- assign section_id = section[0] -%}
-        {%- assign section_data = section[1] -%}
-
+      {% for block in body_blocks %}
         {% include "category",
-          id: section_id,
-          background: section_data.background
+          id: block.key,
+          background: block.background
         %}
       {% endfor %}
     </main>
 
     {% include "footer" %}
 
-    {% include "javascripts", blocks_data: categories_page_sections %}
+    {% include "javascripts" %}
 
     <script>
       if (site) {

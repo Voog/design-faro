@@ -67,7 +67,7 @@
     {%- if editmode -%}
       <button
         class="voog-bg-picker-btn bg-picker block-{{ id }}-picker"
-        data-bg_key="{{ common_page_blocks_key }}"
+        data-bg_key="{{ body_blocks_key }}"
         data-data_key="{{ id }}"
         data-type_picture="false"
         data-type_color="true"

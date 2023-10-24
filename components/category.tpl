@@ -55,7 +55,7 @@
   {%- if editmode -%}
     <button
       class="voog-bg-picker-btn bg-picker cateogry-{{ id }}-picker"
-      data-bg_key="{{ categories_page_sections_key }}"
+      data-bg_key="{{ body_blocks_key }}"
       data-data_key="{{ id }}"
       data-type_picture="true"
       data-type_color="true"

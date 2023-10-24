@@ -107,13 +107,16 @@
       commitData.color = data.color || '';
       commitData.combinedLightness = bgPicker.combinedLightness;
 
-      var nestedDataKeys = ['faro_common_page_blocks', 'faro_categories_page_sections'];
+      if (dataBgKey === 'faro_body_blocks' && dataKey) {
+        const currentBlock = blockData.find(b => b.key === String(dataKey));
 
-      if (nestedDataKeys.includes(dataBgKey) && dataKey) {
-        blockData[dataKey] = blockData[dataKey] || {};
-        blockData[dataKey].background = commitData;
+        if (currentBlock) {
+          currentBlock.background = commitData;
+        }
+
         commitData = blockData;
       }
+
       if (pageType === 'articlePage') {
         Edicy.articles.currentArticle.setData(dataBgKey, commitData);
       } else if (pageType === 'productPage') {

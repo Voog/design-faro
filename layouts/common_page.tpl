@@ -11,19 +11,17 @@
     {% include "header" %}
 
     <main class="common-page-content" role="main" data-search-indexing-allowed="true">
-      {% for block_data in common_page_blocks %}
-        {%- assign block_key = block_data[0] -%}
-        {%- assign block_value = block_data[1] -%}
+      {% for block_data in body_blocks %}
         {% include "block",
-          id: block_key,
-          layout: block_value.layout,
-          background: block_value.background
+          id: block_data.key,
+          layout: block_data.layout,
+          background: block_data.background
         %}
       {% endfor %}
     </main>
 
     {% include "footer" %}
 
-    {% include "javascripts", blocks_data: common_page_blocks %}
+    {% include "javascripts", blocks_data: body_blocks %}
   </body>
 </html>

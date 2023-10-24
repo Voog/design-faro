@@ -10,37 +10,30 @@
         "layout": "split"
       }
     },
-    "common_page_blocks": {
-      "key": "PREFIX_common_page_blocks",
-      "value": {
-        "1": {
+    "body_blocks": {
+      "key": "PREFIX_body_blocks",
+      "value": [
+        {
+          "key": "1",
           "layout": "1",
           "background": {}
         },
-        "2": {
+        {
+          "key": "2",
           "layout": "2",
           "background": {}
         },
-        "3": {
+        {
+          "key": "3",
           "layout": "3",
           "background": {}
         },
-        "4": {
+        {
+          "key": "4",
           "layout": "4",
           "background": {}
         }
-      }
-    },
-    "categories_page_sections": {
-      "key": "PREFIX_categories_page_sections",
-      "value": {
-        "1": {
-          "background": {}
-        },
-        "2": {
-          "background": {}
-        }
-      }
+      ]
     }
   },
   "product": {
