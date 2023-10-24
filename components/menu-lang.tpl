@@ -1,5 +1,5 @@
 <div class="menu-main menu-lang">
-  <div class="menu-item-wrapper">
+  <div class="menu-item-wrapper menu-lang-wrapper">
     {% for language in site.languages -%}
       {% if language.code == page.language_code %}
         <a

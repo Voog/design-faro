@@ -87,10 +87,10 @@
 
   const handleMobileMenuContent = () => {
     const $menu = $('.js-menu-main .menu');
-    const $menuItems = $menu.find('.menu-item-wrapper');
+    const $menuItems = $menu.find('.menu-item-wrapper:not(.menu-lang-wrapper)');
 
     $menuItems.each((_, item) => {
-      $menu.append(item);
+      $menu.append($(item));
     });
   };
 
