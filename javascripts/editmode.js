@@ -100,18 +100,28 @@
     };
 
     // Header background image and color save logic function.
-    var bgPickerCommit = function ({dataBgKey, data, dataKey, bgPicker, pageType, blockData}) {
+    var bgPickerCommit = function ({
+      bgPicker,
+      blockData,
+      blockKey,
+      data,
+      dataBgKey,
+      dataKey,
+      pageType,
+    }) {
       var commitData = $.extend(true, {}, data);
       commitData.image = data.image || '';
       commitData.imageSizes = normalizeValue(data.imageSizes);
       commitData.color = data.color || '';
       commitData.combinedLightness = bgPicker.combinedLightness;
 
-      if (dataBgKey === 'faro_body_blocks' && dataKey) {
-        const currentBlock = blockData.find(b => b.key === String(dataKey));
+      console.log(blockKey, dataKey, commitData);
+
+      if (dataBgKey === 'faro_body_blocks' && blockKey && dataKey) {
+        const currentBlock = blockData.find(b => b.key === String(blockKey));
 
         if (currentBlock) {
-          currentBlock.background = commitData;
+          currentBlock[dataKey] = commitData;
         }
 
         commitData = blockData;

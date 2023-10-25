@@ -33,12 +33,13 @@
         },
         commit: function(data) {
           var commitData = site.bgPickerCommit({
-            dataBgKey: pickerOpts.bg_key,
-            data,
             bgPicker,
-            pageType: pickerOpts.entity,
+            blockData: parsedBlockData,
+            blockKey: pickerOpts.block_key,
+            data,
+            dataBgKey: pickerOpts.bg_key,
             dataKey: pickerOpts.data_key,
-            blockData: parsedBlockData
+            pageType: pickerOpts.entity
           });
 
           if (commitData) {

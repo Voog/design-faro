@@ -60,21 +60,20 @@
   }
 
   &.split_50_50_full {
-    display: flex;
+    float: left;
     padding: 0;
+    width: 50%;
 
     .wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: stretch;
+      height: 100%;
     }
 
     .content-formatted {
       padding: 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      min-height: 50vh;
       position: relative;
       z-index: 2;
     }

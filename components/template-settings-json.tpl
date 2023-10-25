@@ -15,7 +15,7 @@
       "value": [
         {
           "key": "1",
-          "background": {}
+          "block_1_col_1_background": {}
         }
       ]
     }

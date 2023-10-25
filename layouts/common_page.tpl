@@ -21,8 +21,7 @@
         {% assign layout_data = template_settings.common_page_block_layouts[layout_name] %}
 
         {% include "block",
-          id: block_data.key,
-          background: block_data.background,
+          block_data: block_data,
           layout_name: layout_name,
           layout_data: layout_data
         %}
