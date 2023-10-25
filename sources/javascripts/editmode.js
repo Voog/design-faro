@@ -111,10 +111,8 @@
     commitData.color = data.color || '';
     commitData.combinedLightness = bgPicker.combinedLightness;
 
-    console.log(blockKey, dataKey, commitData);
-
     if (dataBgKey === 'faro_body_blocks' && blockKey && dataKey) {
-      const currentBlock = blockData.find(b => b.key === String(blockKey));
+      const currentBlock = blockData.find(b => String(b.key) === String(blockKey));
 
       if (currentBlock) {
         currentBlock[dataKey] = commitData;
@@ -284,6 +282,39 @@
     });
   };
 
+  const handleBlockReorder = ({bodyBlocks, dataKey}) => {
+    $(document).ready(() => {
+      $('.move-button').on('click', e => {
+        const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
+
+        const buttonKey = e.target.dataset.key;
+        const buttonDirection = e.target.dataset.direction;
+
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+        const $currentBlockHtml = $htmlBlocks.filter(`[data-block-key="${buttonKey}"]`);
+        const currentIndex = bodyBlocks.indexOf(currentBlock);
+
+        if (buttonDirection === 'up' && currentIndex > 0) {
+          const prevIndex = currentIndex - 1
+          const prevHtml = $htmlBlocks[prevIndex];
+
+          bodyBlocks.splice(prevIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
+          pageData.set(dataKey, bodyBlocks);
+
+          $currentBlockHtml.insertBefore($(prevHtml));
+        } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
+          const nextIndex = currentIndex + 1
+          const nextHtml = $htmlBlocks[nextIndex];
+
+          bodyBlocks.splice(nextIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
+          pageData.set(dataKey, bodyBlocks);
+
+          $currentBlockHtml.insertAfter($(nextHtml));
+        }
+      })
+    });
+  };
+
   var init = function () {
     bindCustomTexteditorStyles();
     bindCustomDataItem();
@@ -296,6 +327,7 @@
     bgPickerPreview: bgPickerPreview,
     bgPickerCommit: bgPickerCommit,
     bgPickerColorScheme: bgPickerColorScheme,
+    handleBlockReorder: handleBlockReorder,
   });
 
   // Initiates site wide functions.

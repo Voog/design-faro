@@ -13,18 +13,18 @@
       "title": "bg-picker-scripts"
     },
     {
+      "title": "block-structure",
+      "layout_name": "block-structure",
       "content_type": "component",
       "component": true,
-      "file": "components/block-structure.tpl",
-      "layout_name": "block-structure",
-      "title": "block-structure"
+      "file": "components/block-structure.tpl"
     },
     {
+      "title": "block",
+      "layout_name": "block",
       "content_type": "component",
       "component": true,
-      "file": "components/block.tpl",
-      "layout_name": "block",
-      "title": "block"
+      "file": "components/block.tpl"
     },
     {
       "content_type": "component",

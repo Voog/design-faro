@@ -47,19 +47,20 @@
   }
 </style>
 
-<div class="
-  block
-  {{ layout_name }}
-  bg-picker-area
-  {{ background_key }}-picker-area
-  js-background-type
-  {{ bg_type }}
-  {% if content_class_name -%}{{ content_class_name }}{%- endif -%}
-">
+<div
+  class="
+    block
+    {{ layout_name }}
+    bg-picker-area
+    {{ background_key }}-picker-area
+    js-background-type
+    {{ bg_type }}
+    {% if content_class_name -%}{{ content_class_name }}{%- endif -%}
+  "
+  data-block-key="{{ id }}"
+>
   <div class="block-bg-color {{ background_key }}-bg-color js-background-color"></div>
   <div class="block-bg-image {{ background_key }}-background-image js-background-image"></div>
-
-  <script>console.log("{{ background_key }}")</script>
 
   {%- if editmode -%}
     <button

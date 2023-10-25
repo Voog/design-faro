@@ -1,16 +1,4 @@
 <script type="text/javascript">
-  var siteData = new Edicy.CustomData({
-    type: 'site'
-  });
-
-  var pageData = new Edicy.CustomData({
-    type: 'page',
-    id: '{{ page.id }}'
-  });
-
-  var pageBlockData = '{{ body_blocks | json }}';
-  var parsedBlockData = JSON.parse(pageBlockData || '{}');
-
   $(function() {
     $('.bg-picker-area').each(function(index, pickerArea) {
       var $picker = $(pickerArea).find('.bg-picker');
@@ -34,7 +22,7 @@
         commit: function(data) {
           var commitData = site.bgPickerCommit({
             bgPicker,
-            blockData: parsedBlockData,
+            blockData,
             blockKey: pickerOpts.block_key,
             data,
             dataBgKey: pickerOpts.bg_key,
@@ -43,7 +31,7 @@
           });
 
           if (commitData) {
-            parsedBlockData = commitData;
+            blockData = commitData;
           }
         }
       });

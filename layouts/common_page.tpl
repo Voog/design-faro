@@ -23,13 +23,31 @@
         {% include "block",
           block_data: block_data,
           layout_name: layout_name,
-          layout_data: layout_data
+          layout_data: layout_data,
+          wrapper_class: "js-blocks-wrapper"
         %}
       {% endfor %}
     </main>
 
     {% include "footer" %}
 
-    {% include "javascripts", blocks_data: body_blocks %}
+    {% if editmode -%}
+      <script>
+        let blockData = {{ body_blocks | json }};
+      </script>
+    {% endif -%}
+
+    {% include "javascripts" %}
+
+    {% if editmode -%}
+      <script>
+        if (site) {
+          site.handleBlockReorder({
+            bodyBlocks: blockData,
+            dataKey: "{{ body_blocks_key }}"
+          });
+        }
+      </script>
+    {%- endif -%}
   </body>
 </html>

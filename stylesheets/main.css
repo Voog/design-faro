@@ -1,4 +1,21 @@
 @charset "UTF-8";
+.block-wrapper,
+.js-categories-wrapper {
+  position: relative;
+}
+.block-wrapper .move-buttons,
+.js-categories-wrapper .move-buttons {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+}
+
+.js-categories-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .block {
   min-height: 100vh;
   padding: 32px;
@@ -47,9 +64,7 @@
   grid-template-columns: 1fr 40%;
 }
 .block.split_50_50_full {
-  float: left;
   padding: 0;
-  width: 50%;
 }
 .block.split_50_50_full .wrapper {
   display: flex;

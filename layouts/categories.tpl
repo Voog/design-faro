@@ -24,18 +24,32 @@
           block_data: block_data,
           layout_name: layout_name,
           layout_data: layout_data,
-          content_class_name: "js-category-section"
+          content_class_name: "js-category-section",
+          wrapper_class: "js-categories-wrapper"
         %}
       {% endfor %}
     </main>
 
     {% include "footer" %}
 
+    {% if editmode -%}
+      <script>
+        let blockData = {{ body_blocks | json }};
+      </script>
+    {% endif -%}
+
     {% include "javascripts" %}
 
     <script>
       if (site) {
         site.handleCategoriesPageContent();
+        {% if editmode -%}
+
+          site.handleBlockReorder({
+            bodyBlocks: blockData,
+            dataKey: "{{ body_blocks_key }}"
+          });
+        {%- endif -%}
       }
     </script>
   </body>
