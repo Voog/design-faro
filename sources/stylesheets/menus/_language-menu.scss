@@ -79,3 +79,11 @@ $flags:
     content: '';
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .menu-lang {
+    .menu-item-children .menu-child {
+      position: relative;
+    }
+  }
+}

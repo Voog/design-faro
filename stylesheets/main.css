@@ -243,13 +243,13 @@ body.edy-checkout-button-visible {
 .header-wrapper:not(.menu-active) {
   background-color: rgba(var(--body-bg-color-rgb), 0.8);
 }
-.header-wrapper:not(.menu-active):before {
+.header-wrapper:not(.menu-active):after {
   content: "";
   backdrop-filter: blur(10px);
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 10999;
+  top: 0;
 }
 .header-wrapper.fixed {
   position: fixed;
@@ -299,22 +299,25 @@ body.edy-checkout-button-visible {
   }
   .header-wrapper .header .header-content {
     order: 1;
-    z-index: 1;
+    z-index: 2;
   }
   .header-wrapper .header:after {
     content: "";
     width: 32px;
   }
   .header-wrapper .header .header-right {
-    position: sticky;
-    bottom: 0;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    flex: 1;
+    bottom: 100%;
     gap: 0;
-    backdrop-filter: blur(20px);
+    transition: bottom 1s ease-in-out;
+    background-color: var(--body-bg-color);
+  }
+  .header-wrapper .header .header-right.active {
+    top: 0;
   }
   .header-wrapper .header .header-right .menu-lang {
     order: 1;
@@ -327,6 +330,9 @@ body.edy-checkout-button-visible {
     justify-content: center;
     padding: 12px 18px;
     margin: 24px;
+  }
+  .header-wrapper.menu-active .header-right {
+    bottom: 0;
   }
 }
 .product-page .voog-bg-picker-btn {
@@ -794,6 +800,11 @@ body.edy-checkout-button-visible {
   content: "";
 }
 
+@media screen and (max-width: 900px) {
+  .menu-lang .menu-item-children .menu-child {
+    position: relative;
+  }
+}
 .menu-main {
   position: relative;
 }
@@ -807,6 +818,9 @@ body.edy-checkout-button-visible {
 }
 .menu-main .menu-item-wrapper {
   padding: 12px;
+}
+.menu-main .menu-children-icon {
+  display: none;
 }
 .menu-main .menu-item-children,
 .menu-main .dropdown-menu-children {
@@ -898,15 +912,48 @@ body.edy-checkout-button-visible {
     height: 0;
     background-color: rgba(var(--body-bg-color-rgb), 0.8);
     transition: height 1s ease-in-out;
+    z-index: 1;
   }
   .menu-main .menu .menu-item-wrapper {
-    z-index: 1;
-    position: relative;
     padding: 24px;
+    display: flex;
+    justify-content: space-between;
   }
   .menu-main .menu .menu-item-wrapper.menu-lang-wrapper {
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .menu-main .menu .menu-item-wrapper .menu-children-icon,
+  .menu-main .menu .menu-item-wrapper .menu-children-close-icon {
+    background-image: url("../assets/arrow-left.svg");
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-size: contain;
+    z-index: 1;
+  }
+  .menu-main .menu .menu-item-wrapper .menu-children-close-icon {
+    width: 32px;
+    height: 32px;
+    left: 24px;
+    position: absolute;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .menu-main .menu .menu-item-wrapper .menu-item-children {
+    display: block;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    z-index: 2;
+    transition: left 1s ease-in-out;
+  }
+  .menu-main .menu .menu-item-wrapper .menu-item-children.active {
+    left: 0;
+  }
+  .menu-main .menu .menu-item-wrapper .menu-item-children .menu-child {
+    padding: 24px;
   }
   .menu-main .menu .dropdown-menu-visible {
     display: none;
@@ -915,7 +962,7 @@ body.edy-checkout-button-visible {
     height: 100vh;
     overflow: scroll;
   }
-  .menu-main .menu:before {
+  .menu-main .menu:after {
     content: "";
     position: fixed;
     height: 0;
@@ -923,8 +970,9 @@ body.edy-checkout-button-visible {
     top: 0;
     backdrop-filter: blur(20px);
     transition: height 1s ease-in-out;
+    z-index: -1;
   }
-  .menu-active .menu-main .menu:before {
+  .menu-active .menu-main .menu:after {
     height: 100%;
   }
 }

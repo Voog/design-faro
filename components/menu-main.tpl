@@ -11,11 +11,12 @@
     {%- endunless %}
 
     {% for item in site.visible_menuitems %}
-      <div class="menu-item-wrapper">
+      <div class="menu-item-wrapper{% if item.children? %} has-children{% endif %}">
         {%- menulink item wrapper-tag="div" wrapper-class="menu-item" %}
 
         {%- if item.children? %}
           <div class="menu-item-children">
+            <div class="menu-children-close-icon"></div>
             {%- for child in item.visible_children %}
               {% menulink child wrapper-tag="div" wrapper-class="menu-child" %}
             {%- endfor %}
@@ -32,6 +33,7 @@
               </div>
             {% endif %}
           </div>
+          <div class="menu-children-icon"></div>
         {%- endif -%}
       </div>
     {%- endfor -%}

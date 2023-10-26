@@ -1,10 +1,14 @@
 <div class="menu-main menu-lang">
-  <div class="menu-item-wrapper menu-lang-wrapper">
+  <div class="
+    menu-item-wrapper
+    menu-lang-wrapper
+    {% if site.has_many_languages?%}has-children{% endif %}
+  ">
     {% for language in site.languages -%}
       {% if language.code == page.language_code %}
         <a
           href="{{ language.url }}"
-          class="menu-item {% if language.selected? %}active{% endif %}"
+          class="menu-item{% if language.selected? %} active{% endif %}"
           data-lang-code="{{ language.locale }}"
         >
           {{ language.title }}
@@ -16,6 +20,7 @@
       <div class="menu-item-children">
       {% for language in site.languages -%}
         {% unless language.code == page.language_code %}
+          <div class="menu-children-close-icon"></div>
           <a
             class="menu-child"
             href="{{ language.url }}"
@@ -33,6 +38,8 @@
       {% endif %}
 
       </div>
+
+      <div class="menu-children-icon"></div>
     {% endif %}
   </div>
 </div>

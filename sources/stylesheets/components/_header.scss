@@ -9,13 +9,13 @@
   &:not(.menu-active) {
     background-color: rgba(var(--body-bg-color-rgb), .8);
 
-    &:before {
+    &:after {
       content: '';
       backdrop-filter: blur(10px);
       position: absolute;
       height: 100%;
       width: 100%;
-      z-index: $z-index-header - 1;
+      top: 0;
     }
   }
 
@@ -76,7 +76,7 @@
 
       .header-content {
         order: 1;
-        z-index: 1;
+        z-index: 2;
       }
 
       &:after {
@@ -85,15 +85,19 @@
       }
 
       .header-right {
-        position: sticky;
-        bottom: 0;
+        position: fixed;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         width: 100%;
-        flex: 1;
+        bottom: 100%;
         gap: 0;
-        backdrop-filter: blur(20px);
+        transition: bottom 1s ease-in-out;
+        background-color: var(--body-bg-color);
+
+        &.active {
+          top: 0;
+        }
 
         .menu-lang {
           order: 1;
@@ -109,6 +113,10 @@
           margin: 24px;
         }
       }
+    }
+
+    &.menu-active .header-right {
+      bottom: 0;
     }
   }
 }
