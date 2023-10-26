@@ -4,7 +4,7 @@
 {%- capture move_buttons -%}
   <div class="move-buttons">
     <button
-      class="move-button"
+      class="move-button js-move-button"
       data-key="{{ id }}"
       data-direction="up"
       data-wrapper-class="{{ wrapper_class }}"
@@ -12,7 +12,7 @@
       Up
     </button>
     <button
-      class="move-button"
+      class="move-button js-move-button"
       data-key="{{ id }}"
       data-direction="down"
       data-wrapper-class="{{ wrapper_class }}"
@@ -26,7 +26,9 @@
   class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
   data-block-key="{{ id }}"
 >
-  {{ move_buttons }}
+  {% if editmode %}
+    {{ move_buttons }}
+  {% endif %}
 
   {% if layout_data.separate_bg_pickers == true %}
     {% for index in (1..content_area_count) %}

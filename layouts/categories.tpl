@@ -11,14 +11,26 @@
     {% include "header" %}
 
     <main class="categories-page-content" role="main" data-search-indexing-allowed="true">
+      {% assign allowed_layouts = template_settings.categories_page_block_layouts | map: "key" %}
+
       {% for block_data in body_blocks %}
-        {% if template_settings.common_page_block_layouts[block_data.layout] == blank %}
+        {% assign layout =
+          block_data.layout
+          | default: template_settings.default_block_layouts.categories_page
+        %}
+
+        {% assign allowed_layout =
+          template_settings.categories_page_block_layouts
+          | where: "key", layout
+        %}
+
+        {% if allowed_layout.size == 0 %}
           {% assign layout_name = template_settings.default_block_layouts.categories_page %}
         {% else %}
-          {% assign layout_name = block_data.layout %}
+          {% assign layout_name = layout %}
         {% endif %}
 
-        {% assign layout_data = template_settings.categories_page_block_layouts[layout_name] %}
+        {% assign layout_data = allowed_layout.first.value %}
 
         {% include "block",
           block_data: block_data,
@@ -28,13 +40,22 @@
           wrapper_class: "js-categories-wrapper"
         %}
       {% endfor %}
+
+      {% if editmode %}
+        {% for layout in allowed_layouts %}
+          <button class="add-block js-add-block" data-block-layout="{{ layout }}">
+            {{ layout }}
+          </button>
+        {% endfor %}
+      {% endif %}
     </main>
 
     {% include "footer" %}
 
     {% if editmode -%}
       <script>
-        let blockData = {{ body_blocks | json }};
+        let rawBlockData = '{{ body_blocks | json }}';
+        let blockData = JSON.parse(rawBlockData || '{}');
       </script>
     {% endif -%}
 
@@ -43,11 +64,16 @@
     <script>
       if (site) {
         site.handleCategoriesPageContent();
-        {% if editmode -%}
 
+        {% if editmode -%}
           site.handleBlockReorder({
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}"
+          });
+
+          site.handleBlockAdd({
+            bodyBlocks: blockData,
+            dataKey: "{{ body_blocks_key }}",
           });
         {%- endif -%}
       }

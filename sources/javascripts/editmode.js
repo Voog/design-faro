@@ -284,7 +284,7 @@
 
   const handleBlockReorder = ({bodyBlocks, dataKey}) => {
     $(document).ready(() => {
-      $('.move-button').on('click', e => {
+      $('.js-move-button').on('click', e => {
         const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
 
         const buttonKey = e.target.dataset.key;
@@ -299,21 +299,62 @@
           const prevHtml = $htmlBlocks[prevIndex];
 
           bodyBlocks.splice(prevIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
-          pageData.set(dataKey, bodyBlocks);
-
-          $currentBlockHtml.insertBefore($(prevHtml));
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              $currentBlockHtml.insertBefore($(prevHtml));
+            }
+          });
         } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
           const nextIndex = currentIndex + 1
           const nextHtml = $htmlBlocks[nextIndex];
 
           bodyBlocks.splice(nextIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
-          pageData.set(dataKey, bodyBlocks);
-
-          $currentBlockHtml.insertAfter($(nextHtml));
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              $currentBlockHtml.insertAfter($(nextHtml));
+            }
+          });
         }
       })
     });
   };
+
+  const handleBlockAdd = ({bodyBlocks, dataKey}) => {
+    const MAX_ITERATIONS = 100;
+
+    $(document).ready(() => {
+      $('.js-add-block').on('click', e => {
+        const blockLayout = e.target.dataset.blockLayout;
+
+        const existingKeys = bodyBlocks.map(block => block.key);
+
+        let newKey = String(existingKeys.length + 1);
+
+        if (existingKeys.includes(String(newKey))) {
+          for (let i = 1; i < MAX_ITERATIONS; i++) {
+            if (!existingKeys.includes(`${newKey}-${i}`)) {
+              newKey = `${newKey}-${i}`;
+              break;
+            } else if (i === MAX_ITERATIONS - 1) {
+              console.error('Could not find unique key for new block');
+              return;
+            }
+          }
+        }
+
+        bodyBlocks.push({
+          key: newKey,
+          layout: blockLayout,
+        })
+
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            location.reload();
+          },
+        });
+      })
+    })
+  }
 
   var init = function () {
     bindCustomTexteditorStyles();
@@ -327,6 +368,7 @@
     bgPickerPreview: bgPickerPreview,
     bgPickerCommit: bgPickerCommit,
     bgPickerColorScheme: bgPickerColorScheme,
+    handleBlockAdd: handleBlockAdd,
     handleBlockReorder: handleBlockReorder,
   });
 
