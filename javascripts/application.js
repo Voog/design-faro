@@ -613,7 +613,6 @@
 
         // Make sure that atleast 1 menu element is visuble in addition to dropdown icon
         if (idx >= 1 && isOverflowing) {
-
           // Push last visible item to dropdown to make room for dropdown icon
           if (items.length === 0 && idx >= 2) {
             items.push($($menuItems[idx - 1]));
@@ -769,10 +768,11 @@
     };
 
     const handleMenuPadding = () => {
+      const $paddable = $('.js-menu-main .menu .menu-item-wrapper').first();
       if ($(window).width() > 900) {
-        $('.js-menu-main .menu').css('padding-top', '0px');
+        $paddable.css('margin-top', '0px');
       } else {
-        $('.js-menu-main .menu').css('padding-top', $('.js-header').height() + 'px');
+        $paddable.css('margin-top', `${$('.js-header').height() - 12}px`);
       }
     };
 

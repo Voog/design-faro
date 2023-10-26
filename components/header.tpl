@@ -9,7 +9,6 @@
     </div>
 
     <div class="header-right">
-      {{ "search" | lce | escape_once }}
       {% include "menu-lang" %}
       <span class="cart-btn">
         {% comment %}

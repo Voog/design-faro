@@ -88,7 +88,7 @@
       position: relative;
       max-width: max-content;
       height: 32px;
-      z-index: 1;
+      z-index: 2;
 
       .stripe {
         display: block;
@@ -127,6 +127,12 @@
       .menu-item-wrapper {
         z-index: 1;
         position: relative;
+        padding: 24px;
+
+        &.menu-lang-wrapper {
+          padding-bottom: 16px;
+          border-bottom: 1px solid rgba($black, .1);
+        }
       }
 
       .dropdown-menu-visible {
@@ -135,15 +141,21 @@
 
       .menu-active & {
         height: 100vh;
+        overflow: scroll;
       }
 
       &:before {
         content: '';
-        position: absolute;
-        height: 100%;
+        position: fixed;
+        height: 0;
         width: 100%;
         top: 0;
         backdrop-filter: blur(20px);
+        transition: height 1s ease-in-out;
+
+        .menu-active & {
+          height: 100%;
+        }
       }
     }
   }
