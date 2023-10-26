@@ -295,27 +295,27 @@
         const currentIndex = bodyBlocks.indexOf(currentBlock);
 
         if (buttonDirection === 'up' && currentIndex > 0) {
-          const prevIndex = currentIndex - 1
+          const prevIndex = currentIndex - 1;
           const prevHtml = $htmlBlocks[prevIndex];
 
           bodyBlocks.splice(prevIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
           pageData.set(dataKey, bodyBlocks, {
             success: () => {
               $currentBlockHtml.insertBefore($(prevHtml));
-            }
+            },
           });
         } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
-          const nextIndex = currentIndex + 1
+          const nextIndex = currentIndex + 1;
           const nextHtml = $htmlBlocks[nextIndex];
 
           bodyBlocks.splice(nextIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
           pageData.set(dataKey, bodyBlocks, {
             success: () => {
               $currentBlockHtml.insertAfter($(nextHtml));
-            }
+            },
           });
         }
-      })
+      });
     });
   };
 
@@ -345,16 +345,35 @@
         bodyBlocks.push({
           key: newKey,
           layout: blockLayout,
-        })
+        });
 
         pageData.set(dataKey, bodyBlocks, {
           success: () => {
             location.reload();
           },
         });
-      })
-    })
-  }
+      });
+    });
+  };
+
+  const handleBlockDelete = ({bodyBlocks, dataKey}) => {
+    $(document).ready(() => {
+      $('.js-delete-button').on('click', e => {
+        const buttonKey = e.target.dataset.key;
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+        const currentIndex = bodyBlocks.indexOf(currentBlock);
+
+        bodyBlocks.splice(currentIndex, 1);
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            $(`.${e.target.dataset.wrapperClass}`)
+              .filter(`[data-block-key="${buttonKey}"]`)
+              .remove();
+          },
+        });
+      });
+    });
+  };
 
   var init = function () {
     bindCustomTexteditorStyles();
@@ -369,6 +388,7 @@
     bgPickerCommit: bgPickerCommit,
     bgPickerColorScheme: bgPickerColorScheme,
     handleBlockAdd: handleBlockAdd,
+    handleBlockDelete: handleBlockDelete,
     handleBlockReorder: handleBlockReorder,
   });
 

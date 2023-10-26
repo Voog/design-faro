@@ -22,12 +22,25 @@
   </div>
 {%- endcapture -%}
 
+{%- capture delete_button -%}
+  <button
+    class="delete-button js-delete-button"
+    data-key="{{ id }}"
+    data-wrapper-class="{{ wrapper_class }}"
+  >
+    Delete
+  </button>
+{%- endcapture -%}
+
 <div
   class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
   data-block-key="{{ id }}"
 >
   {% if editmode %}
-    {{ move_buttons }}
+    <div class="block-edit-buttons">
+      {{ move_buttons }}
+      {{ delete_button }}
+    </div>
   {% endif %}
 
   {% if layout_data.separate_bg_pickers == true %}

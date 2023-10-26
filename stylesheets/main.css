@@ -3,12 +3,17 @@
 .js-categories-wrapper {
   position: relative;
 }
-.block-wrapper .move-buttons,
-.js-categories-wrapper .move-buttons {
+.block-wrapper .block-edit-buttons,
+.js-categories-wrapper .block-edit-buttons {
   position: absolute;
   z-index: 2;
   top: 16px;
   left: 16px;
+}
+.block-wrapper .move-buttons, .block-wrapper .delete-button,
+.js-categories-wrapper .move-buttons,
+.js-categories-wrapper .delete-button {
+  display: inline-block;
 }
 
 .js-categories-wrapper {

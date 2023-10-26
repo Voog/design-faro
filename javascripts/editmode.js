@@ -306,7 +306,7 @@
             pageData.set(dataKey, bodyBlocks, {
               success: () => {
                 $currentBlockHtml.insertBefore($(prevHtml));
-              }
+              },
             });
           } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
             const nextIndex = currentIndex + 1;
@@ -316,7 +316,7 @@
             pageData.set(dataKey, bodyBlocks, {
               success: () => {
                 $currentBlockHtml.insertAfter($(nextHtml));
-              }
+              },
             });
           }
         });
@@ -360,6 +360,25 @@
       });
     };
 
+    const handleBlockDelete = ({bodyBlocks, dataKey}) => {
+      $(document).ready(() => {
+        $('.js-delete-button').on('click', e => {
+          const buttonKey = e.target.dataset.key;
+          const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+          const currentIndex = bodyBlocks.indexOf(currentBlock);
+
+          bodyBlocks.splice(currentIndex, 1);
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              $(`.${e.target.dataset.wrapperClass}`)
+                .filter(`[data-block-key="${buttonKey}"]`)
+                .remove();
+            },
+          });
+        });
+      });
+    };
+
     var init = function () {
       bindCustomTexteditorStyles();
       bindCustomDataItem();
@@ -373,6 +392,7 @@
       bgPickerCommit: bgPickerCommit,
       bgPickerColorScheme: bgPickerColorScheme,
       handleBlockAdd: handleBlockAdd,
+      handleBlockDelete: handleBlockDelete,
       handleBlockReorder: handleBlockReorder,
     });
 

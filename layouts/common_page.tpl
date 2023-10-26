@@ -72,6 +72,11 @@
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}"
           });
+
+          site.handleBlockDelete({
+            bodyBlocks: blockData,
+            dataKey: "{{ body_blocks_key }}"
+          });
         }
       </script>
     {%- endif -%}
