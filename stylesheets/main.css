@@ -70,6 +70,7 @@
 }
 .block.split_50_50_full {
   padding: 0;
+  min-height: 50vh;
 }
 .block.split_50_50_full .wrapper {
   display: flex;
@@ -769,6 +770,9 @@ body.edy-checkout-button-visible {
   content: "";
 }
 
+.menu-main {
+  position: relative;
+}
 .menu-main .menu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -807,7 +811,7 @@ body.edy-checkout-button-visible {
   padding: 0;
 }
 .menu-main .dropdown-menu-visible .dropdown-menu-children {
-  top: 56px;
+  top: 24px;
 }
 .menu-main .dropdown-menu-visible .dropdown-menu-icon {
   height: 100%;
@@ -834,6 +838,9 @@ body.edy-checkout-button-visible {
   }
 }
 @media screen and (max-width: 900px) {
+  .menu-main {
+    position: unset;
+  }
   .menu-main .mobile-menu-button {
     display: block;
     position: relative;

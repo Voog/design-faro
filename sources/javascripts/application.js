@@ -198,7 +198,7 @@
     const headerHeight = $('.js-header').height();
     const $categoriesPageContent = $('.js-category-section');
 
-    $categoriesPageContent.css('height', 'calc(calc(100vh - 96px) - ' + headerHeight + 'px)');
+    $categoriesPageContent.css('height', `calc(calc(100vh - ${headerHeight}px)`);
   };
 
   const handleHeaderContent = callback => {

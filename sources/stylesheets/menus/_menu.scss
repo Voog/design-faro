@@ -1,4 +1,6 @@
 .menu-main {
+  position: relative;
+
   .menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -43,7 +45,7 @@
     }
 
     .dropdown-menu-children {
-      top: 56px;
+      top: 24px;
     }
 
     .dropdown-menu-icon {
@@ -79,6 +81,8 @@
 
 @media screen and (max-width: $mobile-width) {
   .menu-main {
+    position: unset;
+
     .mobile-menu-button {
       display: block;
       position: relative;
