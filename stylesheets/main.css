@@ -395,6 +395,7 @@ body.edy-checkout-button-visible {
   padding: 56px;
   align-self: center;
   max-width: 1440px;
+  width: 100%;
   gap: 32px;
 }
 .front-page .hero {
