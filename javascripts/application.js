@@ -769,33 +769,13 @@
 
     const handleMenuPadding = () => {
       if ($(window).width() > 900) {
-        $('.js-menu-main .menu .menu-item-wrapper').first().css('margin-top', '0px');
-        $('.js-menu-main .menu .menu-item-wrapper').last().css('margin-bottom', '0px');
-        $('.js-menu-main .menu-lang .menu-child').first().css('top', '0px');
+        $('.js-menu-main .menu .menu-item-wrapper').first().css('padding-top', '');
+        $('.js-menu-main .menu-item-children').css('padding-top', '');
       } else {
-        $('.js-menu-main .menu .menu-item-wrapper')
-          .first()
-          .css('margin-top', `${$('.js-header').height() - 12}px`);
+        const headerHeight = $('.js-header').height();
 
-        $('.js-menu-main .menu > .menu-item-wrapper')
-          .last()
-          .css('margin-bottom', `${$('.header-right').height()}px`);
-
-        $('.js-menu-main .menu .menu-item-children').each((_, item) => {
-          $(item)
-            .find('.menu-child')
-            .first()
-            .css('margin-top', `${$('.js-header').height() - 12}px`);
-
-          $(item)
-            .find('.menu-children-close-icon')
-            .first()
-            .css('top', `${($('.js-header').height() - 12) / 2}px`);
-        });
-
-        $('.js-menu-main .menu-lang .menu-child')
-          .first()
-          .css('top', `${$('.js-header').height() - 12}px`);
+        $('.js-menu-main .menu .menu-item-wrapper').first().css('padding-top', `${headerHeight}px`);
+        $('.js-menu-main .menu-item-children').css('padding-top', `${headerHeight}px`);
       }
     };
 
@@ -811,10 +791,14 @@
         }
       });
 
-      $('.js-menu-main .has-children .menu-children-icon, .menu-lang .menu-children-icon').click(
+      $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(
         e => {
           $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
           $(e.target.parentElement).find('.menu-item-children').addClass('active');
+          $('.js-header').addClass('menu-children-active');
+
+          // Scroll menu to top when opening menu children
+          $('.js-menu-main .menu').scrollTop(0);
         }
       );
 
@@ -822,11 +806,10 @@
         $('.header-right').addClass('active');
       });
 
-      $(
-        '.js-menu-main .has-children .menu-children-close-icon, .menu-lang .has-children .menu-children-close-icon'
-      ).click(e => {
-        $(e.target).closest('.menu-item-wrapper.has-children').removeClass('active');
+      $('.js-header .menu-children-close-icon').click(() => {
+        $('.menu-item-wrapper.has-children').removeClass('active');
         $('.menu-item-children').removeClass('active');
+        $('.js-header').removeClass('menu-children-active');
 
         setTimeout(() => {
           $('.header-right').removeClass('active');

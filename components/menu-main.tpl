@@ -1,8 +1,11 @@
+<div class="menu-children-close-icon"></div>
+
 <nav class="menu-main js-menu-main">
   <div class="mobile-menu-button">
     <div class="stripe"></div>
     <div class="stripe"></div>
   </div>
+
   <div class="menu">
     {% unless site.root_item.hidden? -%}
       <div class="menu-item-wrapper">
@@ -16,7 +19,6 @@
 
         {%- if item.children? %}
           <div class="menu-item-children">
-            <div class="menu-children-close-icon"></div>
             {%- for child in item.visible_children %}
               {% menulink child wrapper-tag="div" wrapper-class="menu-child" %}
             {%- endfor %}

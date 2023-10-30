@@ -20,7 +20,6 @@
       <div class="menu-item-children">
       {% for language in site.languages -%}
         {% unless language.code == page.language_code %}
-          <div class="menu-children-close-icon"></div>
           <a
             class="menu-child"
             href="{{ language.url }}"

@@ -1,3 +1,7 @@
+.menu-children-close-icon {
+  display: none;
+}
+
 .menu-main {
   position: relative;
 
@@ -27,7 +31,7 @@
     flex-direction: column;
     padding: 32px;
     gap: 24px;
-    background-color: rgba(var(--body-bg-color-rgb), .95);
+    background-color: rgba(var(--body-bg-color-rgb), .6);
     backdrop-filter: blur(10px);
   }
 
@@ -84,6 +88,22 @@
 }
 
 @media screen and (max-width: $mobile-width) {
+  .menu-children-close-icon {
+    background-image: url("../assets/arrow-left.svg");
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: contain;
+    z-index: 2;
+    transform: rotate(180deg);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    .menu-children-active & {
+      opacity: 1;
+    }
+  }
+
   .menu-main {
     position: unset;
 
@@ -125,8 +145,8 @@
       left: 0;
       width: 100%;
       height: 0;
-      background-color: rgba(var(--body-bg-color-rgb), .8);
-      transition: height 1s ease-in-out;
+      background-color: rgba(var(--body-bg-color-rgb), .6);
+      transition: height 1s ease-in-out, top 1s ease-in-out;
       z-index: 1;
 
       .menu-item-wrapper {
@@ -139,22 +159,13 @@
           border-bottom: 1px solid rgba($black, .1);
         }
 
-        .menu-children-icon,
-        .menu-children-close-icon {
+        .menu-children-icon {
           background-image: url("../assets/arrow-left.svg");
           width: 24px;
           height: 24px;
           display: block;
           background-size: contain;
           z-index: 1;
-        }
-
-        .menu-children-close-icon {
-          width: 32px;
-          height: 32px;
-          left: 24px;
-          position: absolute;
-          transform: translateY(-50%) rotate(180deg);
         }
 
         .menu-item-children {
@@ -169,6 +180,8 @@
 
           &.active {
             left: 0;
+            height: 100vh;
+            overflow: scroll;
           }
 
           .menu-child {
@@ -184,6 +197,10 @@
       .menu-active & {
         height: 100vh;
         overflow: scroll;
+      }
+
+      .menu-children-active & {
+        overflow: hidden;
       }
 
       &:after {

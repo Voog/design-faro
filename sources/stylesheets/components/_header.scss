@@ -79,24 +79,15 @@
         z-index: 2;
       }
 
-      &:after {
-        content: '';
-        width: 32px;
-      }
-
       .header-right {
-        position: fixed;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         width: 100%;
-        bottom: 100%;
         gap: 0;
-        transition: bottom 1s ease-in-out;
-        background-color: var(--body-bg-color);
 
-        &.active {
-          top: 0;
+        .editmode & {
+          padding-bottom: 160px;
         }
 
         .menu-lang {
@@ -113,10 +104,6 @@
           margin: 24px;
         }
       }
-    }
-
-    &.menu-active .header-right {
-      bottom: 0;
     }
   }
 }
