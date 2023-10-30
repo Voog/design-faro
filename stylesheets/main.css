@@ -1,22 +1,22 @@
 @charset "UTF-8";
 .block-wrapper,
-.js-categories-wrapper {
+.categories-wrapper {
   position: relative;
 }
 .block-wrapper .block-edit-buttons,
-.js-categories-wrapper .block-edit-buttons {
+.categories-wrapper .block-edit-buttons {
   position: absolute;
   z-index: 2;
   top: 16px;
   left: 16px;
 }
 .block-wrapper .move-buttons, .block-wrapper .delete-button,
-.js-categories-wrapper .move-buttons,
-.js-categories-wrapper .delete-button {
+.categories-wrapper .move-buttons,
+.categories-wrapper .delete-button {
   display: inline-block;
 }
 
-.js-categories-wrapper {
+.categories-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -117,7 +117,7 @@
   .block.split_staggered .wrapper .content-formatted:last-child {
     order: 1;
   }
-  .block.split_50_50_full .wrapper {
+  .categories-wrapper {
     grid-template-columns: 1fr;
   }
 }

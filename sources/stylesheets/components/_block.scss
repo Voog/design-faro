@@ -1,5 +1,5 @@
 .block-wrapper,
-.js-categories-wrapper {
+.categories-wrapper {
   position: relative;
 
   .block-edit-buttons {
@@ -14,7 +14,7 @@
   }
 }
 
-.js-categories-wrapper {
+.categories-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -142,11 +142,9 @@
         }
       }
     }
+  }
 
-    &.split_50_50_full {
-      .wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
+  .categories-wrapper {
+    grid-template-columns: 1fr;
   }
 }
