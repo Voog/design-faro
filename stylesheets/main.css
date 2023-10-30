@@ -201,6 +201,14 @@ body.edy-checkout-button-visible {
   fill: #FFFFFF;
 }
 
+@media screen and (max-width: 900px) {
+  .cart-popover {
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 100vw;
+  }
+}
 .footer {
   min-height: 360px;
   padding: 32px;

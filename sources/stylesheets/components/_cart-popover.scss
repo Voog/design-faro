@@ -91,3 +91,12 @@ body {
     }
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .cart-popover {
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 100vw;
+  }
+}
