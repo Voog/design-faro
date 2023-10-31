@@ -63,8 +63,7 @@
     const items = [];
 
     $menuItems.each((idx, item) => {
-      const isOverflowing =
-        item.offsetHeight < item.scrollHeight || item.offsetWidth < item.scrollWidth;
+      const isOverflowing = item.offsetTop > 0;
 
       // Make sure that atleast 1 menu element is visuble in addition to dropdown icon
       if (idx >= 1 && isOverflowing) {

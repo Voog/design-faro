@@ -42,8 +42,7 @@
   }
 
   .header-right {
-    display: grid;
-    grid-template-columns: repeat(3, min-content);
+    display: flex;
     justify-content: end;
     gap: 32px;
     align-items: center;
