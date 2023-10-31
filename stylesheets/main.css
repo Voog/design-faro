@@ -395,6 +395,7 @@ body.edy-checkout-button-visible {
   height: 100%;
   border: none;
   background: none;
+  outline: none;
 }
 .search .search-results {
   padding-top: 24px;

@@ -12,9 +12,9 @@
         // If given, an DOM element results are rendered inside that element
         resultsContainer: $('.js-voog-search-modal-inner').get(0),
         // Defines if modal should close on sideclick.
-        sideclick: true,
+        sideclick: false,
         // Mobile checkpoint
-        mobileModeWidth: 480,
+        mobileModeWidth: 900,
         // Updates results on every keypress.
         updateOnKeypress: true,
         // String for feedback if no results are found.
@@ -296,6 +296,8 @@
   };
 
   const handleWindowResize = () => {
+    let prevWindowWidth = $(window).width();
+
     $(document).ready(() => {
       handleMenus();
       handleSearchPosition();
@@ -307,11 +309,19 @@
 
     $(window).resize(
       debounce(() => {
-        handleMenus();
-        handleSearchPosition();
-        handleHeaderContent(handleMenuPadding);
+        const newWindowWidth = $(window).width();
+
+        if (newWindowWidth !== prevWindowWidth) {
+          handleMenus();
+          handleSearchPosition();
+          handleHeaderContent(() => {
+            handleMenuPadding();
+          });
+
+          prevWindowWidth = newWindowWidth;
+        }
       }, 250)
-    );
+    )
   };
 
   const init = () => {
