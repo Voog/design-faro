@@ -237,10 +237,12 @@
   const bindMobileMenuBtnClick = () => {
     $('.js-menu-main .mobile-menu-button').click(() => {
       if ($('.js-header').hasClass('menu-active')) {
-        $('.js-header').removeClass('menu-active');
+        $('.js-header').removeClass('menu-children-active menu-active');
+        $('.js-header .menu-item-wrapper.has-children').removeClass('active');
+
         setTimeout(() => {
-          $('.js-header .active').removeClass('active');
-        }, 800);
+          $('.js-header .menu-item-children').removeClass('active');
+        }, 1000);
       } else {
         $('.js-header').addClass('menu-active');
       }
