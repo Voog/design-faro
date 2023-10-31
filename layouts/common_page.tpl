@@ -33,6 +33,7 @@
         {% assign layout_data = allowed_layout.first.value %}
 
         {% include "block",
+          allowed_layouts: allowed_layouts,
           block_data: block_data,
           layout_name: layout_name,
           layout_data: layout_data,
@@ -41,6 +42,10 @@
       {% endfor %}
 
       {% if editmode %}
+        {% comment %}
+        TODO: Figure out editmode design
+        {% endcomment %}
+
         {% for layout in allowed_layouts %}
           <button class="add-block js-add-block" data-block-layout="{{ layout }}">
             {{ layout }}
@@ -77,6 +82,11 @@
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}"
           });
+
+          site.handleBlockLayoutChange({
+            bodyBlocks: blockData,
+            dataKey: "{{ body_blocks_key }}"
+          })
         }
       </script>
     {%- endif -%}

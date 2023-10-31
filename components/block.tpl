@@ -1,6 +1,10 @@
 {% assign id = block_data.key %}
 {% assign content_area_count = layout_data.content_areas | default: 1 %}
 
+{% comment %}
+TODO: Figure out editmode design
+{% endcomment %}
+
 {%- capture move_buttons -%}
   <div class="move-buttons">
     <button
@@ -32,6 +36,24 @@
   </button>
 {%- endcapture -%}
 
+{%- capture change_layout_buttons -%}
+  <div>
+    Current layout: {{ layout_name }}<br>
+    Change layout <br>
+    {% for layout in allowed_layouts %}
+      {% unless layout == layout_name %}
+        <button
+          class="js-change-layout-button"
+          data-key="{{ id }}"
+          data-layout="{{ layout }}"
+        >
+          {{ layout }}
+        </button>
+      {% endunless %}
+    {% endfor %}
+  </div>
+{%- endcapture -%}
+
 <div
   class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
   data-block-key="{{ id }}"
@@ -40,6 +62,7 @@
     <div class="block-edit-buttons">
       {{ move_buttons }}
       {{ delete_button }}
+      {{ change_layout_buttons }}
     </div>
   {% endif %}
 

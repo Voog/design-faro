@@ -379,6 +379,40 @@
       });
     };
 
+    const handleFrontPageLayoutChange = ({currentData, key}) => {
+      $(document).ready(() => {
+        $('.js-change-layout-button').on('click', e => {
+          const buttonKey = e.target.dataset.key;
+
+          currentData.layout = buttonKey;
+
+          pageData.set(key, currentData, {
+            success: () => {
+              location.reload();
+            },
+          });
+        });
+      });
+    };
+
+    const handleBlockLayoutChange = ({bodyBlocks, dataKey}) => {
+      $(document).ready(() => {
+        $('.js-change-layout-button').on('click', e => {
+          const buttonKey = e.target.dataset.key;
+          const newLayout = e.target.dataset.layout;
+          const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+
+          currentBlock.layout = newLayout;
+
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              location.reload();
+            },
+          });
+        });
+      });
+    };
+
     var init = function () {
       bindCustomTexteditorStyles();
       bindCustomDataItem();
@@ -393,7 +427,9 @@
       bgPickerColorScheme: bgPickerColorScheme,
       handleBlockAdd: handleBlockAdd,
       handleBlockDelete: handleBlockDelete,
+      handleBlockLayoutChange: handleBlockLayoutChange,
       handleBlockReorder: handleBlockReorder,
+      handleFrontPageLayoutChange: handleFrontPageLayoutChange,
     });
 
     // Initiates site wide functions.

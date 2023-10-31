@@ -65,5 +65,10 @@
     "common_page": "split_40_60",
     "categories_page": "split_50_50_full"
   },
+  "front_page_layouts": [
+    "split",
+    "column",
+    "column-split"
+  ],
   "version": "faro-1.0.0"
 }

@@ -25,6 +25,24 @@ Layout is applied by assigning according classname to "front-page-container" ele
           data-picker_elem =".{{ body_bg_key }}-picker"
           data-bg-color="{{ body_bg_color }}"
         ></button>
+        {% comment %}
+        TODO: Figure out editmode design
+        {% endcomment %}
+
+        <div class="change-layout-buttons">
+          Current layout: {{ front_page_layout }}<br>
+          Change layout <br>
+          {% for layout in template_settings.front_page_layouts %}
+            {% unless layout == front_page_layout %}
+              <button
+                class="js-change-layout-button"
+                data-key="{{ layout }}"
+              >
+                {{ layout }}
+              </button>
+            {% endunless %}
+          {% endfor %}
+        </div>
       {%- endif -%}
       <div class="hero">
         <div class="content-formatted">
@@ -49,6 +67,24 @@ Layout is applied by assigning according classname to "front-page-container" ele
 
     {% include "footer" %}
 
+    {% if editmode -%}
+      <script>
+        let rawData = '{{ front_page_settings | json }}';
+        let data = JSON.parse(rawData || '{}');
+      </script>
+    {% endif -%}
+
     {%- include "javascripts" -%}
+
+    {% if editmode -%}
+      <script>
+        if (site) {
+          site.handleFrontPageLayoutChange({
+            currentData: data,
+            key: '{{ front_page_settings_key }}'
+          })
+        }
+      </script>
+    {% endif -%}
   </body>
 </html>
