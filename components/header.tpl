@@ -10,12 +10,16 @@
 
     <div class="header-right">
       <div class="search">
-        <span class="search-button js-search-modal-open-btn">
-          {{ "search" | lce | escape_once }}
-        </span>
-        {%- include "search" -%}
+        {% if site.search.enabled %}
+          <span class="search-button js-search-modal-open-btn">
+            {{ "search" | lce | escape_once }}
+          </span>
+          {%- include "search" -%}
+        {% endif %}
       </div>
-      {% include "menu-lang" %}
+
+      {%- include "menu-lang" -%}
+
       <span class="cart-btn">
         {% comment %}
           TODO: Use localized translation

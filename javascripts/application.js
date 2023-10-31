@@ -770,12 +770,23 @@
     const handleMenuPadding = () => {
       if ($(window).width() > 900) {
         $('.js-menu-main .menu .menu-item-wrapper').first().css('padding-top', '');
-        $('.js-menu-main .menu-item-children').css('padding-top', '');
+        $('.js-menu-main .menu-item-children, .menu-lang .menu-item-children').css('padding-top', '');
+        $('.search').css('padding-top', '');
       } else {
         const headerHeight = $('.js-header').height();
 
-        $('.js-menu-main .menu .menu-item-wrapper').first().css('padding-top', `${headerHeight}px`);
+        $('.js-menu-main .menu div:visible').first().css('padding-top', `${headerHeight}px`);
         $('.js-menu-main .menu-item-children').css('padding-top', `${headerHeight}px`);
+      }
+    };
+
+    const handleSearchPosition = () => {
+      const $search = $('.search');
+
+      if ($(window).width() > 900) {
+        $('.header-right').prepend($search);
+      } else {
+        $('.menu').prepend($search);
       }
     };
 
@@ -832,6 +843,7 @@
     const handleWindowResize = () => {
       $(document).ready(() => {
         handleMenus();
+        handleSearchPosition();
         handleHeaderContent(() => {
           handleMenuPadding();
           handleCategoriesPageContent();
@@ -841,6 +853,7 @@
       $(window).resize(
         debounce(() => {
           handleMenus();
+          handleSearchPosition();
           handleHeaderContent(handleMenuPadding);
         }, 250)
       );

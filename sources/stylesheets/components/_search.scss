@@ -93,3 +93,37 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .search {
+    .search-button,
+    .search-close {
+      display: none;
+    }
+
+    .search-wrapper {
+      display: flex;
+      position: relative;
+      background-color: unset;
+      backdrop-filter: none;
+    }
+
+    .search-inner {
+      max-width: 100%;
+      top: 0;
+      padding: 0;
+    }
+
+    .search-form {
+      margin: 24px;
+    }
+
+    .search-results {
+      padding-top: 0;
+
+      &.search-results-active {
+        padding: 0 24px 24px;
+      }
+    }
+  }
+}
