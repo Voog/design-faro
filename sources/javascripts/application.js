@@ -274,6 +274,16 @@
     });
   };
 
+  const bindSearchBtnClick = () => {
+    $('.js-search-modal-open-btn').click(() => {
+      $('.js-search').addClass('active');
+    });
+
+    $('.js-search-modal-close-btn').click(() => {
+      $('.js-search').removeClass('active');
+    });
+  };
+
   const handleWindowResize = () => {
     $(document).ready(() => {
       handleMenus();
@@ -297,6 +307,7 @@
     handleShoppingCartEvents();
     buildCustomShoppingCartIcon();
     bindMobileMenuBtnClick();
+    bindSearchBtnClick();
   };
 
   window.site = $.extend(window.site || {}, {

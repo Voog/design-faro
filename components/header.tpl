@@ -9,6 +9,12 @@
     </div>
 
     <div class="header-right">
+      <div class="search">
+        <span class="search-button js-search-modal-open-btn">
+          {{ "search" | lce | escape_once }}
+        </span>
+        {%- include "search" -%}
+      </div>
       {% include "menu-lang" %}
       <span class="cart-btn">
         {% comment %}

@@ -196,6 +196,12 @@
     },
     {
       "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-cross.svg",
+      "filename": "ico-cross.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/ico-ellipsis.svg",
       "kind": "assets",
       "filename": "ico-ellipsis.svg"
@@ -205,6 +211,12 @@
       "file": "assets/ico-placeholder.svg",
       "kind": "assets",
       "filename": "ico-placeholder.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-search.svg",
+      "filename": "ico-search.svg"
     },
     {
       "content_type": "image/png",
