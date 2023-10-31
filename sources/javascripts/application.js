@@ -275,7 +275,10 @@
   const handleWindowResize = () => {
     $(document).ready(() => {
       handleMenus();
-      handleHeaderContent(handleMenuPadding);
+      handleHeaderContent(() => {
+        handleMenuPadding();
+        handleCategoriesPageContent();
+      });
     });
 
     $(window).resize(
@@ -296,7 +299,6 @@
 
   window.site = $.extend(window.site || {}, {
     bindSiteSearch: bindSiteSearch,
-    handleCategoriesPageContent: handleCategoriesPageContent,
   });
 
   init();

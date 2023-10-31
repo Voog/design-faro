@@ -63,8 +63,6 @@
 
     <script>
       if (site) {
-        site.handleCategoriesPageContent();
-
         {% if editmode -%}
           site.handleBlockReorder({
             bodyBlocks: blockData,
