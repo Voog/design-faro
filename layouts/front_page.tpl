@@ -79,7 +79,7 @@ Layout is applied by assigning according classname to "front-page-container" ele
     {% if editmode -%}
       <script>
         if (site) {
-          site.handleFrontPageLayoutChange({
+          site.bindFrontPageLayoutChange({
             currentData: data,
             key: '{{ front_page_settings_key }}'
           })

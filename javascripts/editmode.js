@@ -286,130 +286,127 @@
       });
     };
 
-    const handleBlockReorder = ({bodyBlocks, dataKey}) => {
-      $(document).ready(() => {
-        $('.js-move-button').on('click', e => {
-          const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
+    const bindBlockReorder = ({bodyBlocks, dataKey}) => {
+      $('.js-move-button').on('click', e => {
+        const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
 
-          const buttonKey = e.target.dataset.key;
-          const buttonDirection = e.target.dataset.direction;
+        const buttonKey = e.target.dataset.key;
+        const buttonDirection = e.target.dataset.direction;
 
-          const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
-          const $currentBlockHtml = $htmlBlocks.filter(`[data-block-key="${buttonKey}"]`);
-          const currentIndex = bodyBlocks.indexOf(currentBlock);
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+        const $currentBlockHtml = $htmlBlocks.filter(`[data-block-key="${buttonKey}"]`);
+        const currentIndex = bodyBlocks.indexOf(currentBlock);
 
-          if (buttonDirection === 'up' && currentIndex > 0) {
-            const prevIndex = currentIndex - 1;
-            const prevHtml = $htmlBlocks[prevIndex];
+        if (buttonDirection === 'up' && currentIndex > 0) {
+          const prevIndex = currentIndex - 1;
+          const prevHtml = $htmlBlocks[prevIndex];
 
-            bodyBlocks.splice(prevIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
-            pageData.set(dataKey, bodyBlocks, {
-              success: () => {
-                $currentBlockHtml.insertBefore($(prevHtml));
-              },
-            });
-          } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
-            const nextIndex = currentIndex + 1;
-            const nextHtml = $htmlBlocks[nextIndex];
+          bodyBlocks.splice(prevIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              $currentBlockHtml.insertBefore($(prevHtml));
+            },
+          });
+        } else if (buttonDirection === 'down' && currentIndex + 1 < bodyBlocks.length) {
+          const nextIndex = currentIndex + 1;
+          const nextHtml = $htmlBlocks[nextIndex];
 
-            bodyBlocks.splice(nextIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
-            pageData.set(dataKey, bodyBlocks, {
-              success: () => {
-                $currentBlockHtml.insertAfter($(nextHtml));
-              },
-            });
-          }
-        });
+          bodyBlocks.splice(nextIndex, 0, bodyBlocks.splice(currentIndex, 1)[0]);
+          pageData.set(dataKey, bodyBlocks, {
+            success: () => {
+              $currentBlockHtml.insertAfter($(nextHtml));
+            },
+          });
+        }
       });
     };
 
-    const handleBlockAdd = ({bodyBlocks, dataKey}) => {
+    const bindBlockAdd = ({bodyBlocks, dataKey}) => {
       const MAX_ITERATIONS = 100;
 
-      $(document).ready(() => {
-        $('.js-add-block').on('click', e => {
-          const blockLayout = e.target.dataset.blockLayout;
+      $('.js-add-block').on('click', e => {
+        const blockLayout = e.target.dataset.blockLayout;
 
-          const existingKeys = bodyBlocks.map(block => block.key);
+        const existingKeys = bodyBlocks.map(block => block.key);
 
-          let newKey = String(existingKeys.length + 1);
+        let newKey = String(existingKeys.length + 1);
 
-          if (existingKeys.includes(String(newKey))) {
-            for (let i = 1; i < MAX_ITERATIONS; i++) {
-              if (!existingKeys.includes(`${newKey}-${i}`)) {
-                newKey = `${newKey}-${i}`;
-                break;
-              } else if (i === MAX_ITERATIONS - 1) {
-                console.error('Could not find unique key for new block');
-                return;
-              }
+        if (existingKeys.includes(String(newKey))) {
+          for (let i = 1; i < MAX_ITERATIONS; i++) {
+            if (!existingKeys.includes(`${newKey}-${i}`)) {
+              newKey = `${newKey}-${i}`;
+              break;
+            } else if (i === MAX_ITERATIONS - 1) {
+              console.error('Could not find unique key for new block');
+              return;
             }
           }
+        }
 
-          bodyBlocks.push({
-            key: newKey,
-            layout: blockLayout,
-          });
+        bodyBlocks.push({
+          key: newKey,
+          layout: blockLayout,
+        });
 
-          pageData.set(dataKey, bodyBlocks, {
-            success: () => {
-              location.reload();
-            },
-          });
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            location.reload();
+          },
         });
       });
     };
 
-    const handleBlockDelete = ({bodyBlocks, dataKey}) => {
-      $(document).ready(() => {
-        $('.js-delete-button').on('click', e => {
-          const buttonKey = e.target.dataset.key;
-          const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
-          const currentIndex = bodyBlocks.indexOf(currentBlock);
+    const bindBlockDelete = ({bodyBlocks, dataKey}) => {
+      $('.js-delete-button').on('click', e => {
+        const buttonKey = e.target.dataset.key;
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+        const currentIndex = bodyBlocks.indexOf(currentBlock);
 
-          bodyBlocks.splice(currentIndex, 1);
-          pageData.set(dataKey, bodyBlocks, {
-            success: () => {
-              $(`.${e.target.dataset.wrapperClass}`)
-                .filter(`[data-block-key="${buttonKey}"]`)
-                .remove();
-            },
-          });
+        bodyBlocks.splice(currentIndex, 1);
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            $(`.${e.target.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
+          },
         });
       });
     };
 
-    const handleFrontPageLayoutChange = ({currentData, key}) => {
-      $(document).ready(() => {
-        $('.js-change-layout-button').on('click', e => {
-          const buttonKey = e.target.dataset.key;
+    const bindFrontPageLayoutChange = ({currentData, key}) => {
+      $('.js-change-layout-button').on('click', e => {
+        const buttonKey = e.target.dataset.key;
 
-          currentData.layout = buttonKey;
+        currentData.layout = buttonKey;
 
-          pageData.set(key, currentData, {
-            success: () => {
-              location.reload();
-            },
-          });
+        pageData.set(key, currentData, {
+          success: () => {
+            location.reload();
+          },
         });
       });
     };
 
-    const handleBlockLayoutChange = ({bodyBlocks, dataKey}) => {
-      $(document).ready(() => {
-        $('.js-change-layout-button').on('click', e => {
-          const buttonKey = e.target.dataset.key;
-          const newLayout = e.target.dataset.layout;
-          const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+    const bindBlockLayoutChange = ({bodyBlocks, dataKey}) => {
+      $('.js-change-layout-button').on('click', e => {
+        const buttonKey = e.target.dataset.key;
+        const newLayout = e.target.dataset.layout;
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
 
-          currentBlock.layout = newLayout;
+        currentBlock.layout = newLayout;
 
-          pageData.set(dataKey, bodyBlocks, {
-            success: () => {
-              location.reload();
-            },
-          });
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            location.reload();
+          },
         });
+      });
+    };
+
+    const bindBlockActions = ({bodyBlocks, dataKey}) => {
+      $(document).ready(() => {
+        bindBlockAdd({bodyBlocks, dataKey});
+        bindBlockDelete({bodyBlocks, dataKey});
+        bindBlockReorder({bodyBlocks, dataKey});
+        bindBlockLayoutChange({bodyBlocks, dataKey});
       });
     };
 
@@ -425,11 +422,8 @@
       bgPickerPreview: bgPickerPreview,
       bgPickerCommit: bgPickerCommit,
       bgPickerColorScheme: bgPickerColorScheme,
-      handleBlockAdd: handleBlockAdd,
-      handleBlockDelete: handleBlockDelete,
-      handleBlockLayoutChange: handleBlockLayoutChange,
-      handleBlockReorder: handleBlockReorder,
-      handleFrontPageLayoutChange: handleFrontPageLayoutChange,
+      bindBlockActions: bindBlockActions,
+      bindFrontPageLayoutChange: bindFrontPageLayoutChange,
     });
 
     // Initiates site wide functions.

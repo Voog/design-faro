@@ -68,25 +68,10 @@
     {% if editmode -%}
       <script>
         if (site) {
-          site.handleBlockReorder({
+          site.bindBlockActions({
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}"
           });
-
-          site.handleBlockAdd({
-            bodyBlocks: blockData,
-            dataKey: "{{ body_blocks_key }}"
-          });
-
-          site.handleBlockDelete({
-            bodyBlocks: blockData,
-            dataKey: "{{ body_blocks_key }}"
-          });
-
-          site.handleBlockLayoutChange({
-            bodyBlocks: blockData,
-            dataKey: "{{ body_blocks_key }}"
-          })
         }
       </script>
     {%- endif -%}
