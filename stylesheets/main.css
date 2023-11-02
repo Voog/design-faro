@@ -396,6 +396,14 @@ body.edy-checkout-button-visible {
   background: none;
   outline: none;
 }
+.search .clear-search-button {
+  appearance: none;
+  border: none;
+  background: none;
+  outline: none;
+  color: #888888;
+  cursor: pointer;
+}
 .search .search-results {
   padding-top: 24px;
   text-wrap: wrap;
