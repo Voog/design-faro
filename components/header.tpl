@@ -12,7 +12,7 @@
       <div class="search">
         {% if site.search.enabled %}
           <span class="search-button js-search-modal-open-btn">
-            {{ "search" | lce | escape_once }}
+            {{ "search" | lc | escape_once }}
           </span>
           {%- include "search" -%}
         {% endif %}

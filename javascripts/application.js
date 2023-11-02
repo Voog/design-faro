@@ -565,6 +565,18 @@
           // String for feedback if no results are found.
           noResults: noResultsString,
         });
+
+        $(searchForm).on('sitesearch:showmodal', () => {
+          if ($(window).width() <= 900) {
+            $('.js-menu-main').addClass('search-modal-active');
+          }
+        });
+
+        $(searchForm).on('sitesearch:hidemodal', () => {
+          if ($(window).width() <= 900) {
+            $('.js-menu-main').removeClass('search-modal-active');
+          }
+        });
       }
     };
 

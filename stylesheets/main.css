@@ -439,7 +439,7 @@ body.edy-checkout-button-visible {
     padding-top: 0;
   }
   .search .search-results.search-results-active {
-    padding: 0 24px 24px;
+    padding: 0 24px;
   }
 }
 .product-page .voog-bg-picker-btn {
@@ -1106,6 +1106,10 @@ body.edy-checkout-button-visible {
   }
   .menu-active .menu-main .menu:after {
     height: 100%;
+  }
+  .menu-main.search-modal-active .menu-item-wrapper,
+  .menu-main.search-modal-active .header-right {
+    display: none;
   }
 }
 .content-formatted .custom-btn {

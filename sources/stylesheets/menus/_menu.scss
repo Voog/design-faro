@@ -223,5 +223,12 @@
         }
       }
     }
+
+    &.search-modal-active {
+      .menu-item-wrapper,
+      .header-right {
+        display: none;
+      }
+    }
   }
 }
