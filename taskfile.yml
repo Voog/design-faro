@@ -2,10 +2,14 @@ version: '3'
 silent: true
 
 env:
+  ## CSS
   CSS_SRC_FOLDER: sources/stylesheets
   CSS_OUT_FOLDER: stylesheets
   CSS_ENTRIES: main
   SASS_FLAGS: -I node_modules/ --no-source-map
+
+  CUSTOM_STYLES_CSS_SRC_FOLDER: sources/components/custom-styles
+  CUSTOM_STYLES_CSS_OUT_FOLDER: components
 
   ## JS
   JS_SRC_FOLDER: sources/javascripts
@@ -42,10 +46,19 @@ tasks:
           npx sass $SASS_FLAGS --style=compressed $CSS_SRC_FOLDER/$entry.scss:$CSS_OUT_FOLDER/$entry.min.css
         done
 
+  build-custom-styles-css:
+    cmds:
+      - |
+        echo "Building custom styles CSS"
+        for entry in $CUSTOM_STYLES_CSS_SRC_FOLDER/*.scss; do
+          npx sass $SASS_FLAGS $entry:$CUSTOM_STYLES_CSS_OUT_FOLDER/$(basename "${entry%.*}").tpl
+        done
+
   css:
     cmds:
       - task: build-css
       - task: minify-css
+      - task: build-custom-styles-css
       - echo "CSS build done"
 
   watch-css:

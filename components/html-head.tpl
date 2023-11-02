@@ -29,6 +29,10 @@
   {% stylesheet_link "libs/edicy-search/latest/edicy-search.css" static_host="true" %}
 {%- endif %}
 
+{%- customstyle -%}
+  {%- include "template-cs-main-styles" -%}
+{%- endcustomstyle -%}
+
 {%- comment -%}SITE TITLE{%- endcomment -%}
 <title>{% title %}</title>
 

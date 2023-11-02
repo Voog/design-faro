@@ -1,0 +1,22 @@
+// =============================================================================
+// TEMPLATE CUSTOM STYLES.
+// This file sets the configuration for design editor tool.
+//
+// This file will be converted to CSS, copied under "/components" and renamed to
+// "*.tpl".
+//
+// The output component can be included in any "layout" or "component".
+// =============================================================================
+
+@import '../../stylesheets/variables';
+
+:root {
+  /* VoogStyle
+    "pathI18n": ["main_styles", "colors"],
+    "titleI18n": "primary_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--primary-color}: $black;
+}

@@ -450,6 +450,10 @@ body.edy-checkout-button-visible {
     padding: 0 24px;
   }
 }
+body {
+  color: var(--primary-color);
+}
+
 .product-page .voog-bg-picker-btn {
   position: relative;
   margin-bottom: 12px;
@@ -522,7 +526,7 @@ body.edy-checkout-button-visible {
   }
   .product-page .product-information {
     max-width: 100%;
-    padding: 0;
+    margin: -24px;
     overflow: auto;
   }
 }
