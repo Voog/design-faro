@@ -7,7 +7,7 @@
     {%- include "template-styles" -%}
   </head>
 
-  <body class="categories-page full-height-body">
+  <body class="categories-page">
     {% include "header" %}
 
     <main class="categories-page-content" role="main" data-search-indexing-allowed="true">

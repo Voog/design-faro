@@ -524,13 +524,14 @@ body.edy-checkout-button-visible {
   margin: auto;
 }
 
+.front-page .front-page-wrapper {
+  padding: 56px;
+  max-width: 1440px;
+  margin: auto;
+}
 .front-page .front-page-content {
   display: grid;
-  flex: 1;
   position: relative;
-  padding: 56px;
-  align-self: center;
-  max-width: 1440px;
   width: 100%;
   gap: 32px;
 }
@@ -593,7 +594,7 @@ body.edy-checkout-button-visible {
 }
 
 @media screen and (max-width: 900px) {
-  .front-page .front-page-content {
+  .front-page .front-page-wrapper {
     padding: 24px;
   }
   .front-page .split {
@@ -1290,10 +1291,4 @@ main {
   top: 0;
   left: 0;
   background-color: var(--body-bg-color);
-}
-
-.full-height-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }

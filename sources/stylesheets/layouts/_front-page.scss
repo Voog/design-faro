@@ -1,11 +1,13 @@
 .front-page {
+  .front-page-wrapper {
+    padding: 56px;
+    max-width: $max-page-width;
+    margin: auto;
+  }
+
   .front-page-content {
     display: grid;
-    flex: 1;
     position: relative;
-    padding: 56px;
-    align-self: center;
-    max-width: $max-page-width;
     width: 100%;
     gap: 32px;
   }
@@ -87,7 +89,7 @@
 
 @media screen and (max-width: $mobile-width) {
   .front-page {
-    .front-page-content {
+    .front-page-wrapper {
       padding: 24px;
     }
 
