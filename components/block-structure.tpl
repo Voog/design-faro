@@ -55,7 +55,7 @@
     {{ background_key }}-picker-area
     js-background-type
     {{ bg_type }}
-    {% if content_class_name -%}{{ content_class_name }}{%- endif -%}
+    {% if content_class -%}{{ content_class }}{%- endif -%}
   "
   data-block-key="{{ id }}"
 >

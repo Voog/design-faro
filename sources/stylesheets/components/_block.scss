@@ -1,5 +1,5 @@
 .block-wrapper,
-.categories-wrapper {
+.category-blocks {
   position: relative;
 
   .block-edit-buttons {
@@ -14,7 +14,7 @@
   }
 }
 
-.categories-wrapper {
+.category-blocks .block-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }

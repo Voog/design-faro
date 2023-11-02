@@ -82,7 +82,7 @@ TODO: Figure out editmode design
         background_key: background_key,
         block_index: index,
         content_area_count: 1,
-        content_class_name: content_class_name,
+        content_class: content_class,
         id: id,
         layout_name: layout_name,
         separate_bg_pickers: layout_data.separate_bg_pickers
@@ -101,7 +101,7 @@ TODO: Figure out editmode design
       background: background,
       background_key: background_key,
       content_area_count: content_area_count,
-      content_class_name: content_class_name,
+      content_class: content_class,
       id: id,
       layout_name: layout_name,
       separate_bg_pickers: layout_data.separate_bg_pickers

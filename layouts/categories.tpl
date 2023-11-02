@@ -32,13 +32,15 @@
 
         {% assign layout_data = allowed_layout.first.value %}
 
-        {% include "block",
-          block_data: block_data,
-          layout_name: layout_name,
-          layout_data: layout_data,
-          content_class_name: "js-category-section",
-          wrapper_class: "categories-wrapper js-categories-wrapper"
-        %}
+        <div class="category-blocks">
+          {% include "block",
+            block_data: block_data,
+            layout_name: layout_name,
+            layout_data: layout_data,
+            content_class: "js-category-section",
+            wrapper_class: "js-categories-wrapper"
+          %}
+        </div>
       {% endfor %}
 
       {% if editmode %}
