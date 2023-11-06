@@ -63,7 +63,7 @@ tasks:
 
   watch-css:
     cmds:
-      - npx chokidar $CSS_SRC_FOLDER/* -c "npx task css"
+      - npx chokidar $CSS_SRC_FOLDER/* $CUSTOM_STYLES_CSS_SRC_FOLDER/* -c "npx task css"
 
   build-js:
     cmds:

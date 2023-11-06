@@ -4,7 +4,15 @@
     "titleI18n": "primary_color",
     "editor": "colorPicker",
     "featured": true,
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--heading-1-color",
+      "--heading-2-color",
+      "--heading-3-color",
+      "--heading-4-color",
+      "--content-body-color",
+      "--content-link-color"
+    ]
   */
   --primary-color: #000000;
   /* VoogStyle

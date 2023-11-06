@@ -31,6 +31,8 @@
 
 {%- customstyle -%}
   {%- include "template-cs-main-styles" -%}
+  {%- include "template-cs-headings" -%}
+  {%- include "template-cs-content" -%}
 {%- endcustomstyle -%}
 
 {%- comment -%}SITE TITLE{%- endcomment -%}

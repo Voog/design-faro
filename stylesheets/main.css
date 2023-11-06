@@ -454,15 +454,116 @@ body {
   color: var(--primary-color);
   font-family: var(--font-family);
 }
-
-.dark-background {
+body.dark-background {
   color: var(--darkmode-color);
+}
+
+h1 {
+  font-size: var(--heading-1-font-size);
+  font-weight: var(--heading-1-font-weight);
+  font-style: var(--heading-1-font-style);
+  text-decoration: var(--heading-1-text-decoration);
+  text-transform: var(--heading-1-text-transform);
+  color: var(--heading-1-color);
+  line-height: var(--heading-1-line-height);
+  text-align: var(--heading-1-text-alignment);
+  hyphens: var(--heading-1-hyphens);
+}
+.dark-background h1 {
+  color: var(--darkmode-color);
+}
+
+h2 {
+  font-size: var(--heading-2-font-size);
+  font-weight: var(--heading-2-font-weight);
+  font-style: var(--heading-2-font-style);
+  text-decoration: var(--heading-2-text-decoration);
+  text-transform: var(--heading-2-text-transform);
+  color: var(--heading-2-color);
+  line-height: var(--heading-2-line-height);
+  text-align: var(--heading-2-text-alignment);
+  hyphens: var(--heading-2-hyphens);
+}
+.dark-background h2 {
+  color: var(--darkmode-color);
+}
+
+h3 {
+  font-size: var(--heading-3-font-size);
+  font-weight: var(--heading-3-font-weight);
+  font-style: var(--heading-3-font-style);
+  text-decoration: var(--heading-3-text-decoration);
+  text-transform: var(--heading-3-text-transform);
+  color: var(--heading-3-color);
+  line-height: var(--heading-3-line-height);
+  text-align: var(--heading-3-text-alignment);
+  hyphens: var(--heading-3-hyphens);
+}
+.dark-background h3 {
+  color: var(--darkmode-color);
+}
+
+h4 {
+  font-size: var(--heading-4-font-size);
+  font-weight: var(--heading-4-font-weight);
+  font-style: var(--heading-4-font-style);
+  text-decoration: var(--heading-4-text-decoration);
+  text-transform: var(--heading-4-text-transform);
+  color: var(--heading-4-color);
+  line-height: var(--heading-4-line-height);
+  text-align: var(--heading-4-text-alignment);
+  hyphens: var(--heading-4-hyphens);
+}
+.dark-background h4 {
+  color: var(--darkmode-color);
+}
+
+.content-formatted p {
+  font-size: var(--content-body-font-size);
+  color: var(--content-body-color);
+  line-height: var(--content-body-line-height);
+  hyphens: var(--content-body-hyphens);
+}
+.dark-background .content-formatted p {
+  color: var(--darkmode-color);
+}
+.content-formatted a:not(.custom-btn) {
+  font-weight: var(--content-link-font-weight);
+  font-style: var(--content-link-font-style);
+  text-decoration: var(--content-link-text-decoration);
+  text-transform: var(--content-link-text-transform);
+  color: var(--content-link-color);
+}
+.content-formatted a:not(.custom-btn):hover {
+  font-weight: var(--content-link-hover-font-weight);
+  font-style: var(--content-link-hover-font-style);
+  text-decoration: var(--content-link-hover-text-decoration);
+  text-transform: var(--content-link-hover-text-transform);
+  color: var(--content-link-hover-color);
+}
+.dark-background .content-formatted a:not(.custom-btn) {
+  color: var(--darkmode-color);
+}
+.dark-background .content-formatted a:not(.custom-btn):hover {
+  color: var(--darkmode-color);
+  opacity: 0.7;
 }
 
 .footer {
   color: var(--primary-color);
 }
 
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: calc(var(--heading-1-font-size) / 2);
+  }
+  h2 {
+    font-size: calc(var(--heading-2-font-size) / 1.167);
+  }
+  h3 {
+    font-size: calc(var(--heading-3-font-size) / 1.25);
+  }
+}
 .product-page .voog-bg-picker-btn {
   position: relative;
   margin-bottom: 12px;

@@ -1,12 +1,82 @@
 body {
   color: var(--primary-color);
   font-family: var(--font-family);
+
+  &.dark-background {
+    color: var(--darkmode-color);
+  }
 }
 
-.dark-background {
-  color: var(--darkmode-color);
+@for $heading from 1 through 4 {
+  h#{$heading} {
+    font-size: var(--heading-#{$heading}-font-size);
+    font-weight: var(--heading-#{$heading}-font-weight);
+    font-style: var(--heading-#{$heading}-font-style);
+    text-decoration: var(--heading-#{$heading}-text-decoration);
+    text-transform: var(--heading-#{$heading}-text-transform);
+    color: var(--heading-#{$heading}-color);
+    line-height: var(--heading-#{$heading}-line-height);
+    text-align: var(--heading-#{$heading}-text-alignment);
+    hyphens: var(--heading-#{$heading}-hyphens);
+
+    .dark-background & {
+      color: var(--darkmode-color);
+    }
+  }
+}
+
+.content-formatted {
+  p {
+    font-size: var(--content-body-font-size);
+    color: var(--content-body-color);
+    line-height: var(--content-body-line-height);
+    hyphens: var(--content-body-hyphens);
+
+    .dark-background & {
+      color: var(--darkmode-color);
+    }
+  }
+
+  a:not(.custom-btn) {
+    font-weight: var(--content-link-font-weight);
+    font-style: var(--content-link-font-style);
+    text-decoration: var(--content-link-text-decoration);
+    text-transform: var(--content-link-text-transform);
+    color: var(--content-link-color);
+
+    &:hover {
+      font-weight: var(--content-link-hover-font-weight);
+      font-style: var(--content-link-hover-font-style);
+      text-decoration: var(--content-link-hover-text-decoration);
+      text-transform: var(--content-link-hover-text-transform);
+      color: var(--content-link-hover-color);
+    }
+
+    .dark-background & {
+      color: var(--darkmode-color);
+
+      &:hover {
+        color: var(--darkmode-color);
+        opacity: .7;
+      }
+    }
+  }
 }
 
 .footer {
   color: var(--primary-color);
+}
+
+@media screen and (max-width: $mobile-width) {
+  h1 {
+    font-size: calc(var(--heading-1-font-size) / 2);
+  }
+
+  h2 {
+    font-size: calc(var(--heading-2-font-size) / 1.167)
+  }
+
+  h3 {
+    font-size: calc(var(--heading-3-font-size) / 1.25);
+  }
 }
