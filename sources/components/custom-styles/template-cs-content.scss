@@ -80,7 +80,7 @@
       "--content-link-hover-font-weight"
     ]
   */
-  #{--content-link-font-weight}: 400;
+  #{--content-link-font-weight}: $normal-weight;
 
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],
@@ -121,7 +121,7 @@
     "icon": "bold",
     "scope": "global"
   */
-  #{--content-link-hover-font-weight}: 400;
+  #{--content-link-hover-font-weight}: $normal-weight;
 
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],

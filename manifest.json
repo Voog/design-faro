@@ -111,6 +111,13 @@
       "title": "search"
     },
     {
+      "title": "template-cs-button",
+      "layout_name": "template-cs-button",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-button.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/template-cs-content.tpl",

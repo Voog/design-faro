@@ -548,6 +548,28 @@ h4 {
   color: var(--darkmode-color);
   opacity: 0.7;
 }
+.content-formatted .custom-btn {
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-size) solid var(--button-border-color);
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  font-style: var(--button-font-style);
+  text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+  hyphens: var(--button-hyphens);
+}
+.content-formatted .custom-btn:hover {
+  color: var(--button-hover-color);
+  background-color: var(--button-hover-background-color);
+  border-color: var(--button-hover-border-color);
+}
+.content-formatted .custom-btn:active {
+  color: var(--button-active-color);
+  background-color: var(--button-active-background-color);
+  border-color: var(--button-active-border-color);
+}
 
 .footer {
   color: var(--primary-color);
@@ -1237,18 +1259,7 @@ h4 {
 .content-formatted .custom-btn {
   display: inline-block;
   padding: 12px 40px;
-  background-color: #000000;
-  border: 1px solid #000000;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-.content-formatted .custom-btn:hover {
-  border-color: #888888;
-  background-color: #888888;
-}
-.content-formatted .custom-btn:active {
-  border-color: #727272;
-  background-color: #727272;
+  transition: all 0.1s ease-in-out;
 }
 .content-formatted .custom-btn.custom-btn-disabled {
   border-color: #F7F7F2;
@@ -1853,6 +1864,10 @@ h4 {
 body {
   margin: 0;
   padding: 0;
+}
+body * ::selection {
+  color: #FFFFFF;
+  background: #000000;
 }
 
 main {

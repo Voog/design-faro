@@ -33,6 +33,7 @@
   {%- include "template-cs-main-styles" -%}
   {%- include "template-cs-headings" -%}
   {%- include "template-cs-content" -%}
+  {%- include "template-cs-button" -%}
 {%- endcustomstyle -%}
 
 {%- comment -%}SITE TITLE{%- endcomment -%}
