@@ -1,0 +1,185 @@
+:root {
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "line_height",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 5,
+    "step": 0.1,
+    "unit": "",
+    "scope": "global"
+  */
+  --header-menu-line-height: 1.5;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "size",
+    "editor": "rangePicker",
+    "min": 8,
+    "max": 24,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  --header-menu-font-size: 16px;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "font_size",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "700",
+      "off": "400"
+    },
+    "icon": "bold",
+    "scope": "global"
+  */
+  --header-menu-font-weight: 400;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "font_style",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "italic",
+      "off": "normal"
+    },
+    "icon": "italic",
+    "scope": "global"
+  */
+  --header-menu-font-style: normal;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "text_decoration",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "underline",
+      "off": "none"
+    },
+    "icon": "underline",
+    "scope": "global"
+  */
+  --header-menu-text-decoration: none;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "text_transform",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "uppercase",
+      "off": "none"
+    },
+    "icon": "uppercase",
+    "scope": "global"
+  */
+  --header-menu-text-transform: none;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu"],
+    "titleI18n": "color",
+    "type": "button",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  --header-menu-color: #000000;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "hover"],
+    "titleI18n": "font_size",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "700",
+      "off": "400"
+    },
+    "icon": "bold",
+    "scope": "global"
+  */
+  --header-menu-hover-font-weight: 400;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "hover"],
+    "titleI18n": "font_style",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "italic",
+      "off": "normal"
+    },
+    "icon": "italic",
+    "scope": "global"
+  */
+  --header-menu-hover-font-style: normal;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "hover"],
+    "titleI18n": "text_decoration",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "underline",
+      "off": "none"
+    },
+    "icon": "underline",
+    "scope": "global"
+  */
+  --header-menu-hover-text-decoration: none;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "hover"],
+    "titleI18n": "text_transform",
+    "type": "button",
+    "editor": "toggleIcon",
+    "states": {
+      "on": "uppercase",
+      "off": "none"
+    },
+    "icon": "uppercase",
+    "scope": "global"
+  */
+  --header-menu-hover-text-transform: none;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "hover"],
+    "titleI18n": "color",
+    "type": "button",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  --header-menu-hover-color: rgba(0, 0, 0, 0.7);
+  /* VoogStyle
+    "pathI18n": ["header", "content"],
+    "titleI18n": "line_height",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 5,
+    "step": 0.1,
+    "unit": "",
+    "scope": "global"
+  */
+  --header-content-line-height: 1.5;
+  /* VoogStyle
+    "pathI18n": ["header", "content"],
+    "titleI18n": "size",
+    "editor": "rangePicker",
+    "min": 8,
+    "max": 56,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  --header-content-font-size: 16px;
+  /* VoogStyle
+    "pathI18n": ["header", "content"],
+    "titleI18n": "color",
+    "type": "button",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  --header-content-color: #000000;
+  /* VoogStyle
+    "pathI18n": ["header", "content"],
+    "titleI18n": "hyphens",
+    "editor": "listPicker",
+    "list": {{ base_hyphens_toggle_set }},
+    "scope": "global"
+  */
+  --header-content-hyphens: none;
+}

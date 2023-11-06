@@ -571,6 +571,50 @@ h4 {
   border-color: var(--button-active-border-color);
 }
 
+.header .menu-item a,
+.header .menu-child a,
+.header .search,
+.header .cart-btn,
+.header .menu-lang .menu-item,
+.header .menu-lang .menu-child {
+  line-height: var(--header-menu-line-height);
+  font-size: var(--header-menu-font-size);
+  font-weight: var(--header-menu-font-weight);
+  font-style: var(--header-menu-font-style);
+  text-decoration: var(--header-menu-text-decoration);
+  text-transform: var(--header-menu-text-transform);
+  color: var(--header-menu-color);
+}
+.header .menu-item a:hover,
+.header .menu-child a:hover,
+.header .search:hover,
+.header .cart-btn:hover,
+.header .menu-lang .menu-item:hover,
+.header .menu-lang .menu-child:hover {
+  font-weight: var(--header-menu-hover-font-weight);
+  font-style: var(--header-menu-hover-font-style);
+  text-decoration: var(--header-menu-hover-text-decoration);
+  text-transform: var(--header-menu-hover-text-transform);
+  color: var(--header-menu-hover-color);
+}
+.dark-background .header .menu-item a,
+.dark-background .header .menu-child a,
+.dark-background .header .search,
+.dark-background .header .cart-btn,
+.dark-background .header .menu-lang .menu-item,
+.dark-background .header .menu-lang .menu-child {
+  color: var(--darkmode-color);
+}
+.header .content-formatted {
+  line-height: var(--header-content-line-height);
+  font-size: var(--header-content-font-size);
+  color: var(--header-content-color);
+  hyphens: var(--header-content-hyphens);
+}
+.dark-background .header .content-formatted {
+  color: var(--darkmode-color);
+}
+
 .footer {
   color: var(--primary-color);
 }
@@ -1114,7 +1158,8 @@ h4 {
 .menu-main .dropdown-menu-visible .dropdown-menu-icon {
   height: 100%;
 }
-.menu-main a.untranslated {
+.menu-main .menu-item a.untranslated,
+.menu-main .menu-child a.untranslated {
   color: #C5292A;
 }
 
@@ -1865,7 +1910,7 @@ body {
   margin: 0;
   padding: 0;
 }
-body * ::selection {
+body.light-background * ::selection {
   color: #FFFFFF;
   background: #000000;
 }

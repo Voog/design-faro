@@ -60,8 +60,11 @@
     }
   }
 
-  a.untranslated {
-    color: $red;
+  .menu-item a,
+  .menu-child a {
+    &.untranslated {
+      color: $red;
+    }
   }
 }
 

@@ -88,6 +88,46 @@ body {
   }
 }
 
+.header {
+  .menu-item a,
+  .menu-child a,
+  .search,
+  .cart-btn,
+  .menu-lang .menu-item,
+  .menu-lang .menu-child {
+    line-height: var(--header-menu-line-height);
+    font-size: var(--header-menu-font-size);
+    font-weight: var(--header-menu-font-weight);
+    font-style: var(--header-menu-font-style);
+    text-decoration: var(--header-menu-text-decoration);
+    text-transform: var(--header-menu-text-transform);
+    color: var(--header-menu-color);
+
+    &:hover {
+      font-weight: var(--header-menu-hover-font-weight);
+      font-style: var(--header-menu-hover-font-style);
+      text-decoration: var(--header-menu-hover-text-decoration);
+      text-transform: var(--header-menu-hover-text-transform);
+      color: var(--header-menu-hover-color);
+    }
+
+    .dark-background & {
+      color: var(--darkmode-color);
+    }
+  }
+
+  .content-formatted {
+    line-height: var(--header-content-line-height);
+    font-size: var(--header-content-font-size);
+    color: var(--header-content-color);
+    hyphens: var(--header-content-hyphens);
+
+    .dark-background & {
+      color: var(--darkmode-color);
+    }
+  }
+}
+
 .footer {
   color: var(--primary-color);
 }

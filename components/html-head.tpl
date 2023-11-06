@@ -34,6 +34,7 @@
   {%- include "template-cs-headings" -%}
   {%- include "template-cs-content" -%}
   {%- include "template-cs-button" -%}
+  {%- include "template-cs-header" -%}
 {%- endcustomstyle -%}
 
 {%- comment -%}SITE TITLE{%- endcomment -%}

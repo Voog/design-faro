@@ -4,7 +4,7 @@
   <div class="header">
     {% include "menu-main" %}
 
-    <div class="header-content">
+    <div class="header-content content-formatted">
       {% xcontent name="header" %}
     </div>
 
