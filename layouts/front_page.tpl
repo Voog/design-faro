@@ -72,7 +72,7 @@ Layout is applied by assigning according classname to "front-page-container" ele
     {% if editmode -%}
       <script>
         let rawData = '{{ front_page_settings | json }}';
-        let data = JSON.parse(rawData || '{}');
+        let blockData = JSON.parse(rawData || '{}');
       </script>
     {% endif -%}
 
@@ -82,7 +82,7 @@ Layout is applied by assigning according classname to "front-page-container" ele
       <script>
         if (site) {
           site.bindFrontPageLayoutChange({
-            currentData: data,
+            currentData: blockData,
             key: '{{ front_page_settings_key }}'
           })
         }
