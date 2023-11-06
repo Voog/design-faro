@@ -62,7 +62,8 @@ body {
     }
   }
 
-  .custom-btn {
+  .custom-btn,
+  .form_submit_input {
     border-radius: var(--button-border-radius);
     border: var(--button-border-size) solid var(--button-border-color);
     color: var(--button-color);

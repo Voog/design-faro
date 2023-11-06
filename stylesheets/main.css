@@ -548,7 +548,8 @@ h4 {
   color: var(--darkmode-color);
   opacity: 0.7;
 }
-.content-formatted .custom-btn {
+.content-formatted .custom-btn,
+.content-formatted .form_submit_input {
   border-radius: var(--button-border-radius);
   border: var(--button-border-size) solid var(--button-border-color);
   color: var(--button-color);
@@ -560,12 +561,14 @@ h4 {
   text-transform: var(--button-text-transform);
   hyphens: var(--button-hyphens);
 }
-.content-formatted .custom-btn:hover {
+.content-formatted .custom-btn:hover,
+.content-formatted .form_submit_input:hover {
   color: var(--button-hover-color);
   background-color: var(--button-hover-background-color);
   border-color: var(--button-hover-border-color);
 }
-.content-formatted .custom-btn:active {
+.content-formatted .custom-btn:active,
+.content-formatted .form_submit_input:active {
   color: var(--button-active-color);
   background-color: var(--button-active-background-color);
   border-color: var(--button-active-border-color);
@@ -1301,12 +1304,14 @@ h4 {
     display: none;
   }
 }
-.content-formatted .custom-btn {
+.content-formatted .custom-btn,
+.content-formatted .form_submit_input {
   display: inline-block;
   padding: 12px 40px;
   transition: all 0.1s ease-in-out;
 }
-.content-formatted .custom-btn.custom-btn-disabled {
+.content-formatted .custom-btn.custom-btn-disabled,
+.content-formatted .form_submit_input.custom-btn-disabled {
   border-color: #F7F7F2;
   background-color: #F7F7F2;
   color: #888888;
@@ -1336,8 +1341,12 @@ h4 {
   clear: both;
 }
 .content-formatted .form_field,
-.content-formatted .edy-fe-label {
-  font-size: 14px;
+.content-formatted .edy-fe-label,
+.content-formatted .form_error,
+.content-formatted .form_notice {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
 }
 .content-formatted .form_field {
   padding-top: 8px;
@@ -1349,6 +1358,11 @@ h4 {
 .content-formatted .form_field:last-child {
   padding-bottom: 0;
 }
+.content-formatted .form_field_label,
+.content-formatted .form_field_error,
+.content-formatted .edy-fe-label {
+  padding: 8px 0;
+}
 .content-formatted .form_field_required .form_field_label:after {
   content: "*";
 }
@@ -1357,7 +1371,6 @@ h4 {
 }
 .content-formatted .form_field_label,
 .content-formatted .edy-fe-label {
-  font-weight: 700;
   font-family: inherit;
 }
 .content-formatted .form_field_textfield,
@@ -1378,10 +1391,27 @@ h4 {
 .content-formatted .form_field_textarea {
   width: 280px;
   margin: 0;
-  padding: 8px;
+  padding: 14px 16px;
   border: 1px solid #F7F7F2;
-  border-radius: 4px;
   box-sizing: border-box;
+  background: #FFFFFF;
+}
+.content-formatted .form_field_textfield::placeholder,
+.content-formatted .form_field_textarea::placeholder {
+  color: #888888;
+  font-size: 12px;
+  line-height: 8px;
+  font-weight: 400;
+}
+.content-formatted .form_field_textfield:hover,
+.content-formatted .form_field_textarea:hover {
+  border-color: rgba(136, 136, 136, 0.3);
+}
+.content-formatted .form_field_textfield:focus, .content-formatted .form_field_textfield:focus-visible,
+.content-formatted .form_field_textarea:focus,
+.content-formatted .form_field_textarea:focus-visible {
+  border-color: #000000;
+  outline-color: #000000;
 }
 .content-formatted .form_field_textarea {
   min-height: 96px;

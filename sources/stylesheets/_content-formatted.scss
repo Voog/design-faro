@@ -1,5 +1,6 @@
 .content-formatted {
-  .custom-btn {
+  .custom-btn,
+  .form_submit_input {
     display: inline-block;
     padding: 12px 40px;
     transition: all .1s ease-in-out;
@@ -45,8 +46,12 @@
   }
 
   .form_field,
-  .edy-fe-label {
-    font-size: 14px;
+  .edy-fe-label,
+  .form_error,
+  .form_notice {
+    font-size: 12px;
+    font-weight: $bold-weight;
+    line-height: 1;
   }
 
   .form_field {
@@ -62,6 +67,12 @@
     }
   }
 
+  .form_field_label,
+  .form_field_error,
+  .edy-fe-label {
+    padding: 8px 0;
+  }
+
   .form_field_required {
     .form_field_label:after {
       content: '*';
@@ -74,7 +85,6 @@
 
   .form_field_label,
   .edy-fe-label {
-    font-weight: $bold-weight;
     font-family: inherit;
   }
 
@@ -98,10 +108,27 @@
   .form_field_textarea {
     width: 280px;
     margin: 0;
-    padding: 8px;
+    padding: 14px 16px;
     border: 1px solid $grey-1;
-    border-radius: 4px;
     box-sizing: border-box;
+    background: $white;
+
+    &::placeholder {
+      color: $grey-2;
+      font-size: 12px;
+      line-height: 8px;
+      font-weight: $normal-weight;
+    }
+
+    &:hover {
+      border-color: rgba($grey-2, .3);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: $black;
+      outline-color: $black;
+    }
   }
 
   .form_field_textarea {
