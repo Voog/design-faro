@@ -454,6 +454,14 @@ body {
   color: var(--primary-color);
 }
 
+.dark-background {
+  color: var(--darkmode-color);
+}
+
+.footer {
+  color: var(--primary-color);
+}
+
 .product-page .voog-bg-picker-btn {
   position: relative;
   margin-bottom: 12px;

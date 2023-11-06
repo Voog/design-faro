@@ -19,4 +19,13 @@
     "scope": "global"
   */
   #{--primary-color}: $black;
+
+  /* VoogStyle
+    "pathI18n": ["main_styles", "colors"],
+    "titleI18n": "darkmode_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--darkmode-color}: $white;
 }
