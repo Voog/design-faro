@@ -28,4 +28,14 @@
     "scope": "global"
   */
   #{--darkmode-color}: $white;
+
+  /* VoogStyle
+    "pathI18n": ["main_styles"],
+    "titleI18n": "font",
+    "editor": "listPicker",
+    "list": {{ base_font_set }},
+    "featured": true,
+    "scope": "global"
+  */
+  #{--font-family}: $primary-font;
 }

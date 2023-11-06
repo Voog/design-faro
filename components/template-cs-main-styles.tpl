@@ -15,4 +15,13 @@
     "scope": "global"
   */
   --darkmode-color: #FFFFFF;
+  /* VoogStyle
+    "pathI18n": ["main_styles"],
+    "titleI18n": "font",
+    "editor": "listPicker",
+    "list": {{ base_font_set }},
+    "featured": true,
+    "scope": "global"
+  */
+  --font-family: "PT Serif", serif;
 }
