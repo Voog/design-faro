@@ -40,7 +40,7 @@
 
 <html class="{% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
   <head prefix="og: http://ogp.me/ns#">
-    {%- include "html-head" -%}
+    {%- include "html-head" product_page: true -%}
     {%- include "template-styles" -%}
   </head>
 
@@ -79,9 +79,9 @@
         </div>
         <div class="product-information">
           <div class="content-formatted information-section">
-            <h3 class="product-name">
+            <h4 class="product-name">
               {% editable product.name %}
-            </h3>
+            </h4>
 
             {%- capture original_price -%}
               {% if product.price_min_with_tax != product.price_max_with_tax -%}

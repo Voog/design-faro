@@ -167,6 +167,13 @@
       "title": "template-cs-main-styles"
     },
     {
+      "title": "template-cs-product",
+      "layout_name": "template-cs-product",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-product.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/template-meta.tpl",

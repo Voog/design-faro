@@ -33,6 +33,9 @@
   {%- include "template-cs-main-styles" -%}
   {%- include "template-cs-headings" -%}
   {%- include "template-cs-content" -%}
+  {%- if product_page -%}
+    {%- include "template-cs-product" -%}
+  {%- endif -%}
   {%- include "template-cs-button" -%}
   {%- include "template-cs-header" -%}
   {%- include "template-cs-footer" -%}

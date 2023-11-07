@@ -298,7 +298,10 @@
     "titleI18n": "alignment",
     "editor": "listPicker",
     "list": {{ base_alignment_set }},
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-alignment"
+    ]
   */
   --heading-4-text-alignment: left;
   /* VoogStyle
@@ -309,7 +312,10 @@
     "max": 5,
     "step": 0.1,
     "unit": "",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-line-height"
+    ]
   */
   --heading-4-line-height: 1;
   /* VoogStyle
@@ -319,7 +325,10 @@
     "min": 8,
     "max": 100,
     "unit": "px",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-size"
+    ]
   */
   --heading-4-font-size: 24px;
   /* VoogStyle
@@ -332,7 +341,10 @@
       "off": "400"
     },
     "icon": "bold",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-font-weight"
+    ]
   */
   --heading-4-font-weight: 700;
   /* VoogStyle
@@ -345,7 +357,10 @@
       "off": "normal"
     },
     "icon": "italic",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-font-style"
+    ]
   */
   --heading-4-font-style: normal;
   /* VoogStyle
@@ -358,7 +373,10 @@
       "off": "none"
     },
     "icon": "underline",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-font-text-decoration"
+    ]
   */
   --heading-4-text-decoration: none;
   /* VoogStyle
@@ -371,7 +389,10 @@
       "off": "none"
     },
     "icon": "uppercase",
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-text-transform"
+    ]
   */
   --heading-4-text-transform: none;
   /* VoogStyle
@@ -380,7 +401,10 @@
     "type": "button",
     "editor": "colorPicker",
     "featured": true,
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-color"
+    ]
   */
   --heading-4-color: #000000;
   /* VoogStyle
@@ -388,7 +412,10 @@
     "titleI18n": "hyphens",
     "editor": "listPicker",
     "list": {{ base_hyphens_toggle_set }},
-    "scope": "global"
+    "scope": "global",
+    "boundVariables": [
+      "--product-title-hyphens"
+    ]
   */
   --heading-4-hyphens: none;
 }

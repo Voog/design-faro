@@ -19,7 +19,7 @@
   --primary-color: #000000;
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
-    "titleI18n": "darkmode_color",
+    "titleI18n": "for_dark_background",
     "editor": "colorPicker",
     "featured": true,
     "scope": "global"
