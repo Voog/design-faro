@@ -29,6 +29,12 @@
       </div>
     </main>
 
+    {% if editmode -%}
+      <script>
+        let blockData = {};
+      </script>
+    {% endif -%}
+
     {% include "footer" %}
 
     {% include "javascripts" %}

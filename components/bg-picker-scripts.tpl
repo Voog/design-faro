@@ -20,10 +20,6 @@
           );
         },
         commit: function(data) {
-          if (!blockData) {
-            var blockData = null;
-          }
-
           var commitData = site.bgPickerCommit({
             bgPicker,
             blockData,
