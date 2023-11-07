@@ -1,69 +1,72 @@
+// =============================================================================
+// TEMPLATE CUSTOM STYLES.
+// This file sets the configuration for design editor tool.
+//
+// This file will be converted to CSS, copied under "/components" and renamed to
+// "*.tpl".
+//
+// The output component can be included in any "layout" or "component".
+// =============================================================================
+
+@import '../../stylesheets/variables';
+
 :root {
+  // scss-lint:disable Comment, Indentation
+
   /* VoogStyle
-    "pathI18n": ["content", "text"],
+    "pathI18n": ["footer", "text"],
     "titleI18n": "line_height",
     "editor": "rangePicker",
     "min": 0,
     "max": 5,
     "step": 0.1,
     "unit": "",
-    "scope": "global",
-    "boundVariables": [
-      "--header-content-line-height",
-      "--footer-content-line-height"
-    ]
+    "scope": "global"
   */
-  --content-body-line-height: 1.7;
+  #{--footer-body-line-height}: 1.7;
+
   /* VoogStyle
-    "pathI18n": ["content", "text"],
+    "pathI18n": ["footer", "text"],
     "titleI18n": "size",
     "editor": "rangePicker",
     "min": 8,
     "max": 56,
     "unit": "px",
     "featured": true,
-    "scope": "global",
-    "boundVariables": [
-      "--header-content-font-size",
-      "--footer-content-font-size"
-    ]
+    "scope": "global"
   */
-  --content-body-font-size: 16px;
+  #{--footer-body-font-size}: 16px;
+
   /* VoogStyle
-    "pathI18n": ["content", "text"],
+    "pathI18n": ["footer", "text"],
     "titleI18n": "color",
     "editor": "colorPicker",
     "featured": true,
-    "scope": "global",
-    "boundVariables": [
-      "--header-content-color",
-      "--footer-content-color"
-    ]
+    "scope": "global"
   */
-  --content-body-color: #000000;
+  #{--footer-body-color}: $black;
+
   /* VoogStyle
-    "pathI18n": ["content", "text"],
+    "pathI18n": ["footer", "text"],
     "titleI18n": "hyphens",
     "editor": "listPicker",
     "list": {{ base_hyphens_toggle_set }},
-    "scope": "global",
-    "boundVariables": [
-      "--header-content-hyphens",
-      "--footer-content-hyphens"
-    ]
+    "scope": "global"
   */
-  --content-body-hyphens: none;
+  #{--footer-body-hyphens}: none;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "normal"],
+    "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "color",
     "type": "button",
     "editor": "colorPicker",
     "featured": true,
     "scope": "global"
   */
-  --content-link-color: #000000;
+  #{--footer-link-color}: $black;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "normal"],
+    "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "font_size",
     "type": "button",
     "editor": "toggleIcon",
@@ -74,12 +77,13 @@
     "icon": "bold",
     "scope": "global",
     "boundVariables": [
-      "--content-link-hover-font-weight"
+      "--footer-link-hover-font-weight"
     ]
   */
-  --content-link-font-weight: 400;
+  #{--footer-link-font-weight}: $normal-weight;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "normal"],
+    "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
@@ -90,12 +94,13 @@
     "icon": "italic",
     "scope": "global",
     "boundVariables": [
-      "--content-link-hover-font-style"
+      "--footer-link-hover-font-style"
     ]
   */
-  --content-link-font-style: normal;
+  #{--footer-link-font-style}: normal;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "normal"],
+    "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "text_decoration",
     "type": "button",
     "editor": "toggleIcon",
@@ -106,12 +111,13 @@
     "icon": "underline",
     "scope": "global",
     "boundVariables": [
-      "--content-link-hover-text-decoration"
+      "--footer-link-hover-text-decoration"
     ]
   */
-  --content-link-text-decoration: underline;
+  #{--footer-link-text-decoration}: underline;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "normal"],
+    "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
@@ -122,21 +128,23 @@
     "icon": "uppercase",
     "scope": "global",
     "boundVariables": [
-      "--content-link-hover-text-transform"
+      "--footer-link-hover-text-transform"
     ]
   */
-  --content-link-text-transform: none;
+  #{--footer-link-text-transform}: none;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "hover"],
+    "pathI18n": ["footer", "link", "hover"],
     "titleI18n": "color",
     "type": "button",
     "editor": "colorPicker",
     "featured": true,
     "scope": "global"
   */
-  --content-link-hover-color: rgba(0, 0, 0, 0.7);
+  #{--footer-link-hover-color}: rgba($black, .7);
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "hover"],
+    "pathI18n": ["footer", "link", "hover"],
     "titleI18n": "font_size",
     "type": "button",
     "editor": "toggleIcon",
@@ -147,9 +155,10 @@
     "icon": "bold",
     "scope": "global"
   */
-  --content-link-hover-font-weight: 400;
+  #{--footer-link-hover-font-weight}: $normal-weight;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "hover"],
+    "pathI18n": ["footer", "link", "hover"],
     "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
@@ -160,9 +169,10 @@
     "icon": "italic",
     "scope": "global"
   */
-  --content-link-hover-font-style: normal;
+  #{--footer-link-hover-font-style}: normal;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "hover"],
+    "pathI18n": ["footer", "link", "hover"],
     "titleI18n": "text_decoration",
     "type": "button",
     "editor": "toggleIcon",
@@ -173,9 +183,10 @@
     "icon": "underline",
     "scope": "global"
   */
-  --content-link-hover-text-decoration: none;
+  #{--footer-link-hover-text-decoration}: none;
+
   /* VoogStyle
-    "pathI18n": ["content", "link", "hover"],
+    "pathI18n": ["footer", "link", "hover"],
     "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
@@ -186,5 +197,7 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --content-link-hover-text-transform: none;
+  #{--footer-link-hover-text-transform}: none;
+
+  // scss-lint:enable Comment, Indentation
 }

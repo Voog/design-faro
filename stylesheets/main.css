@@ -707,8 +707,25 @@ h4 {
   color: var(--darkmode-color);
 }
 
-.footer {
-  color: var(--primary-color);
+.footer .content-formatted {
+  line-height: var(--footer-body-line-height);
+  font-size: var(--footer-body-font-size);
+  color: var(--footer-body-color);
+  hyphens: var(--footer-body-hyphens);
+}
+.footer .content-formatted a:not(.custom-btn) {
+  color: var(--footer-link-color);
+  font-weight: var(--footer-link-font-weight);
+  font-style: var(--footer-link-font-style);
+  text-decoration: var(--footer-link-text-decoration);
+  text-transform: var(--footer-link-text-transform);
+}
+.footer .content-formatted a:not(.custom-btn):hover {
+  color: var(--footer-link-hover-color);
+  font-weight: var(--footer-link-hover-font-weight);
+  font-style: var(--footer-link-hover-font-style);
+  text-decoration: var(--footer-link-hover-text-decoration);
+  text-transform: var(--footer-link-hover-text-transform);
 }
 
 @media screen and (max-width: 900px) {

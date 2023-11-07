@@ -11,7 +11,9 @@
       "--heading-3-color",
       "--heading-4-color",
       "--content-body-color",
-      "--content-link-color"
+      "--content-link-color",
+      "--footer-body-color",
+      "--footer-link-color"
     ]
   */
   --primary-color: #000000;
