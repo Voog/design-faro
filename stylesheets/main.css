@@ -1177,6 +1177,10 @@ h4 {
   content: "";
 }
 
+.menu-lang .menu-item {
+  cursor: default;
+}
+
 @media screen and (max-width: 900px) {
   .menu-lang .menu-item-children .menu-child {
     position: relative;

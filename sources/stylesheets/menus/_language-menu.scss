@@ -80,6 +80,10 @@ $flags:
   }
 }
 
+.menu-lang .menu-item {
+  cursor: default;
+}
+
 @media screen and (max-width: $mobile-width) {
   .menu-lang {
     .menu-item-children .menu-child {

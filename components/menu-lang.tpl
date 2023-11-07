@@ -6,13 +6,12 @@
   ">
     {% for language in site.languages -%}
       {% if language.code == page.language_code %}
-        <a
-          href="{{ language.url }}"
+        <span
           class="menu-item{% if language.selected? %} active{% endif %}"
           data-lang-code="{{ language.locale }}"
         >
           {{ language.title }}
-        </a>
+        </span>
       {% endif %}
     {% endfor %}
 
