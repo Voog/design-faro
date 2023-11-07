@@ -21,7 +21,6 @@
     "min": 8,
     "max": 56,
     "unit": "px",
-    "featured": true,
     "scope": "global",
     "boundVariables": [
       "--header-content-font-size",

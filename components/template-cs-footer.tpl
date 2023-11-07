@@ -17,7 +17,6 @@
     "min": 8,
     "max": 56,
     "unit": "px",
-    "featured": true,
     "scope": "global"
   */
   --footer-body-font-size: 16px;
