@@ -652,6 +652,19 @@ h4 {
 .content-formatted .edy-product-widget-item-price-original {
   opacity: 0.4;
 }
+.content-formatted .edy-buy-button-price-container {
+  color: var(--primary-color);
+}
+.content-formatted .edy-buy-button-price-container .edy-buy-button-price-original {
+  opacity: 0.4;
+}
+.dark-background .content-formatted .edy-buy-button-price-container {
+  color: var(--darkmode-color);
+}
+.dark-background .content-formatted .edy-buy-button-variants .form_field_label,
+.dark-background .content-formatted .edy-buy-button-variants .form_field_select {
+  color: var(--darkmode-color);
+}
 
 .header .menu-item a,
 .header .menu-child a,
@@ -742,7 +755,7 @@ h4 {
   text-transform: var(--footer-link-hover-text-transform);
 }
 
-.product-page .product-name {
+.product-page .product-page-content .product-name {
   text-align: var(--product-title-alignment);
   line-height: var(--product-title-line-height);
   font-size: var(--product-title-size);
@@ -753,14 +766,14 @@ h4 {
   color: var(--product-title-color);
   hyphens: var(--product-title-hyphens);
 }
-.product-page .product-price {
+.product-page .product-page-content .product-price {
   font-size: var(--product-price-size);
   font-weight: var(--product-price-font-weight);
   font-style: var(--product-price-font-style);
   text-decoration: var(--product-price-text-decoration);
   color: var(--product-price-color);
 }
-.product-page .product-description {
+.product-page .product-page-content .product-description {
   font-size: var(--product-description-font-size);
   font-weight: var(--product-description-font-weight);
   font-style: var(--product-description-font-style);
@@ -769,9 +782,9 @@ h4 {
   color: var(--product-description-color);
   hyphens: var(--product-description-hyphens);
 }
-.product-page.dark-background .product-name,
-.product-page.dark-background .product-price,
-.product-page.dark-background .product-description {
+.product-page.dark-background .product-page-content .product-name,
+.product-page.dark-background .product-page-content .product-price,
+.product-page.dark-background .product-page-content .product-description {
   color: var(--darkmode-color);
 }
 
@@ -1661,6 +1674,10 @@ h4 {
 }
 .content-formatted .edy-buy-button-variants .form_field .form_field_select {
   border: none;
+  background: none;
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_select:focus {
+  outline: none;
 }
 .content-formatted .edy-buy-button-align-center .form_field {
   grid-template-columns: repeat(4, 1fr);

@@ -215,6 +215,11 @@
 
       .form_field_select {
         border: none;
+        background: none;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
