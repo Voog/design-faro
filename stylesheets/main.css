@@ -952,6 +952,9 @@ h4 {
   margin: auto;
 }
 
+.front-page .voog-bg-picker-btn {
+  position: relative;
+}
 .front-page .front-page-wrapper {
   padding: 56px;
   max-width: 1440px;

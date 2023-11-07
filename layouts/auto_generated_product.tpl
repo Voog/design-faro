@@ -48,21 +48,21 @@
     {% include "header" %}
     <div class="body-bg-color js-background-color"></div>
 
-    <main class="product-page-content" role="main" data-search-indexing-allowed="true">
-      {%- if editmode -%}
-        <button
-          class="voog-bg-picker-btn bg-picker {{ product_body_bg_key }}-picker"
-          data-bg_key="{{ product_body_bg_key }}"
-          data-type_picture="false"
-          data-type_color="true"
-          data-color_elem=".body-bg-color"
-          data-picker_area_elem=".body-bg-picker-area"
-          data-picker_elem =".{{ product_body_bg_key }}-picker"
-          data-bg-color="{{ body_bg_color }}"
-          data-entity="productPage"
-        ></button>
-      {%- endif -%}
+    {%- if editmode -%}
+      <button
+        class="voog-bg-picker-btn bg-picker {{ product_body_bg_key }}-picker"
+        data-bg_key="{{ product_body_bg_key }}"
+        data-type_picture="false"
+        data-type_color="true"
+        data-color_elem=".body-bg-color"
+        data-picker_area_elem=".body-bg-picker-area"
+        data-picker_elem =".{{ product_body_bg_key }}-picker"
+        data-bg-color="{{ body_bg_color }}"
+        data-entity="productPage"
+      ></button>
+    {%- endif -%}
 
+    <main class="product-page-content" role="main" data-search-indexing-allowed="true">
       <div class="split-section">
         <div class="product-image-section">
           {%- if product.image != blank %}
