@@ -46,15 +46,6 @@
     clear: both;
   }
 
-  .form_field,
-  .edy-fe-label,
-  .form_error,
-  .form_notice {
-    font-size: 12px;
-    font-weight: $bold-weight;
-    line-height: 1;
-  }
-
   .form_field {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -95,7 +86,6 @@
   .form_field_file,
   .form_submit input {
     font-family: inherit;
-    font-size: 14px;
   }
 
   .form_field_textfield,
@@ -116,9 +106,6 @@
 
     &::placeholder {
       color: $grey-2;
-      font-size: 12px;
-      line-height: 8px;
-      font-weight: $normal-weight;
     }
 
     &:hover {

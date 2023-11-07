@@ -39,6 +39,7 @@
   {%- include "template-cs-button" -%}
   {%- include "template-cs-header" -%}
   {%- include "template-cs-footer" -%}
+  {%- include "template-cs-form" -%}
 {%- endcustomstyle -%}
 
 {%- comment -%}SITE TITLE{%- endcomment -%}

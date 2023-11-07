@@ -146,6 +146,13 @@
       "title": "template-cs-footer"
     },
     {
+      "title": "template-cs-form",
+      "layout_name": "template-cs-form",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-form.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/template-cs-header.tpl",
