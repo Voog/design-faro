@@ -221,6 +221,25 @@ body {
     }
   }
 
+  .menu-item,
+  .menu-child {
+    &.selected a {
+      font-weight: var(--header-menu-active-font-weight);
+      font-style: var(--header-menu-active-font-style);
+      text-decoration: var(--header-menu-active-text-decoration);
+      text-transform: var(--header-menu-active-text-transform);
+      color: var(--header-menu-active-color);
+
+      &:hover {
+        font-weight: var(--header-menu-hover-font-weight);
+        font-style: var(--header-menu-hover-font-style);
+        text-decoration: var(--header-menu-hover-text-decoration);
+        text-transform: var(--header-menu-hover-text-transform);
+        color: var(--header-menu-hover-color);
+      }
+    }
+  }
+
   .content-formatted {
     line-height: var(--header-content-line-height);
     font-size: var(--header-content-font-size);

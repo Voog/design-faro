@@ -6,10 +6,7 @@
   ">
     {% for language in site.languages -%}
       {% if language.code == page.language_code %}
-        <span
-          class="menu-item{% if language.selected? %} active{% endif %}"
-          data-lang-code="{{ language.locale }}"
-        >
+        <span class="menu-item" data-lang-code="{{ language.locale }}">
           {{ language.title }}
         </span>
       {% endif %}
