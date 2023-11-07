@@ -19,7 +19,7 @@
       <div class="menu-item-wrapper{% if item.children? %} has-children{% endif %}">
         {%- menulink item wrapper-tag="div" wrapper-class="menu-item" %}
 
-        {%- if item.children? %}
+        {%- if item.children? or editmode %}
           <div class="menu-item-children">
             {%- for child in item.visible_children %}
               {% menulink child wrapper-tag="div" wrapper-class="menu-child" %}
