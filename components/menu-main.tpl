@@ -1,4 +1,6 @@
-<div class="menu-children-close-icon"></div>
+<svg width="32" height="32" viewBox="0 0 32 32" class="menu-children-close-icon">
+  <use href="#ico-arrow-left"></use>
+</svg>
 
 <nav class="menu-main js-menu-main">
   <div class="mobile-menu-button">
@@ -35,7 +37,9 @@
               </div>
             {% endif %}
           </div>
-          <div class="menu-children-icon"></div>
+          <svg width="24" height="24" class="menu-children-icon">
+            <use href="#ico-arrow-left"></use>
+          </svg>
         {%- endif -%}
       </div>
     {%- endfor -%}

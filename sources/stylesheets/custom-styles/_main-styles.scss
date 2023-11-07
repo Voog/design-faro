@@ -25,6 +25,10 @@ body {
   }
 }
 
+.dark-background .edy-ecommerce-modal-title h1 {
+  color: revert;
+}
+
 .content-formatted {
   p {
     font-size: var(--content-body-font-size);
@@ -237,6 +241,10 @@ body {
         text-transform: var(--header-menu-hover-text-transform);
         color: var(--header-menu-hover-color);
       }
+
+      .dark-background & {
+        color: var(--darkmode-color);
+      }
     }
   }
 
@@ -249,6 +257,12 @@ body {
     .dark-background & {
       color: var(--darkmode-color);
     }
+  }
+}
+
+.search {
+  input {
+    font-family: var(--font-family);
   }
 }
 
@@ -286,5 +300,40 @@ body {
 
   h3 {
     font-size: calc(var(--heading-3-font-size) / 1.25);
+  }
+
+  .dark-background .header {
+    .mobile-menu-button .stripe {
+      background-color: var(--darkmode-color);
+    }
+
+    .header-right .cart-btn {
+      border-color: var(--darkmode-color);
+    }
+
+    .menu-main .menu .menu-children-icon,
+    .menu-children-close-icon {
+      use {
+        fill: var(--darkmode-color);
+      }
+    }
+  }
+
+  .search {
+    .dark-background & {
+      .search-form svg path {
+        fill: var(--darkmode-color);
+      }
+
+      .search-input {
+        color: var(--darkmode-color);
+      }
+
+      .voog-search-modal-results {
+        h3 a {
+          color: var(--darkmode-color);
+        }
+      }
+    }
   }
 }

@@ -62,6 +62,13 @@
       "title": "html-head"
     },
     {
+      "title": "ico-arrow-left",
+      "layout_name": "ico-arrow-left",
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-arrow-left.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/ico-cart.tpl",
@@ -74,6 +81,13 @@
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-search.tpl",
+      "layout_name": "ico-search",
+      "title": "ico-search"
     },
     {
       "content_type": "component",

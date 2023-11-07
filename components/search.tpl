@@ -2,6 +2,7 @@
   <div class="search-close js-search-modal-close-btn"></div>
   <div class="search-inner">
     <form id="search" class="search-form js-search-form" method="get">
+      {% include "ico-search" %}
       <div class="search-input-wrapper">
         <input
           id="onpage_search"

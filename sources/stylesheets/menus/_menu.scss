@@ -91,15 +91,16 @@
 
 @media screen and (max-width: $mobile-width) {
   .menu-children-close-icon {
-    background-image: url("../assets/arrow-left.svg");
     width: 32px;
     height: 32px;
     display: block;
-    background-size: contain;
     z-index: 2;
-    transform: rotate(180deg);
     opacity: 0;
     transition: opacity 1s ease-in-out;
+
+    path {
+      fill: $black;
+    }
 
     .menu-children-active & {
       opacity: 1;
@@ -163,12 +164,19 @@
         }
 
         .menu-children-icon {
-          background-image: url("../assets/arrow-left.svg");
           width: 24px;
           height: 24px;
           display: block;
-          background-size: contain;
           z-index: 1;
+          transform: rotate(180deg);
+
+          path {
+            fill: inherit;
+          }
+
+          use {
+            fill: $black;
+          }
         }
 
         .menu-item-children {

@@ -1,6 +1,7 @@
 {% include "cart-popover" %}
 
 <div class="header-wrapper js-header{% if fixed %} fixed{% endif %}">
+  {% include "ico-arrow-left" classname: "ico-hidden" %}
   <div class="header">
     {% include "menu-main" %}
 

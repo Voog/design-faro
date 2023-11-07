@@ -380,14 +380,12 @@ body.edy-checkout-button-visible {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 24px;
 }
-.search .search-form:before {
-  content: "";
-  background-image: url("../assets/ico-search.svg");
-  background-position: center;
-  background-repeat: no-repeat;
+.search .search-form svg {
   width: 24px;
   height: 24px;
-  display: block;
+}
+.search .search-form svg path {
+  fill: #000000;
 }
 .search .search-input {
   width: 100%;
@@ -516,6 +514,10 @@ h4 {
 }
 .dark-background h4 {
   color: var(--darkmode-color);
+}
+
+.dark-background .edy-ecommerce-modal-title h1 {
+  color: revert;
 }
 
 .content-formatted p {
@@ -697,6 +699,10 @@ h4 {
   text-transform: var(--header-menu-hover-text-transform);
   color: var(--header-menu-hover-color);
 }
+.dark-background .header .menu-item.selected a,
+.dark-background .header .menu-child.selected a {
+  color: var(--darkmode-color);
+}
 .header .content-formatted {
   line-height: var(--header-content-line-height);
   font-size: var(--header-content-font-size);
@@ -705,6 +711,10 @@ h4 {
 }
 .dark-background .header .content-formatted {
   color: var(--darkmode-color);
+}
+
+.search input {
+  font-family: var(--font-family);
 }
 
 .footer .content-formatted {
@@ -737,6 +747,25 @@ h4 {
   }
   h3 {
     font-size: calc(var(--heading-3-font-size) / 1.25);
+  }
+  .dark-background .header .mobile-menu-button .stripe {
+    background-color: var(--darkmode-color);
+  }
+  .dark-background .header .header-right .cart-btn {
+    border-color: var(--darkmode-color);
+  }
+  .dark-background .header .menu-main .menu .menu-children-icon use,
+  .dark-background .header .menu-children-close-icon use {
+    fill: var(--darkmode-color);
+  }
+  .dark-background .search .search-form svg path {
+    fill: var(--darkmode-color);
+  }
+  .dark-background .search .search-input {
+    color: var(--darkmode-color);
+  }
+  .dark-background .search .voog-search-modal-results h3 a {
+    color: var(--darkmode-color);
   }
 }
 .product-page .voog-bg-picker-btn {
@@ -1295,15 +1324,15 @@ h4 {
 }
 @media screen and (max-width: 900px) {
   .menu-children-close-icon {
-    background-image: url("../assets/arrow-left.svg");
     width: 32px;
     height: 32px;
     display: block;
-    background-size: contain;
     z-index: 2;
-    transform: rotate(180deg);
     opacity: 0;
     transition: opacity 1s ease-in-out;
+  }
+  .menu-children-close-icon path {
+    fill: #000000;
   }
   .menu-children-active .menu-children-close-icon {
     opacity: 1;
@@ -1357,12 +1386,17 @@ h4 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .menu-main .menu .menu-item-wrapper .menu-children-icon {
-    background-image: url("../assets/arrow-left.svg");
     width: 24px;
     height: 24px;
     display: block;
-    background-size: contain;
     z-index: 1;
+    transform: rotate(180deg);
+  }
+  .menu-main .menu .menu-item-wrapper .menu-children-icon path {
+    fill: inherit;
+  }
+  .menu-main .menu .menu-item-wrapper .menu-children-icon use {
+    fill: #000000;
   }
   .menu-main .menu .menu-item-wrapper .menu-item-children {
     display: block;
@@ -2074,4 +2108,8 @@ main {
   top: 0;
   left: 0;
   background-color: var(--body-bg-color);
+}
+
+.ico-hidden {
+  display: none;
 }

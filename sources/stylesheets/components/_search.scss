@@ -53,14 +53,13 @@
     border-bottom: 1px solid rgba($black, .1);
     padding-bottom: 24px;
 
-    &:before {
-      content: '';
-      background-image: url('../assets/ico-search.svg');
-      background-position: center;
-      background-repeat: no-repeat;
+    svg {
       width: 24px;
       height: 24px;
-      display: block;
+
+      path {
+        fill: $black;
+      }
     }
   }
 
