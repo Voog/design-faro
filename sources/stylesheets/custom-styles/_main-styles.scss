@@ -2,7 +2,8 @@ body {
   color: var(--primary-color);
   font-family: var(--font-family);
 
-  &.dark-background {
+  &.dark-background,
+  .dark-background {
     color: var(--darkmode-color);
   }
 }

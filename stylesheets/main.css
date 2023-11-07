@@ -452,7 +452,8 @@ body {
   color: var(--primary-color);
   font-family: var(--font-family);
 }
-body.dark-background {
+body.dark-background,
+body .dark-background {
   color: var(--darkmode-color);
 }
 
