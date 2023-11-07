@@ -162,6 +162,12 @@
 
     {% include "footer" %}
 
+    {% if editmode -%}
+      <script>
+        let blockData = {};
+      </script>
+    {% endif -%}
+
     {% include "javascripts" %}
   </body>
 </html>
