@@ -1349,7 +1349,11 @@ h4 {
 }
 
 @media screen and (max-width: 900px) {
-  .menu-lang .menu-item-children .menu-child {
+  .menu-main .menu .menu-lang .menu-item-wrapper .menu-item-children {
+    display: flex;
+    gap: 0;
+  }
+  .menu-main .menu .menu-lang .menu-item-wrapper .menu-item-children .menu-child {
     position: relative;
   }
 }

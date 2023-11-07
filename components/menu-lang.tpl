@@ -34,7 +34,9 @@
 
       </div>
 
-      <div class="menu-children-icon"></div>
+      <svg width="24" height="24" class="menu-children-icon">
+        <use href="#ico-arrow-left"></use>
+      </svg>
     {% endif %}
   </div>
 </div>

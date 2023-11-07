@@ -85,9 +85,14 @@ $flags:
 }
 
 @media screen and (max-width: $mobile-width) {
-  .menu-lang {
-    .menu-item-children .menu-child {
-      position: relative;
+  .menu-main .menu .menu-lang .menu-item-wrapper {
+    .menu-item-children {
+      display: flex;
+      gap: 0;
+
+      .menu-child {
+        position: relative;
+      }
     }
   }
 }
