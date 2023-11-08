@@ -990,7 +990,6 @@ h4 {
 }
 .front-page .split {
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
 }
 .front-page .split .hero {
   grid-column: 1/-1;
