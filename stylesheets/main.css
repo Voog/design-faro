@@ -117,7 +117,7 @@
   .block.split_staggered .wrapper .content-formatted:last-child {
     order: 1;
   }
-  .categories-wrapper {
+  .category-blocks .block-wrapper {
     grid-template-columns: 1fr;
   }
 }
