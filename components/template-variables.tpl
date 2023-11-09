@@ -110,6 +110,10 @@
             "value": "\"Arvo\", serif"
           },
           {
+            "title": "Bodoni Moda",
+            "value": "\"Bodoni Moda\", serif"
+          },
+          {
             "title": "Crimson Text",
             "value": "\"Crimson Text\", serif"
           },

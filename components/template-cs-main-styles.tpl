@@ -33,5 +33,5 @@
     "featured": true,
     "scope": "global"
   */
-  --font-family: "PT Serif", serif;
+  --font-family: "Bodoni Moda", serif;
 }

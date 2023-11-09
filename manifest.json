@@ -307,6 +307,30 @@
       "filename": "arvo-v20-latin-regular.woff"
     },
     {
+      "content_type": "application/font-woff",
+      "file": "assets/bodoni-moda-v23-latin_latin-ext-700.woff",
+      "kind": "assets",
+      "filename": "bodoni-moda-v23-latin_latin-ext-700.woff"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/bodoni-moda-v23-latin_latin-ext-700italic.woff",
+      "kind": "assets",
+      "filename": "bodoni-moda-v23-latin_latin-ext-700italic.woff"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/bodoni-moda-v23-latin_latin-ext-italic.woff",
+      "kind": "assets",
+      "filename": "bodoni-moda-v23-latin_latin-ext-italic.woff"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/bodoni-moda-v23-latin_latin-ext-regular.woff",
+      "kind": "assets",
+      "filename": "bodoni-moda-v23-latin_latin-ext-regular.woff"
+    },
+    {
       "content_type": "image/svg+xml",
       "file": "assets/chevron-up.svg",
       "kind": "assets",

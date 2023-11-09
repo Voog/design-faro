@@ -1860,6 +1860,28 @@ h4 {
   font-style: italic;
 }
 @font-face {
+  font-family: "Bodoni Moda";
+  src: url("../assets/bodoni-moda-v23-latin_latin-ext-regular.woff") format("woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("../assets/bodoni-moda-v23-latin_latin-ext-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("../assets/bodoni-moda-v23-latin_latin-ext-700.woff") format("woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("../assets/bodoni-moda-v23-latin_latin-ext-700italic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
   font-family: "Cousine";
   src: url("../assets/cousine-v25-vietnamese_latin-ext_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff") format("woff");
   font-weight: normal;
