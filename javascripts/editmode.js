@@ -288,11 +288,10 @@
 
     const bindBlockReorder = ({bodyBlocks, dataKey}) => {
       $('.js-move-button').on('click', e => {
-        const targetBtn = e.target.parentElement;
-        const $htmlBlocks = $(`.${targetBtn.dataset.wrapperClass}`);
+        const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
 
-        const buttonKey = targetBtn.dataset.key;
-        const buttonDirection = targetBtn.dataset.direction;
+        const buttonKey = e.target.dataset.key;
+        const buttonDirection = e.target.dataset.direction;
 
         const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
         const $currentBlockHtml = $htmlBlocks.filter(`[data-block-key="${buttonKey}"]`);
@@ -359,15 +358,14 @@
 
     const bindBlockDelete = ({bodyBlocks, dataKey}) => {
       $('.js-delete-button').on('click', e => {
-        const targetBtn = e.target.parentElement;
-        const buttonKey = targetBtn.dataset.key;
+        const buttonKey = e.target.dataset.key;
         const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
         const currentIndex = bodyBlocks.indexOf(currentBlock);
 
         bodyBlocks.splice(currentIndex, 1);
         pageData.set(dataKey, bodyBlocks, {
           success: () => {
-            $(`.${targetBtn.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
+            $(`.${e.target.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
           },
         });
       });
