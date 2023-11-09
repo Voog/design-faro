@@ -42,6 +42,7 @@
   <head prefix="og: http://ogp.me/ns#">
     {%- include "html-head" product_page: true -%}
     {%- include "template-styles" -%}
+    {%- sd_product -%}
   </head>
 
   <body class="product-page bg-picker-area body-bg-picker-area js-background-type {{ body_bg_type }}">
