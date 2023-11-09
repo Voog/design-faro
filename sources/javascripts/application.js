@@ -25,13 +25,13 @@
         if ($(window).width() <= 900) {
           $('.js-menu-main').addClass('search-modal-active');
         }
-      })
+      });
 
       $(searchForm).on('sitesearch:hidemodal', () => {
         if ($(window).width() <= 900) {
           $('.js-menu-main').removeClass('search-modal-active');
         }
-      })
+      });
     }
   };
 
@@ -250,7 +250,7 @@
     const $search = $('.search');
 
     if ($(window).width() > 900) {
-      $('.header-right').prepend($search)
+      $('.header-right').prepend($search);
     } else {
       $('.menu').prepend($search);
     }
@@ -270,16 +270,14 @@
       }
     });
 
-    $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(
-      e => {
-        $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
-        $(e.target.parentElement).find('.menu-item-children').addClass('active');
-        $('.js-header').addClass('menu-children-active');
+    $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(e => {
+      $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
+      $(e.target.parentElement).find('.menu-item-children').addClass('active');
+      $('.js-header').addClass('menu-children-active');
 
-        // Scroll menu to top when opening menu children
-        $('.js-menu-main .menu').scrollTop(0);
-      }
-    );
+      // Scroll menu to top when opening menu children
+      $('.js-menu-main .menu').scrollTop(0);
+    });
 
     $('.menu-lang .menu-children-icon').click(() => {
       $('.header-right').addClass('active');
@@ -332,7 +330,7 @@
           prevWindowWidth = newWindowWidth;
         }
       }, 250)
-    )
+    );
   };
 
   const init = () => {
@@ -347,7 +345,7 @@
       if (window.VoogEcommerce) {
         $('.cart-btn').css('display', 'block');
       }
-    })
+    });
   };
 
   window.site = $.extend(window.site || {}, {

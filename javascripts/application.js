@@ -815,16 +815,14 @@
         }
       });
 
-      $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(
-        e => {
-          $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
-          $(e.target.parentElement).find('.menu-item-children').addClass('active');
-          $('.js-header').addClass('menu-children-active');
+      $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(e => {
+        $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
+        $(e.target.parentElement).find('.menu-item-children').addClass('active');
+        $('.js-header').addClass('menu-children-active');
 
-          // Scroll menu to top when opening menu children
-          $('.js-menu-main .menu').scrollTop(0);
-        }
-      );
+        // Scroll menu to top when opening menu children
+        $('.js-menu-main .menu').scrollTop(0);
+      });
 
       $('.menu-lang .menu-children-icon').click(() => {
         $('.header-right').addClass('active');
