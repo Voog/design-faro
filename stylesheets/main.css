@@ -12,8 +12,8 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.block-wrapper:hover .block-edit-buttons,
-.category-blocks:hover .block-edit-buttons {
+.block-wrapper:hover > .block-edit-buttons,
+.category-blocks:hover > .block-edit-buttons {
   opacity: 0.5;
   background-color: #F7F7F2;
 }

@@ -11,11 +11,9 @@
     transition: opacity .3s ease-in-out;
   }
 
-  &:hover {
-    .block-edit-buttons {
-      opacity: .5;
-      background-color: $grey-1;
-    }
+  &:hover > .block-edit-buttons {
+    opacity: .5;
+    background-color: $grey-1;
   }
 }
 
