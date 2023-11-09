@@ -888,7 +888,7 @@
 
       $(window).ready(() => {
         if (window.VoogEcommerce) {
-          $('.cart-btn').css('display', 'block');
+          $('.cart-btn').css('display', 'flex');
         }
       });
     };
