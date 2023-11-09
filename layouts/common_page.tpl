@@ -40,18 +40,18 @@
           wrapper_class: "js-blocks-wrapper"
         %}
       {% endfor %}
-
-      {% if editmode %}
-        <div class="add-block-wrapper">
-          <button
-            class="add-block-button js-add-block"
-            data-block-layout="{{ template_settings.default_block_layouts.common_page }}"
-          >
-            +
-          </button>
-        </div>
-      {% endif %}
     </main>
+
+    {% if editmode %}
+      <div class="add-block-wrapper">
+        <button
+          class="add-block-button js-add-block"
+          data-block-layout="{{ template_settings.default_block_layouts.common_page }}"
+        >
+          +
+        </button>
+      </div>
+    {% endif %}
 
     {% include "footer" %}
 

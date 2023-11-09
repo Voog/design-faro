@@ -18,6 +18,13 @@
   background-color: #F7F7F2;
 }
 
+.block-wrapper:first-child .block-edit-buttons .up-button {
+  display: none;
+}
+.block-wrapper:last-child .block-edit-buttons .down-button {
+  display: none;
+}
+
 .category-blocks .block-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
