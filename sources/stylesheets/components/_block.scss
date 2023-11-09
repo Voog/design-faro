@@ -136,6 +136,18 @@
   }
 }
 
+.move-button {
+  background-image: url('../assets/chevron-up.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.delete-button {
+  background-image: url('../assets/trash.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .up-button {
   position: absolute;
   top: 24px;

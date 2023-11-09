@@ -78,13 +78,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/ico-chevron.tpl",
-      "layout_name": "ico-chevron",
-      "title": "ico-chevron"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"
@@ -95,13 +88,6 @@
       "file": "components/ico-search.tpl",
       "layout_name": "ico-search",
       "title": "ico-search"
-    },
-    {
-      "title": "ico-trash",
-      "layout_name": "ico-trash",
-      "content_type": "component",
-      "component": true,
-      "file": "components/ico-trash.tpl"
     },
     {
       "content_type": "component",

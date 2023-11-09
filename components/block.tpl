@@ -7,21 +7,13 @@
     data-key="{{ id }}"
     data-direction="up"
     data-wrapper-class="{{ wrapper_class }}"
-  >
-    <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
-      <use href="#ico-chevron"></use>
-    </svg>
-  </button>
+  ></button>
   <button
     class="move-button down-button js-move-button"
     data-key="{{ id }}"
     data-direction="down"
     data-wrapper-class="{{ wrapper_class }}"
-  >
-    <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
-      <use href="#ico-chevron"></use>
-    </svg>
-  </button>
+  ></button>
 {%- endcapture -%}
 
 {%- capture delete_button -%}
@@ -29,11 +21,7 @@
     class="delete-button js-delete-button"
     data-key="{{ id }}"
     data-wrapper-class="{{ wrapper_class }}"
-  >
-    <svg width="40" height="40" viewBox="0 0 40 40">
-      <use href="#ico-trash"></use>
-    </svg>
-  </button>
+  ></button>
 {%- endcapture -%}
 
 {%- capture change_layout_options -%}
