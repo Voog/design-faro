@@ -15,35 +15,35 @@
       {%- include "ico-trash" classname: "ico-hidden" -%}
       {% assign allowed_layouts = template_settings.categories_page_block_layouts | map: "key" %}
 
-      {% for block_data in body_blocks %}
-        {% assign layout =
-          block_data.layout
-          | default: template_settings.default_block_layouts.categories_page
-        %}
-
-        {% assign allowed_layout =
-          template_settings.categories_page_block_layouts
-          | where: "key", layout
-        %}
-
-        {% if allowed_layout.size == 0 %}
-          {% assign layout_name = template_settings.default_block_layouts.categories_page %}
-        {% else %}
-          {% assign layout_name = layout %}
-        {% endif %}
-
-        {% assign layout_data = allowed_layout.first.value %}
-
-        <div class="category-blocks">
-          {% include "block",
-            block_data: block_data,
-            layout_name: layout_name,
-            layout_data: layout_data,
-            content_class: "js-category-section",
-            wrapper_class: "js-categories-wrapper"
+      <div class="category-blocks">
+        {% for block_data in body_blocks %}
+          {% assign layout =
+            block_data.layout
+            | default: template_settings.default_block_layouts.categories_page
           %}
-        </div>
-      {% endfor %}
+
+          {% assign allowed_layout =
+            template_settings.categories_page_block_layouts
+            | where: "key", layout
+          %}
+
+          {% if allowed_layout.size == 0 %}
+            {% assign layout_name = template_settings.default_block_layouts.categories_page %}
+          {% else %}
+            {% assign layout_name = layout %}
+          {% endif %}
+
+          {% assign layout_data = allowed_layout.first.value %}
+
+            {% include "block",
+              block_data: block_data,
+              layout_name: layout_name,
+              layout_data: layout_data,
+              content_class: "js-category-section",
+              wrapper_class: "js-categories-wrapper"
+            %}
+        {% endfor %}
+      </div>
 
       {% if editmode %}
         {% for layout in allowed_layouts %}
