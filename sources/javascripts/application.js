@@ -342,6 +342,12 @@
     buildCustomShoppingCartIcon();
     bindMobileMenuBtnClick();
     bindSearchBtnClick();
+
+    $(window).ready(() => {
+      if (window.VoogEcommerce) {
+        $('.cart-btn').css('display', 'block');
+      }
+    })
   };
 
   window.site = $.extend(window.site || {}, {

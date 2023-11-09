@@ -361,6 +361,7 @@ body.edy-checkout-button-visible {
 }
 .header-wrapper .header-right .cart-btn {
   cursor: not-allowed;
+  display: none;
 }
 .header-wrapper .header-right .cart-btn.active {
   cursor: pointer;

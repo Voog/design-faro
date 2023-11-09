@@ -51,6 +51,7 @@
 
     .cart-btn {
       cursor: not-allowed;
+      display: none;
 
       &.active {
         cursor: pointer;
