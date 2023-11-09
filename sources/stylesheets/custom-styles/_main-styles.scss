@@ -31,15 +31,13 @@ body {
 }
 
 .content-formatted {
-  p {
-    font-size: var(--content-body-font-size);
-    color: var(--content-body-color);
-    line-height: var(--content-body-line-height);
-    hyphens: var(--content-body-hyphens);
+  font-size: var(--content-body-font-size);
+  color: var(--content-body-color);
+  line-height: var(--content-body-line-height);
+  hyphens: var(--content-body-hyphens);
 
-    .dark-background & {
-      color: var(--darkmode-color);
-    }
+  .dark-background & {
+    color: var(--darkmode-color);
   }
 
   a:not(.custom-btn) {
