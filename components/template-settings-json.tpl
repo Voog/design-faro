@@ -68,7 +68,16 @@
   "front_page_layouts": [
     "split",
     "column",
-    "column-split"
+    "column_split"
   ],
+  "humanized_layout_names": {
+    "split": "Split",
+    "column": "Column",
+    "column_split": "Column Split",
+    "split_40_60": "Dominant right",
+    "split_60_40": "Dominant left",
+    "split_staggered": "Staggered",
+    "split_50_50_full": "Full width"
+  },
   "version": "faro-1.0.0"
 }

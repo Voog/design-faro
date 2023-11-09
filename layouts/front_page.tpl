@@ -28,26 +28,23 @@ Layout is applied by assigning according classname to "front-page-container" ele
 
     <div class="front-page-wrapper">
       <main class="front-page-content {{ front_page_layout }}" role="main" data-search-indexing-allowed="true">
-        {%- if editmode -%}
-          {% comment %}
-          TODO: Figure out editmode design
-          {% endcomment %}
 
-          <div class="change-layout-buttons">
-            Current layout: {{ front_page_layout }}<br>
-            Change layout <br>
-            {% for layout in template_settings.front_page_layouts %}
-              {% unless layout == front_page_layout %}
-                <button
+        {%- if editmode -%}
+          <div class="change-layout-options">
+            <select class="js-change-layout-select">
+              {% for layout in template_settings.front_page_layouts %}
+                <option
                   class="js-change-layout-button"
-                  data-key="{{ layout }}"
+                  value="{{ layout }}"
+                  {% if layout == front_page_layout %}selected="selected"{% endif %}
                 >
-                  {{ layout }}
-                </button>
-              {% endunless %}
-            {% endfor %}
+                  {{ template_settings.humanized_layout_names[layout] }}
+                </option>
+              {% endfor %}
+            </select>
           </div>
         {%- endif -%}
+
         <div class="hero">
           <div class="content-formatted">
             {% content %}

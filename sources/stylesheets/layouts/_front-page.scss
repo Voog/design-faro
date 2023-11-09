@@ -32,7 +32,7 @@
   }
 
   .split,
-  .column-split {
+  .column_split {
     .hero {
       width: 50%;
     }
@@ -70,7 +70,7 @@
     }
   }
 
-  .column-split {
+  .column_split {
     .split-section {
       flex-direction: column;
 
@@ -83,10 +83,9 @@
     }
   }
 
-  .change-layout-buttons {
+  .change-layout-options {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: -32px;
   }
 }
 
@@ -105,14 +104,14 @@
       }
     }
 
-    .column-split {
+    .column_split {
       .split-section .section {
         grid-template-columns: 1fr;
       }
     }
 
     .split,
-    .column-split {
+    .column_split {
       .hero {
         width: 100%;
       }
@@ -129,6 +128,10 @@
     .image-section {
       order: 1;
       margin: -24px;
+    }
+
+    .change-layout-options {
+      top: -64px;
     }
   }
 }

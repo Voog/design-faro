@@ -62,11 +62,11 @@
       "title": "html-head"
     },
     {
-      "title": "ico-arrow-left",
-      "layout_name": "ico-arrow-left",
       "content_type": "component",
       "component": true,
-      "file": "components/ico-arrow-left.tpl"
+      "file": "components/ico-arrow-left.tpl",
+      "layout_name": "ico-arrow-left",
+      "title": "ico-arrow-left"
     },
     {
       "content_type": "component",
@@ -74,6 +74,13 @@
       "file": "components/ico-cart.tpl",
       "layout_name": "ico-cart",
       "title": "ico-cart"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-chevron.tpl",
+      "layout_name": "ico-chevron",
+      "title": "ico-chevron"
     },
     {
       "content_type": "component",
@@ -88,6 +95,13 @@
       "file": "components/ico-search.tpl",
       "layout_name": "ico-search",
       "title": "ico-search"
+    },
+    {
+      "title": "ico-trash",
+      "layout_name": "ico-trash",
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-trash.tpl"
     },
     {
       "content_type": "component",
@@ -146,11 +160,11 @@
       "title": "template-cs-footer"
     },
     {
-      "title": "template-cs-form",
-      "layout_name": "template-cs-form",
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-form.tpl"
+      "file": "components/template-cs-form.tpl",
+      "layout_name": "template-cs-form",
+      "title": "template-cs-form"
     },
     {
       "content_type": "component",
@@ -174,11 +188,11 @@
       "title": "template-cs-main-styles"
     },
     {
-      "title": "template-cs-product",
-      "layout_name": "template-cs-product",
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-product.tpl"
+      "file": "components/template-cs-product.tpl",
+      "layout_name": "template-cs-product",
+      "title": "template-cs-product"
     },
     {
       "content_type": "component",
@@ -305,6 +319,12 @@
       "file": "assets/arvo-v20-latin-regular.woff",
       "kind": "assets",
       "filename": "arvo-v20-latin-regular.woff"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-up.svg",
+      "kind": "assets",
+      "filename": "chevron-up.svg"
     },
     {
       "content_type": "application/font-woff",
@@ -731,6 +751,12 @@
       "file": "assets/source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff",
       "kind": "assets",
       "filename": "source-sans-pro-v21-vietnamese_latin-ext_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/trash.svg",
+      "kind": "assets",
+      "filename": "trash.svg"
     },
     {
       "content_type": "application/font-woff",

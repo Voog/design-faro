@@ -11,6 +11,8 @@
     {% include "header" %}
 
     <main class="categories-page-content" role="main" data-search-indexing-allowed="true">
+      {%- include "ico-chevron" classname: "ico-hidden" -%}
+      {%- include "ico-trash" classname: "ico-hidden" -%}
       {% assign allowed_layouts = template_settings.categories_page_block_layouts | map: "key" %}
 
       {% for block_data in body_blocks %}

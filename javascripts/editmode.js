@@ -288,10 +288,11 @@
 
     const bindBlockReorder = ({bodyBlocks, dataKey}) => {
       $('.js-move-button').on('click', e => {
-        const $htmlBlocks = $(`.${e.target.dataset.wrapperClass}`);
+        const targetBtn = e.target.parentElement;
+        const $htmlBlocks = $(`.${targetBtn.dataset.wrapperClass}`);
 
-        const buttonKey = e.target.dataset.key;
-        const buttonDirection = e.target.dataset.direction;
+        const buttonKey = targetBtn.dataset.key;
+        const buttonDirection = targetBtn.dataset.direction;
 
         const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
         const $currentBlockHtml = $htmlBlocks.filter(`[data-block-key="${buttonKey}"]`);
@@ -358,24 +359,25 @@
 
     const bindBlockDelete = ({bodyBlocks, dataKey}) => {
       $('.js-delete-button').on('click', e => {
-        const buttonKey = e.target.dataset.key;
+        const targetBtn = e.target.parentElement;
+        const buttonKey = targetBtn.dataset.key;
         const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
         const currentIndex = bodyBlocks.indexOf(currentBlock);
 
         bodyBlocks.splice(currentIndex, 1);
         pageData.set(dataKey, bodyBlocks, {
           success: () => {
-            $(`.${e.target.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
+            $(`.${targetBtn.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
           },
         });
       });
     };
 
     const bindFrontPageLayoutChange = ({currentData, key}) => {
-      $('.js-change-layout-button').on('click', e => {
-        const buttonKey = e.target.dataset.key;
+      $('.js-change-layout-select').on('change', e => {
+        const newLayout = e.target.value;
 
-        currentData.layout = buttonKey;
+        currentData.layout = newLayout;
 
         pageData.set(key, currentData, {
           success: () => {
@@ -386,10 +388,11 @@
     };
 
     const bindBlockLayoutChange = ({bodyBlocks, dataKey}) => {
-      $('.js-change-layout-button').on('click', e => {
-        const buttonKey = e.target.dataset.key;
-        const newLayout = e.target.dataset.layout;
-        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+      $('.js-change-layout-select').on('change', e => {
+        const targetKey = $(e.target).find(':selected').data('key');
+        const newLayout = e.target.value;
+
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(targetKey));
 
         currentBlock.layout = newLayout;
 

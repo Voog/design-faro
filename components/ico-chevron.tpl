@@ -1,0 +1,3 @@
+<svg{% if classname %} class="{{ classname }}"{% endif %} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="ico-chevron" d="M2.66406 10.6673L7.9974 5.33398L13.3307 10.6673" stroke="black" stroke-width="1.5" stroke-miterlimit="10"/>
+</svg>

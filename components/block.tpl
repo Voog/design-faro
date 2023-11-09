@@ -1,29 +1,27 @@
 {% assign id = block_data.key %}
 {% assign content_area_count = layout_data.content_areas | default: 1 %}
 
-{% comment %}
-TODO: Figure out editmode design
-{% endcomment %}
-
 {%- capture move_buttons -%}
-  <div class="move-buttons">
-    <button
-      class="move-button js-move-button"
-      data-key="{{ id }}"
-      data-direction="up"
-      data-wrapper-class="{{ wrapper_class }}"
-    >
-      Up
-    </button>
-    <button
-      class="move-button js-move-button"
-      data-key="{{ id }}"
-      data-direction="down"
-      data-wrapper-class="{{ wrapper_class }}"
-    >
-      Down
-    </button>
-  </div>
+  <button
+    class="move-button up-button js-move-button"
+    data-key="{{ id }}"
+    data-direction="up"
+    data-wrapper-class="{{ wrapper_class }}"
+  >
+    <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+      <use href="#ico-chevron"></use>
+    </svg>
+  </button>
+  <button
+    class="move-button down-button js-move-button"
+    data-key="{{ id }}"
+    data-direction="down"
+    data-wrapper-class="{{ wrapper_class }}"
+  >
+    <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+      <use href="#ico-chevron"></use>
+    </svg>
+  </button>
 {%- endcapture -%}
 
 {%- capture delete_button -%}
@@ -32,26 +30,29 @@ TODO: Figure out editmode design
     data-key="{{ id }}"
     data-wrapper-class="{{ wrapper_class }}"
   >
-    Delete
+    <svg width="40" height="40" viewBox="0 0 40 40">
+      <use href="#ico-trash"></use>
+    </svg>
   </button>
 {%- endcapture -%}
 
-{%- capture change_layout_buttons -%}
-  <div>
-    Current layout: {{ layout_name }}<br>
-    Change layout <br>
-    {% for layout in allowed_layouts %}
-      {% unless layout == layout_name %}
-        <button
-          class="js-change-layout-button"
-          data-key="{{ id }}"
-          data-layout="{{ layout }}"
-        >
-          {{ layout }}
-        </button>
-      {% endunless %}
-    {% endfor %}
-  </div>
+{%- capture change_layout_options -%}
+  {%- if allowed_layouts.size > 1 -%}
+    <div class="change-layout-options">
+      <select class="js-change-layout-select">
+        {% for layout in allowed_layouts %}
+          <option
+            class="js-change-layout-button"
+            data-key="{{ id }}"
+            value="{{ layout }}"
+            {% if layout == layout_name %}selected="selected"{% endif %}
+          >
+            {{ template_settings.humanized_layout_names[layout] }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  {%- endif -%}
 {%- endcapture -%}
 
 <div
@@ -62,7 +63,7 @@ TODO: Figure out editmode design
     <div class="block-edit-buttons">
       {{ move_buttons }}
       {{ delete_button }}
-      {{ change_layout_buttons }}
+      {{ change_layout_options }}
     </div>
   {% endif %}
 
