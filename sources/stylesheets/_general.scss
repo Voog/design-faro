@@ -24,3 +24,25 @@ main {
 .ico-hidden {
   display: none;
 }
+
+.add-block-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.add-block-button {
+  width: 56px;
+  height: 56px;
+  background: $grey-2;
+  border: none;
+  color: $white;
+  font-size: 48px;
+  cursor: pointer;
+  margin: 12px 0;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+
+  &:hover {
+    opacity: .7;;
+  }
+}

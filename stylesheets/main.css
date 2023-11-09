@@ -24,8 +24,8 @@
 }
 
 .block {
-  min-height: 100vh;
-  padding: 32px;
+  min-height: calc(100vh - 128px);
+  padding: 64px;
   position: relative;
 }
 .block .voog-bg-picker-btn {
@@ -156,15 +156,20 @@
 @media screen and (max-width: 640px) {
   .block {
     padding: 24px;
+    min-height: calc(100vh - 48px);
   }
   .block.split_40_60 .wrapper, .block.split_staggered .wrapper, .block.split_60_40 .wrapper {
     grid-template-columns: 1fr;
+  }
+  .block.split_staggered .wrapper {
+    flex: unset;
   }
   .block.split_staggered .wrapper .content-formatted:first-child {
     order: 2;
   }
   .block.split_staggered .wrapper .content-formatted:last-child {
     order: 1;
+    height: unset;
   }
   .category-blocks .block-wrapper {
     grid-template-columns: 1fr;
@@ -2263,4 +2268,25 @@ main {
 
 .ico-hidden {
   display: none;
+}
+
+.add-block-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.add-block-button {
+  width: 56px;
+  height: 56px;
+  background: #888888;
+  border: none;
+  color: #FFFFFF;
+  font-size: 48px;
+  cursor: pointer;
+  margin: 12px 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.add-block-button:hover {
+  opacity: 0.7;
 }

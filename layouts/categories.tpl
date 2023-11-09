@@ -46,11 +46,14 @@
       </div>
 
       {% if editmode %}
-        {% for layout in allowed_layouts %}
-          <button class="add-block js-add-block" data-block-layout="{{ layout }}">
-            {{ layout }}
+        <div class="add-block-wrapper">
+          <button
+            class="add-block-button js-add-block"
+            data-block-layout="{{ template_settings.default_block_layouts.categories_page }}"
+          >
+            +
           </button>
-        {% endfor %}
+        </div>
       {% endif %}
     </main>
 

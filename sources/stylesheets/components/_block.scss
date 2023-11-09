@@ -25,8 +25,8 @@
 }
 
 .block {
-  min-height: 100vh;
-  padding: 32px;
+  min-height: calc(100vh - 128px);
+  padding: 64px;
   position: relative;
 
   .voog-bg-picker-btn {
@@ -175,6 +175,7 @@
 @media screen and (max-width: $mobile-width-small) {
   .block {
     padding: 24px;
+    min-height: calc(100vh - 48px);
 
     &.split_40_60,
     &.split_staggered,
@@ -186,12 +187,15 @@
 
     &.split_staggered {
       .wrapper {
+        flex: unset;
+
         .content-formatted:first-child {
           order: 2;
         }
 
         .content-formatted:last-child {
           order: 1;
+          height: unset;
         }
       }
     }
