@@ -1,8 +1,15 @@
 {% assign bg_color = background.color %}
 {% assign bg_image = background.image %}
+{% assign bg_image_sizes = background.imageSizes %}
 
 {%- if bg_color == blank -%}
   {%- assign bg_color = "none" -%}
+{%- endif -%}
+
+{%- if bg_image_sizes == nil -%}
+  {%- assign bg_image_sizes_str = "" -%}
+{%- else -%}
+  {%- assign bg_image_sizes_str = bg_image_sizes | json -%}
 {%- endif -%}
 
 {% assign bg_color_data = background.colorData %}
@@ -74,6 +81,8 @@
       data-picker_area_elem=".{{ background_key }}-picker-area"
       data-picker_elem =".{{ background_key }}-picker"
       data-bg-color="{{ bg_color }}"
+      data-bg-image="{{ bg_image }}"
+      data-bg-image-sizes="{{ bg_image_sizes_str | escape }}"
       data-variable_name="{{ background_key }}-bg-color"
     ></button>
   {%- endif -%}
