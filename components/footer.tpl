@@ -1,4 +1,4 @@
-<div class="footer">
+<footer class="footer">
   <div class="footer-content">
     <div class="content-formatted">
       {% xcontent name="footer-col-1" %}
@@ -13,4 +13,4 @@
       {% xcontent name="footer-col-4" %}
     </div>
   </div>
-</div>
+</footer>
