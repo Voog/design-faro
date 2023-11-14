@@ -1,8 +1,8 @@
 {% include "cart-popover" %}
 
-<div class="header-wrapper js-header{% if fixed %} fixed{% endif %}">
+<header class="header js-header{% if fixed %} fixed{% endif %}">
   {% include "ico-arrow-left" classname: "ico-hidden" %}
-  <div class="header">
+  <div class="wrapper">
     {% include "menu-main" %}
 
     <div class="header-content content-formatted">
@@ -30,4 +30,4 @@
       </span>
     </div>
   </div>
-</div>
+</header>

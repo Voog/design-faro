@@ -212,7 +212,7 @@
   };
 
   const handleHeaderContent = callback => {
-    const $header = $('.js-header .header');
+    const $header = $('.js-header .wrapper');
     const $headerRight = $header.find('.header-right');
     const $menuMain = $header.find('.js-menu-main .menu');
 

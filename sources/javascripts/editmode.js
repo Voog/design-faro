@@ -203,16 +203,6 @@
     return color;
   };
 
-  var bgPickerColorScheme = function (lightness) {
-    if (typeof lightness != 'undefined') {
-      if (lightness > 0.6) {
-        $('.header-wrapper').addClass('light').removeClass('dark');
-      } else {
-        $('.header-wrapper').addClass('dark').removeClass('light');
-      }
-    }
-  };
-
   //==========================================================================
   // Sets site custom data saving fanction variable.
   //==========================================================================
@@ -418,7 +408,6 @@
   window.site = $.extend(window.site || {}, {
     bgPickerPreview: bgPickerPreview,
     bgPickerCommit: bgPickerCommit,
-    bgPickerColorScheme: bgPickerColorScheme,
     bindBlockActions: bindBlockActions,
     bindFrontPageLayoutChange: bindFrontPageLayoutChange,
   });
