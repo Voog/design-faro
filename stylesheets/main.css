@@ -1095,6 +1095,9 @@ h4 {
   position: absolute;
   top: -32px;
 }
+.front-page.dark-background .change-layout-options select {
+  color: var(--darkmode-color);
+}
 
 @media screen and (max-width: 900px) {
   .front-page .front-page-wrapper {

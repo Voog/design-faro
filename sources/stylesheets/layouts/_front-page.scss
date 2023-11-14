@@ -87,6 +87,10 @@
     position: absolute;
     top: -32px;
   }
+
+  &.dark-background .change-layout-options select {
+    color: var(--darkmode-color);
+  }
 }
 
 @media screen and (max-width: $tablet-width) {
