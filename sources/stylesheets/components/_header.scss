@@ -65,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $tablet-width) {
   .header {
     .wrapper {
       grid-template-columns: auto 1fr auto;

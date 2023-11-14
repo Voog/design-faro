@@ -76,7 +76,7 @@
   }
 }
 
-@media screen and (min-width: $mobile-width) {
+@media screen and (min-width: $tablet-width) {
   .menu-main {
     .menu-item-wrapper .menu-item:hover + .menu-item-children,
     .dropdown-menu-visible .dropdown-menu-icon:hover + .dropdown-menu-children,
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $tablet-width) {
   .menu-children-close-icon {
     width: 32px;
     height: 32px;

@@ -84,7 +84,7 @@ $flags:
   cursor: default;
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $tablet-width) {
   .menu-main .menu .menu-lang .menu-item-wrapper {
     .menu-item-children {
       display: flex;

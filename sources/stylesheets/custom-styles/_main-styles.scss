@@ -395,7 +395,7 @@ body {
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $tablet-width) {
   h1 {
     font-size: calc(var(--heading-1-font-size) / 2);
   }

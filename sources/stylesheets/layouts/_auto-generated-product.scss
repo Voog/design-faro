@@ -77,7 +77,7 @@
   }
 }
 
-@media screen and (max-width: $mobile-width) {
+@media screen and (max-width: $tablet-width) {
   .product-page {
     .product-page-content,
     .product-information {
@@ -86,7 +86,7 @@
   }
 }
 
-@media screen and (max-width: $mobile-width-small) {
+@media screen and (max-width: $mobile-width) {
   .product-page {
     .split-section {
       grid-template-columns: 1fr;
