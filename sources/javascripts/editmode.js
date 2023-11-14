@@ -40,7 +40,7 @@
         ? getImageByWidth(data.imageSizes, $(window).width())
         : null,
       bgPickerImage =
-        data.image && data.image !== '' ? 'url(' + bgPickerImageSuitable.url + ')' : 'none',
+        data.image && data.image !== '' ? `url(${bgPickerImageSuitable.url})` : 'none',
       bgPickerImageSizes = data.imageSizes && data.imageSizes !== '' ? data.imageSizes : null,
       bgPickerColor = data.color && data.color !== '' ? data.color : 'rgba(0,0,0,0)',
       bgPickerColorDataLightness =
@@ -75,7 +75,7 @@
     }
 
     if (data.colorData) {
-      colorRgb = data.colorData.r + ',' + data.colorData.g + ',' + data.colorData.b;
+      colorRgb = `${data.colorData.r},${data.colorData.g},${data.colorData.b}`;
     } else {
       colorRgb = '255,255,255';
     }

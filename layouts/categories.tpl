@@ -66,15 +66,15 @@
 
     {% include "javascripts" %}
 
-    <script>
-      if (site) {
-        {% if editmode -%}
+    {% if editmode -%}
+      <script>
+        if (site) {
           site.bindBlockActions({
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}"
           });
-        {%- endif -%}
-      }
-    </script>
+        }
+      </script>
+    {%- endif -%}
   </body>
 </html>
