@@ -2377,12 +2377,19 @@ main {
   height: 56px;
   background: #888888;
   border: none;
-  color: #FFFFFF;
-  font-size: 48px;
   cursor: pointer;
   margin: 12px 0;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.3s ease-in-out;
+}
+.add-block-button svg {
+  rotate: 45deg;
+}
+.add-block-button svg path {
+  stroke: white;
 }
 .add-block-button:hover {
   opacity: 0.7;

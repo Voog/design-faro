@@ -78,6 +78,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/ico-cross.tpl",
+      "layout_name": "ico-cross",
+      "title": "ico-cross"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"
