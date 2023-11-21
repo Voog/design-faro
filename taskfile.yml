@@ -46,6 +46,12 @@ tasks:
           npx sass $SASS_FLAGS --style=compressed $CSS_SRC_FOLDER/$entry.scss:$CSS_OUT_FOLDER/$entry.min.css
         done
 
+  postcss:
+    cmds:
+      - |
+        echo "Postprocessing CSS"
+        npx postcss $CSS_OUT_FOLDER/*.css --replace --no-map --use autoprefixer
+
   build-custom-styles-css:
     cmds:
       - |
@@ -59,6 +65,7 @@ tasks:
       - task: build-css
       - task: minify-css
       - task: build-custom-styles-css
+      - task: postcss
       - echo "CSS build done"
 
   watch-css:

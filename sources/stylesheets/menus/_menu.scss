@@ -151,7 +151,6 @@
       height: 0;
       background-color: rgba(var(--body-bg-color-rgb), .6);
       transition: height 1s ease-in-out, top 1s ease-in-out;
-      z-index: 1;
 
       .menu-item-wrapper {
         padding: 24px;
@@ -213,6 +212,7 @@
       .menu-active & {
         height: 100vh;
         overflow: scroll;
+        z-index: 1;
       }
 
       .menu-children-active & {
@@ -222,15 +222,16 @@
       &:after {
         content: '';
         position: fixed;
-        height: 0;
+        height: 1px;
         width: 100%;
-        top: 0;
+        top: -1px;
         backdrop-filter: blur(20px);
         transition: height 1s ease-in-out;
         z-index: -1;
 
         .menu-active & {
           height: 100%;
+          top: 0;
         }
       }
     }
