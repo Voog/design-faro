@@ -19,7 +19,9 @@
         {% endif %}
       </div>
 
-      {%- include "menu-lang" -%}
+      {%- if site.has_many_languages? or editmode -%}
+        {%- include "menu-lang" -%}
+      {%- endif -%}
 
       <span class="cart-btn">
         {% comment %}

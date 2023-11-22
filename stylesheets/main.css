@@ -1529,6 +1529,14 @@ h4 {
 .menu-main .dropdown-menu-visible .dropdown-menu-icon {
   height: 100%;
 }
+.menu-main .menu-item {
+  width: 100%;
+}
+.menu-main .menu-item a,
+.menu-main .menu-child a {
+  display: inline-block;
+  width: 100%;
+}
 .menu-main .menu-item a.untranslated,
 .menu-main .menu-child a.untranslated {
   color: #C5292A;
@@ -1549,6 +1557,9 @@ h4 {
     display: flex;
     flex-direction: column;
     z-index: 11015;
+  }
+  .menu-main .dropdown-menu-children .menu-item-wrapper .menu-item + .menu-item-children, .menu-main .dropdown-menu-children .menu-item-wrapper .menu-item:hover + .menu-item-children {
+    left: calc(100% - 104px);
   }
 }
 @media screen and (max-width: 900px) {
