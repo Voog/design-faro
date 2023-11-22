@@ -79,7 +79,7 @@
 }
 .block.split_50_50_full {
   padding: 0;
-  min-height: 50vh;
+  min-height: calc(100vh - var(--header-height));
 }
 .block.split_50_50_full .wrapper {
   display: flex;
@@ -1605,6 +1605,9 @@ h4 {
     background-color: rgba(var(--body-bg-color-rgb), 0.6);
     transition: height 1s ease-in-out, top 1s ease-in-out;
   }
+  .menu-main .menu > :first-child {
+    padding-top: var(--header-height);
+  }
   .menu-main .menu .menu-item-wrapper {
     padding: 24px;
     display: flex;
@@ -1645,6 +1648,9 @@ h4 {
   .menu-main .menu .menu-item-wrapper .menu-item-children .menu-child {
     padding: 24px;
   }
+  .menu-main .menu .menu-item-wrapper .menu-item-children .menu-child:first-child {
+    padding-top: var(--header-height);
+  }
   .menu-main .menu .menu-item-children,
   .menu-main .menu .dropdown-menu-children {
     background-color: rgba(var(--body-bg-color-rgb), 0.6);
@@ -1656,6 +1662,17 @@ h4 {
     height: 100vh;
     overflow: scroll;
     z-index: 1;
+  }
+  .menu-active .menu-main .menu:before {
+    content: "";
+    display: block;
+    height: var(--header-height);
+    width: 100%;
+    top: 0;
+    position: fixed;
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    z-index: 2;
   }
   .menu-children-active .menu-main .menu {
     overflow: hidden;

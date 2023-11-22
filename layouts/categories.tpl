@@ -37,7 +37,6 @@
               block_data: block_data,
               layout_name: layout_name,
               layout_data: layout_data,
-              content_class: "js-category-section",
               wrapper_class: "js-categories-wrapper"
             %}
         {% endfor %}

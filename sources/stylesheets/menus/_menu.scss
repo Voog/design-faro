@@ -152,6 +152,10 @@
       background-color: rgba(var(--body-bg-color-rgb), .6);
       transition: height 1s ease-in-out, top 1s ease-in-out;
 
+      > :first-child {
+        padding-top: var(--header-height);
+      }
+
       .menu-item-wrapper {
         padding: 24px;
         display: flex;
@@ -196,6 +200,10 @@
 
           .menu-child {
             padding: 24px;
+
+            &:first-child {
+              padding-top: var(--header-height);
+            }
           }
         }
       }
@@ -213,6 +221,17 @@
         height: 100vh;
         overflow: scroll;
         z-index: 1;
+
+        &:before {
+          content: '';
+          display: block;
+          height: var(--header-height);
+          width: 100%;
+          top: 0;
+          position: fixed;
+          backdrop-filter: blur(20px);
+          z-index: 2;
+        }
       }
 
       .menu-children-active & {

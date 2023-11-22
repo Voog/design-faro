@@ -5,5 +5,7 @@
     --body-bg-color-rgb:  {{- body_bg_color_data.r | default: 255 -}},
                           {{- body_bg_color_data.g | default: 255 -}},
                           {{- body_bg_color_data.b | default: 255 -}};
+
+    --header-height: 0px;
   }
 </style>
