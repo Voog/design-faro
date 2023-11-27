@@ -7,7 +7,7 @@
     "front_page_settings": {
       "key": "PREFIX_front_page_settings",
       "value": {
-        "layout": "split"
+        "layout": "split_dominant_right"
       }
     },
     "body_blocks": {
@@ -66,14 +66,14 @@
     "categories_page": "split_50_50_full"
   },
   "front_page_layouts": [
-    "split",
+    "split_dominant_right",
     "column",
-    "column_split"
+    "split_even"
   ],
   "humanized_layout_names": {
-    "split": "Split",
+    "split_even": "Split",
     "column": "Column",
-    "column_split": "Column Split",
+    "split_dominant_right": "Dominant right",
     "split_40_60": "Dominant right",
     "split_60_40": "Dominant left",
     "split_staggered": "Staggered",

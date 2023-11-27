@@ -51,18 +51,13 @@ Layout is applied by assigning according classname to "front-page-container" ele
           </div>
         </div>
         <div class="split-section">
-          <div class="section">
-            <div class="content-formatted">
-              {% content name="column-left" %}
-            </div>
-
-            <div class="content-formatted">
-              {% content name="column-right" %}
-            </div>
+          <div class="content-formatted">
+            {% content name="column-left" %}
           </div>
-        </div>
-        <div class="image-section">
-          {% content name="image-section" %}
+
+          <div class="content-formatted">
+            {% content name="column-right" %}
+          </div>
         </div>
       </main>
     </div>

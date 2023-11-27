@@ -1096,47 +1096,28 @@ h4 {
 .front-page .hero .content-formatted {
   width: 100%;
 }
-.front-page .section {
-  padding-bottom: 56px;
-}
-.front-page .split .hero,
-.front-page .column_split .hero {
+.front-page .split_dominant_right .hero,
+.front-page .split_even .hero {
   width: 50%;
 }
-.front-page .split .split-section,
-.front-page .column_split .split-section {
+.front-page .split_dominant_right {
   display: flex;
+  flex-direction: column;
+}
+.front-page .split_dominant_right .split-section {
+  display: grid;
+  grid-template-columns: 40% 50%;
+  justify-content: space-between;
   position: relative;
   align-items: center;
 }
-.front-page .split {
-  grid-template-columns: 1fr 1fr;
-}
-.front-page .split .hero {
-  grid-column: 1/-1;
-}
-.front-page .split .split-section {
-  gap: 16px;
-}
-.front-page .split .split-section .section {
-  flex: 1;
-}
-.front-page .split .split-section .content-formatted {
-  width: 66.7%;
-}
-.front-page .split .image-section {
-  display: flex;
+.front-page .split_even .split-section {
   flex-direction: column;
-  justify-content: center;
-}
-.front-page .column_split .split-section {
-  flex-direction: column;
-}
-.front-page .column_split .split-section .section {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
 }
 .front-page .change-layout-options {
   position: absolute;
@@ -1150,29 +1131,13 @@ h4 {
   .front-page .front-page-wrapper {
     padding: 24px;
   }
-  .front-page .split {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-  .front-page .split .split-section .content-formatted {
+  .front-page .split_dominant_right .hero,
+  .front-page .split_even .hero {
     width: 100%;
   }
-  .front-page .column_split .split-section .section {
+  .front-page .split_dominant_right .split-section,
+  .front-page .split_even .split-section {
     grid-template-columns: 1fr;
-  }
-  .front-page .split .hero,
-  .front-page .column_split .hero {
-    width: 100%;
-  }
-  .front-page .hero {
-    order: 2;
-  }
-  .front-page .split-section {
-    order: 3;
-  }
-  .front-page .image-section {
-    order: 1;
-    margin: -24px;
   }
   .front-page .change-layout-options {
     top: -64px;
