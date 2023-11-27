@@ -2,7 +2,10 @@
   <use href="#ico-arrow-left"></use>
 </svg>
 
-<nav class="menu-main js-menu-main">
+{%- comment %}
+  Menus are hidden initially to wait for finalized positioning with JS
+{% endcomment -%}
+<nav class="menu-main js-menu-main hidden">
   <div class="mobile-menu-button">
     <div class="stripe"></div>
     <div class="stripe"></div>

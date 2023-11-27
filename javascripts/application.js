@@ -619,10 +619,12 @@
       const $menuItems = $menu.find('.menu-item-wrapper');
       const items = [];
 
+      $dropdownMenu.removeClass('dropdown-menu-visible').addClass('dropdown-menu');
+
       $menuItems.each((idx, item) => {
         const isOverflowing = item.offsetTop > 0;
 
-        // Make sure that atleast 1 menu element is visuble in addition to dropdown icon
+        // Make sure that atleast 1 menu element is visible in addition to dropdown icon
         if (idx >= 1 && isOverflowing) {
           // Push last visible item to dropdown to make room for dropdown icon
           if (items.length === 0 && idx >= 2) {
@@ -840,6 +842,12 @@
         handleMenus();
         handleSearchPosition();
         handleHeaderContent(setHeaderHeight);
+
+        $('.js-menu-main, .js-header-right').removeClass('hidden');
+      });
+
+      $(window).resize(() => {
+        $('.js-menu-main, .js-header-right').addClass('hidden');
       });
 
       $(window).resize(
@@ -850,6 +858,8 @@
             handleMenus();
             handleSearchPosition();
             handleHeaderContent(setHeaderHeight);
+
+            $('.js-menu-main, .js-header-right').removeClass('hidden');
 
             prevWindowWidth = newWindowWidth;
           }

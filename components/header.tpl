@@ -9,7 +9,10 @@
       {% xcontent name="header" %}
     </div>
 
-    <div class="header-right">
+    {%- comment %}
+      Right header content is hidden initially for menus to be positioned with JS
+    {% endcomment -%}
+    <div class="header-right js-header-right hidden">
       <div class="search">
         {% if site.search.enabled %}
           <span class="search-button js-search-modal-open-btn">

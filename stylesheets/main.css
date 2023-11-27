@@ -371,6 +371,13 @@ body.edy-checkout-button-visible {
   content: "·";
   margin: 0 4px;
 }
+.header .header-right > * {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.header .header-right.hidden > * {
+  opacity: 0;
+}
 
 @media screen and (max-width: 900px) {
   .header .wrapper {
@@ -1482,6 +1489,13 @@ h4 {
 
 .menu-main {
   position: relative;
+}
+.menu-main > * {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-main.hidden > * {
+  opacity: 0;
 }
 .menu-main .menu {
   display: flex;
