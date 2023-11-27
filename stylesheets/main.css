@@ -406,7 +406,6 @@ body.edy-checkout-button-visible {
   .header .wrapper .header-right .cart-btn {
     order: 2;
     border: 1px solid #000000;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 12px 18px;

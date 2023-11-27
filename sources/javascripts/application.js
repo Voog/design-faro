@@ -331,7 +331,7 @@
     bindSearchBtnClick();
 
     $(window).ready(() => {
-      if (window.VoogEcommerce) {
+      if (window.VoogEcommerce && !window.VoogEcommerce.storeInfo.is_publicly_unavailable) {
         $('.cart-btn').css('display', 'flex');
       }
     });
