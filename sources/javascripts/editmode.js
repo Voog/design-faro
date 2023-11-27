@@ -342,18 +342,23 @@
     });
   };
 
-  const bindBlockDelete = ({bodyBlocks, dataKey}) => {
+  const bindBlockDelete = ({bodyBlocks, dataKey, deleteConfirmation}) => {
     $('.js-delete-button').on('click', e => {
-      const buttonKey = e.target.dataset.key;
-      const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
-      const currentIndex = bodyBlocks.indexOf(currentBlock);
+      if (confirm(deleteConfirmation)) {
+        const buttonKey = e.target.dataset.key;
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(buttonKey));
+        const currentIndex = bodyBlocks.indexOf(currentBlock);
 
-      bodyBlocks.splice(currentIndex, 1);
-      pageData.set(dataKey, bodyBlocks, {
-        success: () => {
-          $(`.${e.target.dataset.wrapperClass}`).filter(`[data-block-key="${buttonKey}"]`).remove();
-        },
-      });
+        bodyBlocks.splice(currentIndex, 1);
+
+        pageData.set(dataKey, bodyBlocks, {
+          success: () => {
+            $(`.${e.target.dataset.wrapperClass}`)
+              .filter(`[data-block-key="${buttonKey}"]`)
+              .remove();
+          },
+        });
+      }
     });
   };
 
@@ -388,10 +393,10 @@
     });
   };
 
-  const bindBlockActions = ({bodyBlocks, dataKey}) => {
+  const bindBlockActions = ({bodyBlocks, dataKey, deleteConfirmation}) => {
     $(document).ready(() => {
       bindBlockAdd({bodyBlocks, dataKey});
-      bindBlockDelete({bodyBlocks, dataKey});
+      bindBlockDelete({bodyBlocks, dataKey, deleteConfirmation});
       bindBlockReorder({bodyBlocks, dataKey});
       bindBlockLayoutChange({bodyBlocks, dataKey});
     });

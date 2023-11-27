@@ -69,7 +69,8 @@
         if (site) {
           site.bindBlockActions({
             bodyBlocks: blockData,
-            dataKey: "{{ body_blocks_key }}"
+            dataKey: "{{ body_blocks_key }}",
+            deleteConfirmation: 'Are you sure?'{% comment %}TODO: use localized translation{% endcomment %}
           });
         }
       </script>
