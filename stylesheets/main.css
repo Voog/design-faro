@@ -318,7 +318,7 @@ body.edy-checkout-button-visible {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000;
+  z-index: 10700;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .header:not(.menu-active) {
@@ -345,7 +345,7 @@ body.edy-checkout-button-visible {
   gap: 16px;
   min-height: 64px;
   position: relative;
-  z-index: 10000;
+  z-index: 10700;
 }
 .header .header-content {
   display: flex;
