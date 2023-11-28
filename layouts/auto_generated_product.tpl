@@ -66,15 +66,15 @@
     <main class="product-page-content" role="main" data-search-indexing-allowed="true">
       <div class="split-section">
         <div class="product-image-section">
-          {%- if product.image != blank %}
-            {% assign item_image_state = "with-image" %}
+          {%- if product.photos != blank %}
+            {% assign item_image_state = "with-images" %}
           {% else %}
-            {% assign item_image_state = "without-image" %}
+            {% assign item_image_state = "without-images" %}
           {% endif -%}
 
           <div class="product-image {{ item_image_state }}">
-            {%- if product.image != blank -%}
-              {% image product.image loading: 'lazy' target_width: "600" class: "item-image" %}
+            {%- if product.photos != blank -%}
+              {% gallery product layout="product_slider" %}
             {%- endif -%}
           </div>
         </div>
