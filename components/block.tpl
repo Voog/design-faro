@@ -46,57 +46,81 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div
-  class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
-  data-block-key="{{ id }}"
->
-  {% if editmode %}
-    <div class="block-edit-buttons">
-      {{ move_buttons }}
-      {{ delete_button }}
-      {{ change_layout_options }}
-    </div>
-  {% endif %}
+{%- if editmode -%}
+  {%- assign block_has_content = true -%}
+{%- else -%}
+  {%- capture block_contents_html -%}
+    {%- for index in (1..content_area_count) -%}
+      {%- assign block_area_name = "block-" | append: id | append: "-col-" | append: index -%}
 
-  {% if layout_data.separate_bg_pickers == true %}
-    {% for index in (1..content_area_count) %}
+      {% content name=block_area_name %}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- capture block_contents_size -%}
+    {{- block_contents_html | size | minus: 1 -}}
+  {%- endcapture -%}
+
+  {%- if block_contents_size contains "-" -%}
+    {%- assign block_has_content = false -%}
+  {%- else -%}
+    {%- assign block_has_content = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if block_has_content %}
+  <div
+    class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
+    data-block-key="{{ id }}"
+  >
+    {% if editmode %}
+      <div class="block-edit-buttons">
+        {{ move_buttons }}
+        {{ delete_button }}
+        {{ change_layout_options }}
+      </div>
+    {% endif %}
+
+    {% if layout_data.separate_bg_pickers == true %}
+      {% for index in (1..content_area_count) %}
+        {% assign background_key =
+          "block_"
+          | append: id
+          | append: "_col_"
+          | append: index
+          | append: "_background"
+        %}
+        {% assign background = block_data[background_key] %}
+
+        {% include "block-structure",
+          background: background,
+          background_key: background_key,
+          block_index: index,
+          content_area_count: 1,
+          content_class: content_class,
+          id: id,
+          layout_name: layout_name,
+          separate_bg_pickers: layout_data.separate_bg_pickers
+        %}
+      {% endfor %}
+    {% else %}
       {% assign background_key =
         "block_"
         | append: id
-        | append: "_col_"
-        | append: index
-        | append: "_background"
+        | append: "_col_1_background"
       %}
+
       {% assign background = block_data[background_key] %}
 
       {% include "block-structure",
         background: background,
         background_key: background_key,
-        block_index: index,
-        content_area_count: 1,
+        content_area_count: content_area_count,
         content_class: content_class,
         id: id,
         layout_name: layout_name,
         separate_bg_pickers: layout_data.separate_bg_pickers
       %}
-    {% endfor %}
-  {% else %}
-    {% assign background_key =
-      "block_"
-      | append: id
-      | append: "_col_1_background"
-    %}
-
-    {% assign background = block_data[background_key] %}
-
-    {% include "block-structure",
-      background: background,
-      background_key: background_key,
-      content_area_count: content_area_count,
-      content_class: content_class,
-      id: id,
-      layout_name: layout_name,
-      separate_bg_pickers: layout_data.separate_bg_pickers
-    %}
-  {% endif %}
-</div>
+    {% endif %}
+  </div>
+{%- endif %}

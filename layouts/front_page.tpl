@@ -1,5 +1,5 @@
 {%- comment -%}
-Possible front page layouts: "split" (default), "column" and "column-split".
+Possible front page layouts: "split_dominant_right" (default), "column" and "split".
 Layout is applied by assigning according classname to "front-page-container" element.
 {%- endcomment -%}
 <!DOCTYPE html>
