@@ -838,7 +838,7 @@
     const handleWindowResize = () => {
       let prevWindowWidth = $(window).width();
 
-      $(document).ready(() => {
+      $(window).on('load', () => {
         handleMenus();
         handleSearchPosition();
         handleHeaderContent(setHeaderHeight);
