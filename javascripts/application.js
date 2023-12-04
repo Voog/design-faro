@@ -847,7 +847,11 @@
       });
 
       $(window).resize(() => {
-        $('.js-menu-main, .js-header-right').addClass('hidden');
+        const newWindowWidth = $(window).width();
+
+        if (newWindowWidth !== prevWindowWidth) {
+          $('.js-menu-main, .js-header-right').addClass('hidden');
+        }
       });
 
       $(window).resize(
