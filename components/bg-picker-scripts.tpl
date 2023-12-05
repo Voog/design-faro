@@ -2,6 +2,11 @@
   $(function() {
     $('.bg-picker-area').each(function(index, pickerArea) {
       var $picker = $(pickerArea).find('.bg-picker');
+
+      if (!$picker.length) {
+        return;
+      }
+
       var pickerOpts = $picker.data();
 
       var bgPicker = new Edicy.BgPicker($picker, {
