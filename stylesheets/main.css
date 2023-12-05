@@ -1867,6 +1867,37 @@ h4 {
 .content-formatted .edy-buy-button-align-right .form_field {
   grid-template-columns: 3fr 1fr;
 }
+.content-formatted table {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+}
+.content-formatted table tr {
+  border-top: 1px solid #888888;
+  background-color: transparent;
+}
+.dark-background .content-formatted table tr {
+  border-top: 1px solid var(--darkmode-color);
+}
+.content-formatted table tr:last-child {
+  border-bottom: 1px solid #888888;
+}
+.dark-background .content-formatted table tr:last-child {
+  border-bottom: 1px solid var(--darkmode-color);
+}
+.content-formatted table td {
+  border-left: 1px solid #888888;
+  padding: 4px;
+}
+.dark-background .content-formatted table td {
+  border-left: 1px solid var(--darkmode-color);
+}
+.content-formatted table td:last-child {
+  border-right: 1px solid #888888;
+}
+.dark-background .content-formatted table td:last-child {
+  border-right: 1px solid var(--darkmode-color);
+}
 
 @media screen and (max-width: 640px) {
   .content-formatted .form_field_size_medium,

@@ -224,6 +224,47 @@
   .edy-buy-button-align-right .form_field {
     grid-template-columns: 3fr 1fr;
   }
+
+  // Tables
+  table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid $grey-2;
+      background-color: transparent;
+
+      .dark-background & {
+        border-top: 1px solid var(--darkmode-color);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $grey-2;
+
+        .dark-background & {
+          border-bottom: 1px solid var(--darkmode-color);
+        }
+      }
+    }
+
+    td {
+      border-left: 1px solid $grey-2;
+      padding: 4px;
+
+      .dark-background & {
+        border-left: 1px solid var(--darkmode-color);
+      }
+
+      &:last-child {
+        border-right: 1px solid $grey-2;
+
+        .dark-background & {
+          border-right: 1px solid var(--darkmode-color);
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $mobile-width) {
