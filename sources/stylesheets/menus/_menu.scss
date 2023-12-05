@@ -122,6 +122,10 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     path {
       fill: $black;
     }
@@ -133,13 +137,22 @@
 
   .menu-main {
     position: unset;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
 
     .mobile-menu-button {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
       max-width: max-content;
-      height: 32px;
+      height: 100%;
       z-index: 2;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       .stripe {
         display: block;
@@ -148,8 +161,8 @@
         background-color: $black;
         transition: transform 1s ease-in-out;
 
-        &:first-of-type {
-          margin: 50% 0 8px;
+        &:last-of-type {
+          margin-top: 8px;
         }
 
         .menu-active & {

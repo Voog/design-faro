@@ -1556,6 +1556,9 @@ h4 {
     opacity: 0;
     transition: opacity 1s ease-in-out;
   }
+  .menu-children-close-icon:hover {
+    cursor: pointer;
+  }
   .menu-children-close-icon path {
     fill: #000000;
   }
@@ -1564,14 +1567,22 @@ h4 {
   }
   .menu-main {
     position: unset;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
   }
   .menu-main .mobile-menu-button {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     max-width: -moz-max-content;
     max-width: max-content;
-    height: 32px;
+    height: 100%;
     z-index: 2;
+  }
+  .menu-main .mobile-menu-button:hover {
+    cursor: pointer;
   }
   .menu-main .mobile-menu-button .stripe {
     display: block;
@@ -1580,8 +1591,8 @@ h4 {
     background-color: #000000;
     transition: transform 1s ease-in-out;
   }
-  .menu-main .mobile-menu-button .stripe:first-of-type {
-    margin: 50% 0 8px;
+  .menu-main .mobile-menu-button .stripe:last-of-type {
+    margin-top: 8px;
   }
   .menu-active .menu-main .mobile-menu-button .stripe:first-of-type {
     transform: rotate(-45deg) translate(-3.5px, 2.5px);
