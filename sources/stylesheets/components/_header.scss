@@ -47,7 +47,7 @@
     gap: 32px;
     align-items: center;
     text-wrap: nowrap;
-    z-index: $z-index-header;
+    z-index: 1;
 
     .cart-btn {
       cursor: not-allowed;
@@ -70,6 +70,14 @@
 
     &.hidden > * {
       opacity: 0;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .header {
+    .header-right {
+      z-index: $z-index-header;
     }
   }
 }

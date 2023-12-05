@@ -358,7 +358,7 @@ body.edy-checkout-button-visible {
   gap: 32px;
   align-items: center;
   text-wrap: nowrap;
-  z-index: 10700;
+  z-index: 1;
 }
 .header .header-right .cart-btn {
   cursor: not-allowed;
@@ -379,6 +379,11 @@ body.edy-checkout-button-visible {
   opacity: 0;
 }
 
+@media screen and (min-width: 900px) {
+  .header .header-right {
+    z-index: 10700;
+  }
+}
 @media screen and (max-width: 900px) {
   .header .wrapper {
     grid-template-columns: auto 1fr auto;
