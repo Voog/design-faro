@@ -46,9 +46,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if editmode -%}
-  {%- assign block_has_content = true -%}
-{%- else -%}
+{%- unless editmode -%}
   {%- capture block_contents_html -%}
     {%- for index in (1..content_area_count) -%}
       {%- assign block_area_name = "block-" | append: id | append: "-col-" | append: index -%}
@@ -56,19 +54,9 @@
       {% content name=block_area_name %}
     {%- endfor -%}
   {%- endcapture -%}
+{%- endunless -%}
 
-  {%- capture block_contents_size -%}
-    {{- block_contents_html | size | minus: 1 -}}
-  {%- endcapture -%}
-
-  {%- if block_contents_size contains "-" -%}
-    {%- assign block_has_content = false -%}
-  {%- else -%}
-    {%- assign block_has_content = true -%}
-  {%- endif -%}
-{%- endif -%}
-
-{%- if block_has_content %}
+{%- if block_contents_html != blank or editmode %}
   <div
     class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
     data-block-key="{{ id }}"
