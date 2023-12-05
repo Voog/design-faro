@@ -358,7 +358,7 @@ body.edy-checkout-button-visible {
   gap: 32px;
   align-items: center;
   text-wrap: nowrap;
-  z-index: 1;
+  z-index: 10700;
 }
 .header .header-right .cart-btn {
   cursor: not-allowed;

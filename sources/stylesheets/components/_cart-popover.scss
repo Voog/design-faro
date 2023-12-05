@@ -22,7 +22,7 @@ body {
   opacity: 0;
   max-width: 360px;
   pointer-events: none;
-  z-index: $zindex-cart-popover;
+  z-index: $z-index-cart-popover;
   background-color: $white;
   transition: opacity 400ms;
   cursor: pointer;
@@ -84,7 +84,7 @@ body {
     align-items: center;
     background-color: $black;
     box-shadow: $box-shadow;
-    z-index: $zindex-cart-popover + 1;
+    z-index: $z-index-cart-popover + 1;
 
     path {
       fill: $white;
