@@ -6,7 +6,13 @@
     {% include "menu-main" %}
 
     <div class="header-content content-formatted">
-      {% xcontent name="header" %}
+      {%- assign header_content_title = "cross_site_title" | lce -%}
+      {%- assign header_content_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
+      {% xcontent
+        name="header"
+        title=header_content_title
+        title_tooltip=header_content_title_tooltip
+      %}
     </div>
 
     {%- comment %}
