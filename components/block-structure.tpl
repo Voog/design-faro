@@ -1,6 +1,6 @@
-{% assign bg_color = background.color %}
-{% assign bg_image = background.image %}
-{% assign bg_image_sizes = background.imageSizes %}
+{%- assign bg_color = background.color -%}
+{%- assign bg_image = background.image -%}
+{%- assign bg_image_sizes = background.imageSizes -%}
 
 {%- if bg_color == blank -%}
   {%- assign bg_color = "none" -%}
@@ -12,30 +12,30 @@
   {%- assign bg_image_sizes_str = bg_image_sizes | json -%}
 {%- endif -%}
 
-{% assign bg_color_data = background.colorData %}
-{% assign bg_combined_lightness = background.combinedLightness %}
+{%- assign bg_color_data = background.colorData -%}
+{%- assign bg_combined_lightness = background.combinedLightness -%}
 
-{% if background %}
-  {% if bg_combined_lightness %}
-    {% if bg_combined_lightness > 0.6 %}
-      {% assign bg_type = "light-background" %}
-    {% else %}
-      {% assign bg_type = "dark-background" %}
-    {% endif %}
-  {% else %}
-    {% if bg_color_data.a >= 0.6 %}
-      {% if bg_color_data.lightness >= 0.6 %}
-        {% assign bg_type = "light-background" %}
-      {% else %}
-        {% assign bg_type = "dark-background" %}
-      {% endif %}
-    {% else %}
-      {% assign bg_type = "light-background" %}
-    {% endif %}
-  {% endif %}
-{% else %}
-  {% assign bg_type = "light-background" %}
-{% endif %}
+{%- if background -%}
+  {%- if bg_combined_lightness -%}
+    {%- if bg_combined_lightness > 0.6 -%}
+      {%- assign bg_type = "light-background" -%}
+    {%- else -%}
+      {%- assign bg_type = "dark-background" -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- if bg_color_data.a >= 0.6 -%}
+      {%- if bg_color_data.lightness >= 0.6 -%}
+        {%- assign bg_type = "light-background" -%}
+      {%- else -%}
+        {%- assign bg_type = "dark-background" -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign bg_type = "light-background" -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign bg_type = "light-background" -%}
+{%- endif -%}
 
 <style>
   :root {
