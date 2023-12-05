@@ -197,6 +197,10 @@
           z-index: 1;
           transform: rotate(180deg);
 
+          &:hover {
+            cursor: pointer;
+          }
+
           path {
             fill: inherit;
           }

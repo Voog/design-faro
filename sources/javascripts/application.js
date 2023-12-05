@@ -256,9 +256,16 @@
       }
     });
 
-    $('.js-menu-main .menu-children-icon, .menu-lang .menu-children-icon').click(e => {
+    $(
+      '.js-menu-main .menu-children-icon, .menu-lang .menu-item, .menu-lang .menu-children-icon'
+    ).click(e => {
       $(e.target).closest('.menu-item-wrapper.has-children').addClass('active');
-      $(e.target.parentElement).find('.menu-item-children').addClass('active');
+
+      $(e.target)
+        .parents('.menu-item-wrapper.has-children')
+        .find('.menu-item-children')
+        .addClass('active');
+
       $('.js-header').addClass('menu-children-active');
 
       // Scroll menu to top when opening menu children
@@ -307,7 +314,7 @@
       if (newWindowWidth !== prevWindowWidth) {
         $('.js-menu-main, .js-header-right').addClass('hidden');
       }
-    })
+    });
 
     $(window).resize(
       debounce(() => {

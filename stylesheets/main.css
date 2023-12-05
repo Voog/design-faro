@@ -1615,6 +1615,9 @@ h4 {
     z-index: 1;
     transform: rotate(180deg);
   }
+  .menu-main .menu .menu-item-wrapper .menu-children-icon:hover {
+    cursor: pointer;
+  }
   .menu-main .menu .menu-item-wrapper .menu-children-icon path {
     fill: inherit;
   }
