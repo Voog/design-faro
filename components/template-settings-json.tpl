@@ -34,6 +34,12 @@
       }
     },
     {
+      "key": "split_60_40",
+      "value": {
+        "content_areas": "2"
+      }
+    },
+    {
       "key": "column",
       "value": {
         "content_areas": "1"
@@ -41,12 +47,6 @@
     },
     {
       "key": "split_staggered",
-      "value": {
-        "content_areas": "2"
-      }
-    },
-    {
-      "key": "split_60_40",
       "value": {
         "content_areas": "2"
       }
