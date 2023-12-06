@@ -456,13 +456,14 @@ body.edy-checkout-button-visible {
   width: 100%;
   padding: 24px;
   position: relative;
-  top: 10%;
+  top: max(10%, 96px);
 }
 .search .search-input-wrapper {
   flex: 1;
 }
 .search .search-form {
   display: flex;
+  align-items: center;
   gap: 24px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 24px;
@@ -511,6 +512,11 @@ body.edy-checkout-button-visible {
   margin: 0;
 }
 
+@media screen and (min-width: 900px) {
+  .search .search-results {
+    height: calc(75vh - 96px);
+  }
+}
 @media screen and (max-width: 900px) {
   .search .search-button,
   .search .search-close {
@@ -527,6 +533,7 @@ body.edy-checkout-button-visible {
     max-width: 100%;
     top: 0;
     padding: 0;
+    width: 100%;
   }
   .search .search-form {
     margin: 24px;
@@ -536,6 +543,7 @@ body.edy-checkout-button-visible {
   }
   .search .search-results.search-results-active {
     padding: 0 24px;
+    height: calc(80vh - 96px);
   }
 }
 body {

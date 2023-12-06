@@ -40,7 +40,7 @@
     width: 100%;
     padding: 24px;
     position: relative;
-    top: 10%;
+    top: max(10%, 96px);
   }
 
   .search-input-wrapper {
@@ -49,6 +49,7 @@
 
   .search-form {
     display: flex;
+    align-items: center;
     gap: 24px;
     border-bottom: 1px solid rgba($black, .1);
     padding-bottom: 24px;
@@ -103,6 +104,14 @@
   }
 }
 
+@media screen and (min-width: $tablet-width) {
+  .search {
+    .search-results {
+      height: calc(75vh - 96px);
+    }
+  }
+}
+
 @media screen and (max-width: $tablet-width) {
   .search {
     .search-button,
@@ -121,6 +130,7 @@
       max-width: 100%;
       top: 0;
       padding: 0;
+      width: 100%;
     }
 
     .search-form {
@@ -132,6 +142,7 @@
 
       &.search-results-active {
         padding: 0 24px;
+        height: calc(80vh - 96px);
       }
     }
   }
