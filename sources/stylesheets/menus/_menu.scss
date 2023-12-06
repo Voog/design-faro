@@ -197,10 +197,12 @@
         padding: 24px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &.menu-lang-wrapper {
           padding-bottom: 16px;
           border-bottom: 1px solid rgba($black, .1);
+          width: 100%;
         }
 
         .menu-children-icon {
@@ -208,7 +210,7 @@
           height: 24px;
           display: block;
           z-index: 1;
-          transform: rotate(180deg);
+          transform: rotate(180deg) translateY(-4px);
 
           &:hover {
             cursor: pointer;
