@@ -2,41 +2,30 @@
 {% include "template-settings" %}
 {% include "template-variables" product_page: true %}
 
-{%- capture footnote_content_html -%}
-  {%- unless editmode -%}
-    {%- content bind=product name="footnote" -%}
-  {%- endunless -%}
-{%- endcapture -%}
-
-{%- capture footnote_content_size -%}
-  {{- footnote_content_html | size | minus: 1 -}}
-{%- endcapture -%}
-
-{%- unless footnote_content_size contains "-" -%}
-  {%- assign footnote_content_has_content = true -%}
-{%- endunless -%}
-
-{% capture bottom_content_html %}
-  {%- unless editmode -%}
-    {%- content bind=product name="content" -%}
-  {%- endunless -%}
-{% endcapture %}
-
-{%- capture bottom_content_size -%}
-  {{- bottom_content_html | size | minus: 1 -}}
-{%- endcapture -%}
-
-{%- unless bottom_content_size contains "-" -%}
-  {%- assign bottom_content_has_content = true -%}
-{%- endunless -%}
-
 {%- capture product_social_html -%}
-  {%- unless editmode -%}
-    {%- xcontent name="product-social" -%}
-  {%- endunless -%}
+  {%- assign cross_page_info_title = "cross_page_info" | lce  -%}
+  {%- assign cross_page_info_title_tooltip = "content_tooltip_all_pages_same_type" | lce -%}
+  {% xcontent
+    name="product-social"
+    title=cross_page_info_title
+    title_tooltip=cross_page_info_title_tooltip
+  %}
 {%- endcapture -%}
 
-{%- assign product_social_size = product_social_html | strip | size -%}
+{%- capture footnote_content_html -%}
+  {%- content bind=product name="footnote" -%}
+{%- endcapture -%}
+
+{%- capture bottom_content_html -%}
+  {%- assign bottom_content_title = "additional_content" | lce -%}
+  {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
+  {% content
+    bind=product
+    name="content"
+    title=bottom_content_title
+    title_tooltip=bottom_content_title_tooltip
+  %}
+{%- endcapture -%}
 
 <html class="{% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
   <head prefix="og: http://ogp.me/ns#">
@@ -122,15 +111,9 @@
               {% include "buy-button" %}
             </div>
 
-            {%- if editmode or product_social_size > 0 -%}
+            {%- if product_social_html != blank -%}
               <div class="product-social">
-                {%- assign cross_page_info_title = "cross_page_info" | lce  -%}
-                {%- assign cross_page_info_title_tooltip = "content_tooltip_all_pages_same_type" | lce -%}
-                {% xcontent
-                  name="product-social"
-                  title=cross_page_info_title
-                  title_tooltip=cross_page_info_title_tooltip
-                %}
+                {{ product_social_html }}
               </div>
             {%- endif -%}
 
@@ -139,25 +122,18 @@
             {% content bind=product title=content_title title_tooltip=content_title_tooltip  %}
           </div>
 
-          {% if footnote_content_has_content or editmode %}
+          {% if footnote_content_html != blank %}
             <div class="product-footnote">
-              {% content bind=product name="footnote" %}
+              {{ footnote_content_html }}
             </div>
           {% endif %}
         </div>
       </div>
 
-      {%- if bottom_content_has_content == true or editmode -%}
+      {%- if bottom_content_html != blank -%}
         <div class="content-formatted product-additional-content">
-          {%- assign bottom_content_title = "additional_content" | lce -%}
-          {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
-          {% content
-            bind=product
-            name="content"
-            title=bottom_content_title
-            title_tooltip=bottom_content_title_tooltip
-          %}
-        </section>
+          {{ bottom_content_html }}
+        </div>
       {%- endif -%}
     </main>
 
