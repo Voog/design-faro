@@ -19,7 +19,7 @@
     {%- endunless %}
 
     {% for item in site.visible_menuitems %}
-      <div class="menu-item-wrapper{% if item.children? %} has-children{% endif %}">
+      <div class="menu-item-wrapper{% if editmode or item.children? %} has-children{% endif %}">
         {%- menulink item wrapper-tag="div" wrapper-class="menu-item" %}
 
         {%- if item.children? or editmode and item.translated? %}
