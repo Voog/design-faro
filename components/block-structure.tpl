@@ -1,10 +1,6 @@
-{%- assign bg_color = background.color -%}
+{%- assign bg_color = background.color | default: "none" -%}
 {%- assign bg_image = background.image -%}
 {%- assign bg_image_sizes = background.imageSizes -%}
-
-{%- if bg_color == blank -%}
-  {%- assign bg_color = "none" -%}
-{%- endif -%}
 
 {%- if bg_image_sizes == nil -%}
   {%- assign bg_image_sizes_str = "" -%}

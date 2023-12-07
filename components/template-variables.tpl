@@ -17,11 +17,7 @@
 
   {%- assign front_page_settings = page.data[front_page_settings_key] -%}
 
-  {% comment %}Assign variables based on page type.{% endcomment %}
-  {% assign body_bg_color = body_bg.color %}
-  {%- if body_bg_color == blank -%}
-    {%- assign body_bg_color = 'none' -%}
-  {%- endif -%}
+  {% assign body_bg_color = body_bg.color | default: "none" %}
 
   {% assign body_bg_color_data = body_bg.colorData %}
   {% assign body_bg_combined_lightness = body_bg.combinedLightness %}
