@@ -504,6 +504,9 @@ body.edy-checkout-button-visible {
   margin: 0;
   text-decoration: none;
 }
+.search .search-results a:hover {
+  opacity: 0.5;
+}
 .search .search-results p {
   color: #888888;
   font-size: 14px;

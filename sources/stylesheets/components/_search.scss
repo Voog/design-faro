@@ -94,6 +94,10 @@
       text-decoration: none;
     }
 
+    a:hover {
+      opacity: .5;
+    }
+
     p {
       color: $grey-2;
       font-size: 14px;
