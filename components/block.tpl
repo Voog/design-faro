@@ -47,16 +47,24 @@
 {%- endcapture -%}
 
 {%- unless editmode -%}
-  {%- capture block_contents_html -%}
-    {%- for index in (1..content_area_count) -%}
-      {%- assign block_area_name = "block-" | append: id | append: "-col-" | append: index -%}
+  {%- assign block_has_content = false -%}
 
+  {%- for index in (1..content_area_count) -%}
+    {%- assign block_area_name = "block-" | append: id | append: "-col-" | append: index -%}
+
+    {%- capture block_contents_html -%}
       {% content name=block_area_name %}
-    {%- endfor -%}
-  {%- endcapture -%}
+    {%- endcapture -%}
+
+    {%- if block_contents_html != blank -%}
+      {%- assign block_has_content = true -%}
+      {%- break -%}
+    {%- endif -%}
+
+  {%- endfor -%}
 {%- endunless -%}
 
-{%- if block_contents_html != blank or editmode %}
+{%- if editmode or block_has_content %}
   <div
     class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
     data-block-key="{{ id }}"
