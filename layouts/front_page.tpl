@@ -31,7 +31,7 @@ Layout is applied by assigning according classname to "front-page-container" ele
 
         {%- if editmode -%}
           <div class="change-layout-options">
-            <select class="js-change-layout-select" title="Change front page layout">
+            <select class="js-change-layout-select" title="{{ 'change_content_layout' | lce }}">
               {% for layout in template_settings.front_page_layouts %}
                 <option
                   class="js-change-layout-button"

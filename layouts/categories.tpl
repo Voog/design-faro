@@ -47,7 +47,7 @@
       <div class="add-block-wrapper">
         <button
           class="add-block-button js-add-block"
-          title="Add new block"
+          title="{{ 'add_new_block' | lce }}"
           data-block-layout="{{ template_settings.default_block_layouts.categories_page }}"
         >
           {%- include "ico-cross" -%}
@@ -72,7 +72,7 @@
           site.bindBlockActions({
             bodyBlocks: blockData,
             dataKey: "{{ body_blocks_key }}",
-            deleteConfirmation: 'Are you sure?'{% comment %}TODO: use localized translation{% endcomment %}
+            deleteConfirmation: '{{ "are_you_sure" | lce }}',
           });
         }
       </script>

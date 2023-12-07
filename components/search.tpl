@@ -11,10 +11,7 @@
           placeholder="{{ 'search' | lc | escape_once }}"
         >
       </div>
-      {% comment %}
-      TODO: Use localized translation
-      {% endcomment %}
-      <input type="reset" class="clear-search-button" value="Clear">
+      <input type="reset" class="clear-search-button" value="{{ 'clear' | lc | escape_once }}">
     </form>
     <div class="search-results js-voog-search-modal-inner"></div>
   </div>

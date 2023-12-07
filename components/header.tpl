@@ -33,10 +33,7 @@
       {%- endif -%}
 
       <span class="cart-btn">
-        {% comment %}
-          TODO: Use localized translation
-        {% endcomment %}
-        Cart
+        {{ "cart" | lc | escape_once }}
         <span class="cart-btn-count"></span>
       </span>
     </div>
