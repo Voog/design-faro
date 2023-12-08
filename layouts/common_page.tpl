@@ -46,7 +46,7 @@
       <div class="add-block-wrapper">
         <button
           class="add-block-button js-add-block"
-          title="{{ 'add_new_block' | lce }}"
+          data-title="{{ 'add_new_block' | lce }}"
           data-block-layout="{{ template_settings.default_block_layouts.common_page }}"
         >
           {%- include "ico-cross" -%}

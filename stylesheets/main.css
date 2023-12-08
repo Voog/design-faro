@@ -9,13 +9,61 @@
   height: 100%;
   position: absolute;
   z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+.block-wrapper .block-edit-buttons > *,
+.category-blocks .block-edit-buttons > * {
+  display: none;
 }
 .block-wrapper:hover > .block-edit-buttons,
 .category-blocks:hover > .block-edit-buttons {
-  opacity: 0.5;
-  background-color: #F7F7F2;
+  background-color: rgba(247, 247, 242, 0.5);
+}
+.block-wrapper:hover > .block-edit-buttons > *,
+.category-blocks:hover > .block-edit-buttons > * {
+  display: block;
+}
+.block-wrapper:hover > .block-edit-buttons > *:after,
+.category-blocks:hover > .block-edit-buttons > *:after {
+  content: attr(data-title);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: -32px;
+  background: #000000;
+  color: #FFFFFF;
+  text-wrap: nowrap;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  pointer-events: none;
+}
+.block-wrapper:hover > .block-edit-buttons > *:hover:after,
+.category-blocks:hover > .block-edit-buttons > *:hover:after {
+  opacity: 1;
+}
+.block-wrapper:hover > .block-edit-buttons .up-button:after,
+.category-blocks:hover > .block-edit-buttons .up-button:after {
+  left: 0;
+}
+.block-wrapper:hover > .block-edit-buttons .delete-button:after,
+.category-blocks:hover > .block-edit-buttons .delete-button:after {
+  right: 0;
+}
+.block-wrapper:hover > .block-edit-buttons .down-button:after,
+.category-blocks:hover > .block-edit-buttons .down-button:after {
+  top: 32px;
+  right: 0;
+  transform: rotate(180deg);
+}
+.block-wrapper:hover > .block-edit-buttons .change-layout-options:after,
+.category-blocks:hover > .block-edit-buttons .change-layout-options:after {
+  left: 0;
 }
 
 .block-wrapper:first-child .block-edit-buttons .up-button {
@@ -170,6 +218,9 @@
   border: none;
   cursor: pointer;
   font-family: var(--font-family);
+}
+.change-layout-options:hover {
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 640px) {
@@ -1093,6 +1144,28 @@ h4 {
 
 .front-page .voog-bg-picker-btn {
   position: relative;
+}
+.front-page .change-layout-options:after {
+  content: attr(data-title);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: -32px;
+  left: 0;
+  background: #000000;
+  color: #FFFFFF;
+  text-wrap: nowrap;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  pointer-events: none;
+}
+.front-page .change-layout-options:hover:after {
+  opacity: 1;
 }
 .front-page .front-page-wrapper {
   padding: 56px;
@@ -2442,6 +2515,8 @@ main {
 .add-block-wrapper {
   display: flex;
   justify-content: center;
+  min-height: 156px;
+  align-items: center;
 }
 
 .add-block-button {
@@ -2452,6 +2527,7 @@ main {
   cursor: pointer;
   margin: 12px 0;
   opacity: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2461,8 +2537,29 @@ main {
   rotate: 45deg;
 }
 .add-block-button svg path {
-  stroke: white;
+  stroke: #FFFFFF;
+}
+.add-block-button:after {
+  content: attr(data-title);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: -40px;
+  background: #000000;
+  color: #FFFFFF;
+  text-wrap: nowrap;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  pointer-events: none;
 }
 .add-block-button:hover {
   opacity: 0.7;
+}
+.add-block-button:hover:after {
+  opacity: 1;
 }

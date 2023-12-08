@@ -28,6 +28,8 @@ main {
 .add-block-wrapper {
   display: flex;
   justify-content: center;
+  min-height: 156px;
+  align-items: center;
 }
 
 .add-block-button {
@@ -38,6 +40,7 @@ main {
   cursor: pointer;
   margin: 12px 0;
   opacity: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,11 +50,33 @@ main {
     rotate: 45deg;
 
     path {
-      stroke: white;
+      stroke: $white;
     }
   }
 
+  &:after {
+    content: attr(data-title);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    padding: 8px;
+    width: fit-content;
+    position: absolute;
+    top: -40px;
+    background: $black;
+    color: $white;
+    text-wrap: nowrap;
+    font-size: 12px;
+    font-weight: $normal-weight;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    pointer-events: none;
+  }
+
   &:hover {
-    opacity: .7;;
+    opacity: .7;
+
+    &:after {
+      opacity: 1;
+    }
   }
 }

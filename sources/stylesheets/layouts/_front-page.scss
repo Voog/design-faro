@@ -3,6 +3,31 @@
     position: relative;
   }
 
+  .change-layout-options {
+    &:after {
+      content: attr(data-title);
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      padding: 8px;
+      width: fit-content;
+      position: absolute;
+      top: -32px;
+      left: 0;
+      background: $black;
+      color: $white;
+      text-wrap: nowrap;
+      font-size: 12px;
+      font-weight: $normal-weight;
+      border-radius: 4px;
+      font-family: var(--font-family);
+      pointer-events: none;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
   .front-page-wrapper {
     padding: 56px;
     max-width: $max-page-width;

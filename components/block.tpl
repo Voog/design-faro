@@ -4,14 +4,14 @@
 {%- capture move_buttons -%}
   <button
     class="move-button up-button js-move-button"
-    title="{{ 'move_block_up' | lce }}"
+    data-title="{{ 'move_block_up' | lce }}"
     data-key="{{ id }}"
     data-direction="up"
     data-wrapper-class="{{ wrapper_class }}"
   ></button>
   <button
     class="move-button down-button js-move-button"
-    title="{{ 'move_block_down' | lce }}"
+    data-title="{{ 'move_block_down' | lce }}"
     data-key="{{ id }}"
     data-direction="down"
     data-wrapper-class="{{ wrapper_class }}"
@@ -21,7 +21,7 @@
 {%- capture delete_button -%}
   <button
     class="delete-button js-delete-button"
-    title="{{ 'delete_block' | lce }}"
+    data-title="{{ 'delete_block' | lce }}"
     data-key="{{ id }}"
     data-wrapper-class="{{ wrapper_class }}"
   ></button>
@@ -29,8 +29,8 @@
 
 {%- capture change_layout_options -%}
   {%- if allowed_layouts.size > 1 -%}
-    <div class="change-layout-options">
-      <select class="js-change-layout-select" title="{{ 'change_content_layout' | lce }}">
+    <div class="change-layout-options" data-title="{{ 'change_content_layout' | lce }}">
+      <select class="js-change-layout-select">
         {% for layout in allowed_layouts %}
           <option
             class="js-change-layout-button"

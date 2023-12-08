@@ -30,8 +30,8 @@ Layout is applied by assigning according classname to "front-page-container" ele
       <main class="front-page-content {{ front_page_layout }}" role="main" data-search-indexing-allowed="true">
 
         {%- if editmode -%}
-          <div class="change-layout-options">
-            <select class="js-change-layout-select" title="{{ 'change_content_layout' | lce }}">
+          <div class="change-layout-options" data-title="{{ 'change_content_layout' | lce }}">
+            <select class="js-change-layout-select" >
               {% for layout in template_settings.front_page_layouts %}
                 <option
                   class="js-change-layout-button"
