@@ -1127,14 +1127,13 @@ h4 {
   grid-template-columns: 40% 50%;
   justify-content: space-between;
   position: relative;
-  align-items: center;
+  align-items: start;
 }
 .front-page .split_even .split-section {
-  flex-direction: column;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   gap: 32px;
 }
 .front-page .change-layout-options {
