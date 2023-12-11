@@ -102,22 +102,49 @@
         align-items: stretch;
         width: 100%;
         gap: 0;
-
-        .editmode & {
-          padding-bottom: 160px;
-        }
+        padding-bottom: 176px;
 
         .menu-lang {
           order: 1;
         }
 
         .cart-btn {
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+        }
+      }
+    }
+
+    &.menu-active {
+      .wrapper {
+        .cart-btn {
           order: 2;
-          border: 1px solid $black;
+          outline: 1px solid $black;
           align-items: center;
           justify-content: center;
           padding: 12px 18px;
-          margin: 24px;
+          position: fixed;
+          left: 24px;
+          bottom: 24px;
+          right: 24px;
+          opacity: 1;
+
+          .editmode & {
+            bottom: 96px;
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            height: calc(100% + 48px);
+            width: 100vw;
+            top: -24px;
+            left: -24px;
+            background-color: rgba(var(--body-bg-color-rgb), .6);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba($black, .1);
+            z-index: -1;
+          }
         }
       }
     }

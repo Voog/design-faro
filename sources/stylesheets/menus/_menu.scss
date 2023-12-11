@@ -181,7 +181,7 @@
       flex-direction: column;
       flex-wrap: nowrap;
       gap: 0;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -201,16 +201,18 @@
 
         &.menu-lang-wrapper {
           padding-bottom: 16px;
-          border-bottom: 1px solid rgba($black, .1);
           width: 100%;
         }
 
         .menu-children-icon {
           width: 24px;
           height: 24px;
-          display: block;
-          z-index: 1;
+          display: none;
           transform: rotate(180deg) translateY(-4px);
+
+          .menu-active & {
+            display: block;
+          }
 
           &:hover {
             cursor: pointer;
