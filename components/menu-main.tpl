@@ -9,6 +9,7 @@
   <div class="mobile-menu-button">
     <div class="stripe"></div>
     <div class="stripe"></div>
+    <span class="cart-item-count js-cart-items-count"></span>
   </div>
 
   <div class="menu">

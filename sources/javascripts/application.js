@@ -109,9 +109,11 @@
   const buildCustomShoppingCartIcon = () => {
     // Emitted when the shopping cart button element is added to the DOM.
     $(document).on('voog:shoppingcart:button:created', () => {
-      if (getCartItemsCount() >= 1) {
+      const itemsCount = getCartItemsCount();
+      if (itemsCount >= 1) {
         $('.cart-btn').addClass('active');
-        $('.cart-btn .cart-btn-count').text(getCartItemsCount());
+
+        $('.js-cart-items-count').each((_, el) => $(el).text(itemsCount));
       }
     });
   };
@@ -127,8 +129,8 @@
   const handleProductCountChange = (e, addProduct) => {
     const itemsCount = getCartItemsCount();
     const $cartBtn = $('.cart-btn');
-    const $counterElement = $('.cart-btn .cart-btn-count');
-    const prevCount = parseInt($counterElement.text()) || 0;
+    const $counterElements = $('.js-cart-items-count');
+    const prevCount = parseInt($('.cart-btn .js-cart-items-count').text()) || 0;
     const isCartModalOpen = $('.edy-ecommerce-modal-open').length >= 1;
     let timer;
 
@@ -158,24 +160,24 @@
       }
 
       $cartBtn.addClass('active');
-      $counterElement.text(itemsCount);
+      $counterElements.each((_, el) => $(el).text(itemsCount));
     } else {
       $cartBtn.removeClass('active');
-      $counterElement.text('');
+      $counterElements.each((_, el) => $(el).text(''));
     }
   };
 
   const handleProductCountSync = () => {
     const itemsCount = getCartItemsCount();
     const $cartBtn = $('.cart-btn');
-    const $counterElement = $('.cart-btn .cart-btn-count');
+    const $counterElements = $('.js-cart-items-count');
 
     if (itemsCount >= 1) {
       $cartBtn.addClass('active');
-      $counterElement.text(itemsCount);
+      $counterElements.each((_, el) => $(el).text(itemsCount));
     } else {
       $cartBtn.removeClass('active');
-      $counterElement.text('');
+      $counterElements.each((_, el) => $(el).text(''));
     }
   };
 

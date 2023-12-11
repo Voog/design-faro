@@ -409,8 +409,14 @@ body {
   }
 
   .dark-background .header {
-    .mobile-menu-button .stripe {
-      background-color: var(--darkmode-color);
+    .mobile-menu-button {
+      .stripe {
+        background-color: var(--darkmode-color);
+      }
+
+      .cart-item-count {
+        color: var(--darkmode-color);
+      }
     }
 
     .header-right .cart-btn {

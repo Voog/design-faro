@@ -5,6 +5,10 @@
 .menu-main {
   position: relative;
 
+  .cart-item-count {
+    display: none;
+  }
+
   > * {
     opacity: 1;
     transition: opacity .3s ease-in-out;
@@ -173,6 +177,29 @@
           &:last-of-type {
             transform: rotate(45deg) translate(-3.5px, -3.5px);
           }
+        }
+      }
+
+      .cart-item-count {
+        display: inline-block;
+        position: absolute;
+        min-width: 12px;
+        text-align: center;
+        top: 12px;
+        right: -50%;
+        transform: translateX(-50%);
+        background-color: $black;
+        color: $white;
+        padding: 0 4px;
+        font-size: 12px;
+        line-height: 20px;
+        border-radius: 1em;
+        outline: 2px solid var(--body-bg-color);
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+
+        .menu-active & {
+          opacity: 0;
         }
       }
     }

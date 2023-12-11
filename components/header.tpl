@@ -34,7 +34,7 @@
 
       <span class="cart-btn">
         {{ "cart" | lc | escape_once }}
-        <span class="cart-btn-count"></span>
+        <span class="cart-btn-count js-cart-items-count"></span>
       </span>
     </div>
   </div>
