@@ -1770,7 +1770,7 @@ h4 {
   }
   .menu-main .menu .menu-item-children,
   .menu-main .menu .dropdown-menu-children {
-    background-color: rgba(var(--body-bg-color-rgb), 0.6);
+    background-color: rgba(var(--body-bg-color-rgb), 0.8);
   }
   .menu-main .menu .dropdown-menu-visible {
     display: none;

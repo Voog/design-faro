@@ -36,6 +36,10 @@
   <meta name="description" content="{{ og_obj.description | strip_html | escape_once }}">
 {%- endif -%}
 
+{%- if body_bg_color != blank -%}
+  <meta name="theme-color" content="{{ body_bg_color }}">
+{%- endif -%}
+
 {%- comment -%}SEO pagination for blog articles.{%- endcomment -%}
 {%- if article -%}
   {%- if article.older -%}
