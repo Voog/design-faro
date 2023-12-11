@@ -1122,7 +1122,7 @@ h4 {
 }
 .product-page .product-information .product-description {
   padding-bottom: 24px;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .product-page .product-information .product-buy-button {
   padding-bottom: 24px;
@@ -1154,8 +1154,7 @@ h4 {
   }
   .product-page .product-information {
     max-width: 100%;
-    margin: -24px;
-    overflow: auto;
+    padding: 0;
   }
 }
 .common-page .common-page-content {
