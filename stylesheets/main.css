@@ -1061,6 +1061,9 @@ h4 {
     background-color: var(--darkmode-color);
   }
   .dark-background .header .header-right .cart-btn {
+    outline-color: var(--darkmode-color);
+  }
+  .dark-background .header .header-right .cart-btn:after {
     border-color: var(--darkmode-color);
   }
   .dark-background .header .menu-main .menu .menu-children-icon use,

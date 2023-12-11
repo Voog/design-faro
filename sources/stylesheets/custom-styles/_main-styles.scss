@@ -414,7 +414,11 @@ body {
     }
 
     .header-right .cart-btn {
-      border-color: var(--darkmode-color);
+      outline-color: var(--darkmode-color);
+
+      &:after {
+        border-color: var(--darkmode-color);
+      }
     }
 
     .menu-main .menu .menu-children-icon,
