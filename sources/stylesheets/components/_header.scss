@@ -63,6 +63,11 @@
       }
     }
 
+    .search,
+    .cart-btn {
+      padding: 12px;
+    }
+
     > * {
       opacity: 1;
       transition: opacity .3s ease-in-out;
@@ -103,6 +108,11 @@
         width: 100%;
         gap: 0;
         padding-bottom: 176px;
+
+        .search,
+        .cart-btn {
+          padding: 0;
+        }
 
         .menu-lang {
           order: 1;

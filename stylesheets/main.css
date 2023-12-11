@@ -422,6 +422,10 @@ body.edy-checkout-button-visible {
   content: "·";
   margin: 0 4px;
 }
+.header .header-right .search,
+.header .header-right .cart-btn {
+  padding: 12px;
+}
 .header .header-right > * {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -453,6 +457,10 @@ body.edy-checkout-button-visible {
     width: 100%;
     gap: 0;
     padding-bottom: 176px;
+  }
+  .header .wrapper .header-right .search,
+  .header .wrapper .header-right .cart-btn {
+    padding: 0;
   }
   .header .wrapper .header-right .menu-lang {
     order: 1;
