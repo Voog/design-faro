@@ -59,6 +59,7 @@
     js-background-type
     {{ bg_type }}
     {% if content_class -%}{{ content_class }}{%- endif -%}
+    {% if animated -%}animated js-animated-block{%- endif -%}
   "
   data-block-key="{{ id }}"
 >

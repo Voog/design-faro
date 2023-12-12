@@ -34,6 +34,7 @@
 
         {% include "block",
           allowed_layouts: allowed_layouts,
+          animated: true,
           block_data: block_data,
           layout_name: layout_name,
           layout_data: layout_data,
@@ -73,6 +74,12 @@
             dataKey: "{{ body_blocks_key }}",
             deleteConfirmation: '{{ "are_you_sure" | lce }}',
           });
+        }
+      </script>
+    {%- else %}
+      <script>
+        if (site) {
+          site.handleBlockVisibility();
         }
       </script>
     {%- endif -%}

@@ -844,6 +844,29 @@
       });
     };
 
+    const handleBlockVisibility = () => {
+      const blocks = document.querySelectorAll('.js-animated-block');
+
+      if (blocks.length > 0) {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          {
+            threshold: 0.7,
+          }
+        );
+
+        blocks.forEach(block => {
+          observer.observe(block);
+        });
+      }
+    };
+
     const handleWindowResize = () => {
       let prevWindowWidth = $(window).width();
 
@@ -897,6 +920,7 @@
 
     window.site = $.extend(window.site || {}, {
       bindSiteSearch: bindSiteSearch,
+      handleBlockVisibility: handleBlockVisibility,
     });
 
     init();

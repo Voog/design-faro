@@ -89,6 +89,7 @@
         {%- assign background = block_data[background_key] -%}
 
         {%- include "block-structure",
+          animated: animated,
           background: background,
           background_key: background_key,
           block_index: index,
@@ -109,6 +110,7 @@
       {%- assign background = block_data[background_key] -%}
 
       {% include "block-structure",
+        animated: animated,
         background: background,
         background_key: background_key,
         content_area_count: content_area_count,
