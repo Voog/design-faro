@@ -1176,6 +1176,9 @@ h4 {
   margin: auto;
 }
 
+.front-page {
+  position: relative;
+}
 .front-page .voog-bg-picker-btn {
   position: relative;
 }
@@ -1265,6 +1268,9 @@ h4 {
   .front-page .change-layout-options {
     top: -64px;
   }
+}
+.product-list-page {
+  position: relative;
 }
 .product-list-page .voog-bg-picker-btn {
   position: relative;
@@ -2560,9 +2566,9 @@ main {
 }
 
 .body-bg-color {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   background-color: var(--body-bg-color);
