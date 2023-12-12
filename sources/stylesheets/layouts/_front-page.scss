@@ -9,13 +9,12 @@
       opacity: 0;
       transition: opacity .3s ease-in-out;
       padding: 8px;
-      width: fit-content;
+      width: max-content;
       position: absolute;
       top: -32px;
       left: 0;
       background: $black;
       color: $white;
-      text-wrap: nowrap;
       font-size: 12px;
       font-weight: $normal-weight;
       border-radius: 4px;
