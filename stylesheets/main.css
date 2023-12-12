@@ -1304,13 +1304,13 @@ h4 {
   grid-template-columns: 40% 50%;
   justify-content: space-between;
   position: relative;
-  align-items: start;
+  align-items: center;
 }
 .front-page .split_even .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
   gap: 32px;
 }
 .front-page .change-layout-options {
