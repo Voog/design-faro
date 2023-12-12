@@ -1325,6 +1325,9 @@ h4 {
   .front-page .front-page-wrapper {
     padding: 24px;
   }
+  .front-page .hero {
+    min-height: auto;
+  }
   .front-page .split_dominant_right .hero,
   .front-page .split_even .hero {
     width: 100%;
