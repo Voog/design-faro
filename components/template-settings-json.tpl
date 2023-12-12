@@ -71,13 +71,13 @@
     "split_even"
   ],
   "humanized_layout_names": {
-    "split_even": "{{ "split" | lce }}",
-    "column": "{{ "column" | lce }}",
-    "split_dominant_right": "{{ "dominant_right" | lce }}",
-    "split_40_60": "{{ "dominant_right" | lce }}",
-    "split_60_40": "{{ "dominant_left" | lce }}",
-    "split_staggered": "{{ "staggered" | lce }}",
-    "split_50_50_full": "{{ "full_height" | lce }}"
+    "split_even": {{ "split" | lce | json }},
+    "column": {{ "column" | lce | json }},
+    "split_dominant_right": {{ "dominant_right" | lce | json }},
+    "split_40_60": {{ "dominant_right" | lce | json }},
+    "split_60_40": {{ "dominant_left" | lce | json }},
+    "split_staggered": {{ "staggered" | lce | json }},
+    "split_50_50_full": {{ "full_height" | lce | json }}
   },
   "version": "faro-1.0.0"
 }
