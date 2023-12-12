@@ -1661,6 +1661,8 @@ h4 {
     display: flex;
     flex-direction: column;
     z-index: 11015;
+    width: -moz-max-content;
+    width: max-content;
   }
   .menu-main .dropdown-menu-children .menu-item-wrapper .menu-item + .menu-item-children, .menu-main .dropdown-menu-children .menu-item-wrapper .menu-item:hover + .menu-item-children {
     left: calc(100% - 104px);
