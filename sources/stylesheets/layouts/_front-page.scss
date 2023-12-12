@@ -114,8 +114,17 @@
       }
     }
 
+    .column .split-section {
+      display: flex;
+      flex-direction: column;
+    }
+
     .change-layout-options {
       top: -64px;
+    }
+
+    .split-section {
+      gap: 32px;
     }
   }
 }

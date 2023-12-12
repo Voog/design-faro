@@ -1336,8 +1336,15 @@ h4 {
   .front-page .split_even .split-section {
     grid-template-columns: 1fr;
   }
+  .front-page .column .split-section {
+    display: flex;
+    flex-direction: column;
+  }
   .front-page .change-layout-options {
     top: -64px;
+  }
+  .front-page .split-section {
+    gap: 32px;
   }
 }
 .product-list-page {
