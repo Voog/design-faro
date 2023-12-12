@@ -24,11 +24,17 @@
       ></button>
     {%- endif -%}
 
-    <main class="product-list-content" role="main" data-search-indexing-allowed="true">
-      <div class="content-formatted">
-        {% content %}
-      </div>
-    </main>
+    {%- capture product_list_content_html -%}
+      {% content %}
+    {%- endcapture -%}
+
+    {%- if editmode or product_list_content_html != blank %}
+      <main class="product-list-content" role="main" data-search-indexing-allowed="true">
+        <div class="content-formatted">
+          {{ product_list_content_html }}
+        </div>
+      </main>
+    {%- endif %}
 
     {% if editmode -%}
       <script>
