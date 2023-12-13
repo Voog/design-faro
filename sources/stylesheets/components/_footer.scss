@@ -1,0 +1,34 @@
+.footer {
+  min-height: 360px;
+  padding: 32px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  z-index: 1;
+
+  .footer-content {
+    max-width: $max-page-width;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    align-self: center;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 5%;
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .footer {
+    padding: 24px;
+
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+
+      .content-formatted:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}

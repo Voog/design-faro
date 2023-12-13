@@ -1,0 +1,6 @@
+.menu-breadcrumbs {
+  .menu-item.divider:after {
+    content: '·';
+    margin: 0 4px;
+  }
+}

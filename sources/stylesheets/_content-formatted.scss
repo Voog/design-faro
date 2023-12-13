@@ -1,0 +1,279 @@
+.content-formatted {
+  .custom-btn,
+  .form_submit_input,
+  .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    transition: all .1s ease-in-out;
+
+    &.custom-btn-disabled {
+      border-color: $grey-1;
+      background-color: $grey-1;
+      color: $grey-2;
+    }
+  }
+
+  .edy-texteditor-container {
+    margin: 8px;
+  }
+
+  .edy-texteditor-container-wrapper {
+    margin-bottom: 1em;
+  }
+
+  .edy-texteditor-container-wrapper-left, .edy-texteditor-container-left {
+    margin-right: 1em;
+  }
+
+  .edy-texteditor-container-wrapper-right, .edy-texteditor-container-right {
+    margin-left: 1em;
+  }
+
+  // Content area image title
+  .edy-image-container-with-title:after {
+    display: block;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 1.3em;
+    content: attr(data-title);
+  }
+
+  // Forms
+
+  form {
+    max-width: 100%;
+    margin-top: 24px;
+    clear: both;
+  }
+
+  .form_field {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .form_field_label,
+  .form_field_error,
+  .edy-fe-label {
+    padding: 8px 0;
+  }
+
+  .form_field_required {
+    .form_field_label:after {
+      content: '*';
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  .form_field_label,
+  .edy-fe-label {
+    font-family: inherit;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea,
+  .form_field_select,
+  .form_field_file,
+  .form_submit input {
+    font-family: inherit;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea,
+  .form_field_select,
+  .form_field_file {
+    max-width: 100%;
+  }
+
+  .form_field_textfield,
+  .form_field_textarea {
+    width: 280px;
+    margin: 0;
+    padding: 14px 16px;
+    border: 1px solid $grey-1;
+    box-sizing: border-box;
+    background: $white;
+
+    &::placeholder {
+      color: $grey-2;
+    }
+
+    &:hover {
+      border-color: rgba($grey-2, .3);
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: $black;
+      outline-color: $black;
+    }
+  }
+
+  .form_field_textarea {
+    min-height: 96px;
+  }
+
+  .form_field_size_medium {
+    max-width: 416px;
+    width: 100%;
+  }
+
+  .form_field_size_large {
+    max-width: 576px;
+    width: 100%;
+  }
+
+  .form_submit {
+    margin-top: 8px;
+  }
+
+  .form_error,
+  .form_field_error {
+    color: $red;
+  }
+
+  .form_field_with_errors {
+    .form_field_textfield,
+    .form_field_textarea {
+      border: 1px solid $red;
+    }
+  }
+
+  .form_notice {
+    color: $green;
+  }
+
+  .edy-product-widget-grid {
+    .edy-product-widget-item .edy-product-widget-item-details-flex-wrap {
+      text-align: center;
+
+      .edy-product-widget-item-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .edy-product-widget-masonry .edy-product-widget-item-content,
+  .edy-product-widget-catalogue .edy-product-widget-item  {
+    .edy-product-widget-item-details-inner {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .edy-buy-button .edy-buy-button-title,
+  .edy-js-buy-button {
+    &:before {
+      content: '+';
+      margin-right: 4px;
+    }
+  }
+
+  .edy-buy-button-variants {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 48px;
+
+    .form_field {
+      display: grid;
+      grid-template-columns: 1fr 1fr 3fr;
+      gap: 8px;
+      align-items: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      border-top: 0.5px solid rgba($black, .1);
+      border-bottom: 0.5px solid rgba($black, .1);
+
+      & + .form_field {
+        border-top: none;
+      }
+
+      .form_field_label:after {
+        content: ':';
+      }
+
+      .form_field_select {
+        border: none;
+        background: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .edy-buy-button-align-center .form_field {
+    grid-template-columns: repeat(4, 1fr);
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+    }
+  }
+
+  .edy-buy-button-align-right .form_field {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  // Tables
+  table {
+    width: 100%;
+    margin-top: 24px;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid $grey-2;
+      background-color: transparent;
+
+      .dark-background & {
+        border-top: 1px solid var(--darkmode-color);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $grey-2;
+
+        .dark-background & {
+          border-bottom: 1px solid var(--darkmode-color);
+        }
+      }
+    }
+
+    td {
+      border-left: 1px solid $grey-2;
+      padding: 4px;
+
+      .dark-background & {
+        border-left: 1px solid var(--darkmode-color);
+      }
+
+      &:last-child {
+        border-right: 1px solid $grey-2;
+
+        .dark-background & {
+          border-right: 1px solid var(--darkmode-color);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .content-formatted {
+    .form_field_size_medium,
+    .form_field_size_large {
+      max-width: 100%;
+    }
+  }
+}

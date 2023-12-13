@@ -1,0 +1,130 @@
+.front-page {
+  position: relative;
+
+  .voog-bg-picker-btn {
+    position: relative;
+  }
+
+  .change-layout-options {
+    &:after {
+      content: attr(data-title);
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      padding: 8px;
+      width: max-content;
+      position: absolute;
+      top: -32px;
+      left: 0;
+      background: $black;
+      color: $white;
+      font-size: 12px;
+      font-weight: $normal-weight;
+      border-radius: 4px;
+      font-family: var(--font-family);
+      pointer-events: none;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  .front-page-wrapper {
+    padding: 56px;
+    max-width: $max-page-width;
+    margin: auto;
+  }
+
+  .front-page-content {
+    display: grid;
+    position: relative;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .hero {
+    min-height: 432px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .content-formatted {
+      width: 100%;
+    }
+  }
+
+  .split_dominant_right,
+  .split_even {
+    .hero {
+      width: 50%;
+    }
+  }
+
+  .split_dominant_right {
+    display: flex;
+    flex-direction: column;
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 40% 50%;
+      justify-content: space-between;
+      position: relative;
+      align-items: center;
+    }
+  }
+
+  .split_even {
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+
+  .change-layout-options {
+    position: absolute;
+    top: -32px;
+  }
+
+  &.dark-background .change-layout-options select {
+    color: var(--darkmode-color);
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .front-page {
+    .front-page-wrapper {
+      padding: 24px;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .split_dominant_right,
+    .split_even {
+      .hero {
+        width: 100%;
+      }
+
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .column .split-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .change-layout-options {
+      top: -64px;
+    }
+
+    .split-section {
+      gap: 32px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+// VARIABLES
+// Custom variables to use in every .scss files.
+// Comment out the "_variables.scss" partial in the "main.scss" file if not used.
+
+// Specific colors
+$black: #000000;
+$white: #FFFFFF;
+
+$grey-1: #F7F7F2;
+$grey-2: #888888;
+$grey-3: #727272;
+$grey-4: #1C1C1C;
+
+$red: #C5292A;
+$green: #2F5D4B;
+$warning: #191489;
+
+// Sign out button
+$color-common-gray: rgb(27,33,36);
+$color-toolbar-bg: rgb(238,238,238);
+$color-silver-2: rgb(196,196,196);
+
+$normal-weight: 400;
+$medium-weight: 500;
+$demi-weight: 600;
+$bold-weight: 700;
+
+$primary-font: 'Bodoni Moda', serif;
+
+$box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+
+$z-index-header: 10700;
+$z-index-dropdown: 11015;
+$z-index-cart-popover: 11020;
+
+$max-page-width: 1440px;
+
+$mobile-width: 640px;
+$tablet-width: 900px;

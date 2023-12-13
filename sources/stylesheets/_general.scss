@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  &.light-background * ::selection {
+    color: $white;
+    background: $black;
+  }
+}
+
+main {
+  position: relative;
+}
+
+.body-bg-color {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--body-bg-color);
+}
+
+.ico-hidden {
+  display: none;
+}
+
+.add-block-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 156px;
+  align-items: center;
+}
+
+.add-block-button {
+  width: 56px;
+  height: 56px;
+  background: $grey-2;
+  border: none;
+  cursor: pointer;
+  margin: 12px 0;
+  opacity: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s ease-in-out;
+
+  svg {
+    rotate: 45deg;
+
+    path {
+      stroke: $white;
+    }
+  }
+
+  &:after {
+    content: attr(data-title);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    padding: 8px;
+    width: max-content;
+    position: absolute;
+    top: -40px;
+    background: $black;
+    color: $white;
+    font-size: 12px;
+    font-weight: $normal-weight;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: .7;
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}
