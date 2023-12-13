@@ -27,7 +27,7 @@
     "unit": "px",
     "scope": "global"
   */
-  --heading-1-font-size: 120px;
+  --heading-1-font-size: 88px;
   /* VoogStyle
     "pathI18n": ["headings", "title"],
     "titleI18n": "font_size",

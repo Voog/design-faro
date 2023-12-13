@@ -92,7 +92,7 @@
       "--footer-link-hover-text-decoration"
     ]
   */
-  --footer-link-text-decoration: underline;
+  --footer-link-text-decoration: none;
   /* VoogStyle
     "pathI18n": ["footer", "link", "normal"],
     "titleI18n": "text_transform",
