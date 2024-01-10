@@ -79,5 +79,5 @@
     "split_staggered": {{ "staggered" | lce | json }},
     "split_50_50_full": {{ "full_height" | lce | json }}
   },
-  "version": "faro-1.0.0"
+  "version": "faro-1.0.1"
 }
