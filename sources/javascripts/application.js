@@ -310,9 +310,6 @@
               entry.target.classList.add('visible');
             }
           });
-        },
-        {
-          threshold: 0.7,
         }
       );
 
