@@ -8,6 +8,14 @@ body {
   }
 }
 
+.edy-product-widget-modal {
+  .edy-product-widget-modal-title,
+  .edy-buy-button-price-container .edy-buy-button-price-original,
+  .edy-buy-button-price-container .edy-buy-button-effective-price {
+    color: var(--primary-color);
+  }
+}
+
 @for $heading from 1 through 4 {
   h#{$heading} {
     font-size: var(--heading-#{$heading}-font-size);
@@ -28,6 +36,41 @@ body {
 
 .dark-background .edy-ecommerce-modal-title h1 {
   color: revert;
+}
+
+.custom-btn,
+.custom-btn.edy-buy-button,
+.form_submit_input,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn,
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+  &:not(.custom-btn-disabled) {
+    border-radius: var(--button-border-radius);
+    border: var(--button-border-size) solid var(--button-border-color);
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    font-style: var(--button-font-style);
+    text-decoration: var(--button-text-decoration);
+    text-transform: var(--button-text-transform);
+    hyphens: var(--button-hyphens);
+
+    &:hover {
+      color: var(--button-hover-color);
+      background-color: var(--button-hover-background-color);
+      border-color: var(--button-hover-border-color);
+    }
+
+    &:active {
+      color: var(--button-active-color);
+      background-color: var(--button-active-background-color);
+      border-color: var(--button-active-border-color);
+    }
+  }
+}
+
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+  white-space: nowrap;
 }
 
 .content-formatted {
@@ -62,33 +105,6 @@ body {
         color: var(--darkmode-color);
         opacity: .7;
       }
-    }
-  }
-
-  .custom-btn,
-  .form_submit_input,
-  .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
-    border-radius: var(--button-border-radius);
-    border: var(--button-border-size) solid var(--button-border-color);
-    color: var(--button-color);
-    background-color: var(--button-background-color);
-    font-size: var(--button-font-size);
-    font-weight: var(--button-font-weight);
-    font-style: var(--button-font-style);
-    text-decoration: var(--button-text-decoration);
-    text-transform: var(--button-text-transform);
-    hyphens: var(--button-hyphens);
-
-    &:hover {
-      color: var(--button-hover-color);
-      background-color: var(--button-hover-background-color);
-      border-color: var(--button-hover-border-color);
-    }
-
-    &:active {
-      color: var(--button-active-color);
-      background-color: var(--button-active-background-color);
-      border-color: var(--button-active-border-color);
     }
   }
 
@@ -198,7 +214,10 @@ body {
   }
 
   .edy-buy-button-price-container {
-    color: var(--primary-color);
+    .edy-buy-button-price-original,
+    .edy-buy-button-effective-price {
+      color: var(--primary-color);
+    }
 
     .edy-buy-button-price-original {
       opacity: .4;
