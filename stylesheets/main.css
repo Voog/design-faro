@@ -2352,10 +2352,11 @@ h4 {
   color: revert;
 }
 
-.custom-btn,
-.form_submit_input,
-.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn,
-.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+.custom-btn:not(.custom-btn-disabled),
+.custom-btn.edy-buy-button:not(.custom-btn-disabled),
+.form_submit_input:not(.custom-btn-disabled),
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:not(.custom-btn-disabled),
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn:not(.custom-btn-disabled) {
   border-radius: var(--button-border-radius);
   border: var(--button-border-size) solid var(--button-border-color);
   color: var(--button-color);
@@ -2369,18 +2370,20 @@ h4 {
   -webkit-hyphens: var(--button-hyphens);
           hyphens: var(--button-hyphens);
 }
-.custom-btn:hover,
-.form_submit_input:hover,
-.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover,
-.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn:hover {
+.custom-btn:not(.custom-btn-disabled):hover,
+.custom-btn.edy-buy-button:not(.custom-btn-disabled):hover,
+.form_submit_input:not(.custom-btn-disabled):hover,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:not(.custom-btn-disabled):hover,
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn:not(.custom-btn-disabled):hover {
   color: var(--button-hover-color);
   background-color: var(--button-hover-background-color);
   border-color: var(--button-hover-border-color);
 }
-.custom-btn:active,
-.form_submit_input:active,
-.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:active,
-.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn:active {
+.custom-btn:not(.custom-btn-disabled):active,
+.custom-btn.edy-buy-button:not(.custom-btn-disabled):active,
+.form_submit_input:not(.custom-btn-disabled):active,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:not(.custom-btn-disabled):active,
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn:not(.custom-btn-disabled):active {
   color: var(--button-active-color);
   background-color: var(--button-active-background-color);
   border-color: var(--button-active-border-color);
