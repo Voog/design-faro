@@ -8,6 +8,14 @@ body {
   }
 }
 
+.edy-product-widget-modal {
+  .edy-product-widget-modal-title,
+  .edy-buy-button-price-container .edy-buy-button-price-original,
+  .edy-buy-button-price-container .edy-buy-button-effective-price {
+    color: var(--primary-color);
+  }
+}
+
 @for $heading from 1 through 4 {
   h#{$heading} {
     font-size: var(--heading-#{$heading}-font-size);
@@ -203,7 +211,10 @@ body {
   }
 
   .edy-buy-button-price-container {
-    color: var(--primary-color);
+    .edy-buy-button-price-original,
+    .edy-buy-button-effective-price {
+      color: var(--primary-color);
+    }
 
     .edy-buy-button-price-original {
       opacity: .4;

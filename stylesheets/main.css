@@ -1599,39 +1599,6 @@ body.edy-checkout-button-visible {
   text-align: center;
   width: 100%;
 }
-.content-formatted .edy-buy-button .edy-buy-button-title:before,
-.content-formatted .edy-js-buy-button:before {
-  content: "+";
-  margin-right: 4px;
-}
-.content-formatted .edy-buy-button-variants {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 48px;
-}
-.content-formatted .edy-buy-button-variants .form_field {
-  display: grid;
-  grid-template-columns: 1fr 1fr 3fr;
-  gap: 8px;
-  align-items: center;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-}
-.content-formatted .edy-buy-button-variants .form_field + .form_field {
-  border-top: none;
-}
-.content-formatted .edy-buy-button-variants .form_field .form_field_label:after {
-  content: ":";
-}
-.content-formatted .edy-buy-button-variants .form_field .form_field_select {
-  border: none;
-  background: none;
-}
-.content-formatted .edy-buy-button-variants .form_field .form_field_select:focus {
-  outline: none;
-}
 .content-formatted .edy-buy-button-align-center .form_field {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -1689,6 +1656,55 @@ body.edy-checkout-button-visible {
   border-color: #F7F7F2;
   background-color: #F7F7F2;
   color: #888888;
+}
+
+.edy-buy-button .edy-buy-button-title:before,
+.edy-js-buy-button:before {
+  content: "+";
+  margin-right: 4px;
+}
+
+.content-formatted .edy-buy-button-variants, .edy-product-widget-modal-container .edy-buy-button-variants {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
+}
+.content-formatted .edy-buy-button-variants .form_field, .edy-product-widget-modal-container .edy-buy-button-variants .form_field {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  gap: 8px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+.content-formatted .edy-buy-button-variants .form_field + .form_field, .edy-product-widget-modal-container .edy-buy-button-variants .form_field + .form_field {
+  border-top: none;
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_label:after, .edy-product-widget-modal-container .edy-buy-button-variants .form_field .form_field_label:after {
+  content: ":";
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_select, .edy-product-widget-modal-container .edy-buy-button-variants .form_field .form_field_select {
+  border: none;
+  background: none;
+}
+.content-formatted .edy-buy-button-variants .form_field .form_field_select:focus, .edy-product-widget-modal-container .edy-buy-button-variants .form_field .form_field_select:focus {
+  outline: none;
+}
+.edy-product-widget-modal-container .edy-buy-button-variants {
+  padding-bottom: 24px;
+}
+.edy-product-widget-modal-container .edy-buy-button-variants .form_field:first-child {
+  padding-top: 16px;
+}
+.edy-product-widget-modal-container .edy-buy-button-variants .form_field:last-child {
+  padding-bottom: 16px;
+}
+
+.edy-product-widget-modal .product-price-original {
+  opacity: 0.4;
+  margin-right: 4px;
 }
 
 @media screen and (max-width: 640px) {
@@ -2258,6 +2274,12 @@ body .dark-background {
   color: var(--darkmode-color);
 }
 
+.edy-product-widget-modal .edy-product-widget-modal-title,
+.edy-product-widget-modal .edy-buy-button-price-container .edy-buy-button-price-original,
+.edy-product-widget-modal .edy-buy-button-price-container .edy-buy-button-effective-price {
+  color: var(--primary-color);
+}
+
 h1 {
   font-size: var(--heading-1-font-size);
   font-weight: var(--heading-1-font-weight);
@@ -2475,7 +2497,8 @@ h4 {
 .content-formatted .edy-product-widget-item-price-original {
   opacity: 0.4;
 }
-.content-formatted .edy-buy-button-price-container {
+.content-formatted .edy-buy-button-price-container .edy-buy-button-price-original,
+.content-formatted .edy-buy-button-price-container .edy-buy-button-effective-price {
   color: var(--primary-color);
 }
 .content-formatted .edy-buy-button-price-container .edy-buy-button-price-original {
