@@ -315,27 +315,27 @@
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/bodoni-moda-v23-latin_latin-ext-700.woff",
+      "file": "assets/bodoni-moda-v25-latin_latin-ext_math_symbols-700.woff",
       "kind": "assets",
-      "filename": "bodoni-moda-v23-latin_latin-ext-700.woff"
+      "filename": "bodoni-moda-v25-latin_latin-ext_math_symbols-700.woff"
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/bodoni-moda-v23-latin_latin-ext-700italic.woff",
+      "file": "assets/bodoni-moda-v25-latin_latin-ext_math_symbols-700italic.woff",
       "kind": "assets",
-      "filename": "bodoni-moda-v23-latin_latin-ext-700italic.woff"
+      "filename": "bodoni-moda-v25-latin_latin-ext_math_symbols-700italic.woff"
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/bodoni-moda-v23-latin_latin-ext-italic.woff",
+      "file": "assets/bodoni-moda-v25-latin_latin-ext_math_symbols-italic.woff",
       "kind": "assets",
-      "filename": "bodoni-moda-v23-latin_latin-ext-italic.woff"
+      "filename": "bodoni-moda-v25-latin_latin-ext_math_symbols-italic.woff"
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/bodoni-moda-v23-latin_latin-ext-regular.woff",
+      "file": "assets/bodoni-moda-v25-latin_latin-ext_math_symbols-regular.woff",
       "kind": "assets",
-      "filename": "bodoni-moda-v23-latin_latin-ext-regular.woff"
+      "filename": "bodoni-moda-v25-latin_latin-ext_math_symbols-regular.woff"
     },
     {
       "content_type": "image/svg+xml",

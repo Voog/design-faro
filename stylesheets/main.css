@@ -1759,23 +1759,23 @@ body.edy-checkout-button-visible {
 }
 @font-face {
   font-family: "Bodoni Moda";
-  src: url("../assets/bodoni-moda-v23-latin_latin-ext-regular.woff") format("woff");
+  src: url("../assets/bodoni-moda-v25-latin_latin-ext_math_symbols-regular.woff") format("woff");
   font-weight: normal;
 }
 @font-face {
   font-family: "Bodoni Moda";
-  src: url("../assets/bodoni-moda-v23-latin_latin-ext-italic.woff") format("woff");
+  src: url("../assets/bodoni-moda-v25-latin_latin-ext_math_symbols-italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Bodoni Moda";
-  src: url("../assets/bodoni-moda-v23-latin_latin-ext-700.woff") format("woff");
+  src: url("../assets/bodoni-moda-v25-latin_latin-ext_math_symbols-700.woff") format("woff");
   font-weight: bold;
 }
 @font-face {
   font-family: "Bodoni Moda";
-  src: url("../assets/bodoni-moda-v23-latin_latin-ext-700italic.woff") format("woff");
+  src: url("../assets/bodoni-moda-v25-latin_latin-ext_math_symbols-700italic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
