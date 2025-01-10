@@ -2,6 +2,7 @@
   <div class="
     menu-item-wrapper
     menu-lang-wrapper
+    top-level
     {% if site.has_many_languages?%}has-children{% endif %}
   ">
     {% for language in site.languages -%}
@@ -16,13 +17,15 @@
       <div class="menu-item-children">
       {% for language in site.languages -%}
         {% unless language.code == page.language_code %}
-          <a
-            class="menu-child"
-            href="{{ language.url }}"
-            data-lang-code="{{ language.locale }}"
-          >
-            {{ language.title }}
-          </a>
+          <div class="menu-item-wrapper menu-child">
+            <a
+              class="menu-item"
+              href="{{ language.url }}"
+              data-lang-code="{{ language.locale }}"
+            >
+              {{ language.title }}
+            </a>
+          </div>
         {% endunless %}
       {%- endfor %}
 
