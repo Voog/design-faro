@@ -1217,7 +1217,7 @@ body.edy-checkout-button-visible {
   gap: 32px;
   overflow: hidden;
 }
-.menu-main .menu-item-wrapper {
+.menu-main .menu-item-wrapper.top-level {
   padding: 12px;
 }
 .menu-main .menu-children-icon {

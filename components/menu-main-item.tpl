@@ -1,8 +1,8 @@
-{% comment %}
+{%- comment %}
   Expected parameters:
   - menuitem (MenuItem): The menuitem to display and render children for.
   - toplevel (Boolean): Whether the menuitem is a top-level item or not.
-{% endcomment %}
+{%- endcomment %}
 
 <div class="menu-item-wrapper{% if editmode or menuitem.children? %} has-children{% endif %}{% if toplevel %} top-level{% else %} menu-child{% endif %}">
   {%- menulink menuitem wrapper-tag="div" wrapper-class="menu-item" %}
