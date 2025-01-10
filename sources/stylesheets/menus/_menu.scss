@@ -256,27 +256,37 @@
         }
 
         .menu-item-children {
+          box-shadow: none;
           display: block;
-          top: 0;
-          right: -100%;
           height: 100%;
-          width: 100%;
           padding: 0;
-          z-index: 2;
+          right: -100%;
+          top: 0;
           transition: right .3s ease-in-out;
+          width: 100%;
+          z-index: 2;
 
           &.active {
             right: 0;
             height: 100vh;
-            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: auto;
           }
+        }
 
-          .menu-child {
-            padding: 24px;
+        &.menu-child {
+          padding: 24px;
 
-            &:first-child {
-              padding-top: var(--header-height);
-            }
+          &:first-child {
+            padding-top: var(--header-height);
+          }
+        }
+
+        .menu-child {
+          padding: 24px;
+
+          &:first-child {
+            padding-top: var(--header-height);
           }
         }
       }

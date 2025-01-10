@@ -616,7 +616,7 @@
       const $dropdownContent = $dropdownMenu.find('.dropdown-menu-children');
 
       const $menu = $mainMenu.find('.menu').append($dropdownContent.children());
-      const $menuItems = $menu.find('.menu-item-wrapper');
+      const $menuItems = $menu.find('.menu-item-wrapper.top-level');
       const items = [];
 
       $dropdownMenu.removeClass('dropdown-menu-visible').addClass('dropdown-menu');
@@ -644,7 +644,7 @@
 
     const handleMobileMenuContent = () => {
       const $menu = $('.js-menu-main .menu');
-      const $menuItems = $menu.find('.menu-item-wrapper:not(.menu-lang-wrapper)');
+      const $menuItems = $menu.find('.menu-item-wrapper.top-level:not(.menu-lang-wrapper)');
 
       $menuItems.each((_, item) => {
         $menu.append($(item));
@@ -810,7 +810,8 @@
 
         $(e.target)
           .parents('.menu-item-wrapper.has-children')
-          .find('.menu-item-children')
+          .find('.menu-item-children:not(.active)')
+          .first()
           .addClass('active');
 
         $('.js-header').addClass('menu-children-active');
@@ -824,13 +825,18 @@
       });
 
       $('.js-header .menu-children-close-icon').click(() => {
-        $('.menu-item-wrapper.has-children').removeClass('active');
-        $('.menu-item-children').removeClass('active');
-        $('.js-header').removeClass('menu-children-active');
+        const $lastActiveMenu = $('.menu-item-wrapper.has-children.active').last();
 
-        setTimeout(() => {
-          $('.header-right').removeClass('active');
-        }, 1000);
+        $lastActiveMenu.removeClass('active');
+        $lastActiveMenu.find('.menu-item-children').removeClass('active');
+
+        if ($lastActiveMenu.hasClass('top-level')) {
+          $('.js-header').removeClass('menu-children-active');
+
+          setTimeout(() => {
+            $('.header-right').removeClass('active');
+          }, 1000);
+        }
       });
     };
 

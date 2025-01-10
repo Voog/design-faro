@@ -118,6 +118,13 @@
       "title": "menu-lang"
     },
     {
+      "title": "menu-main-item",
+      "layout_name": "menu-main-item",
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-main-item.tpl"
+    },
+    {
       "content_type": "component",
       "component": true,
       "file": "components/menu-main.tpl",
