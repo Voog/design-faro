@@ -26,25 +26,27 @@
     > * {
       display: block;
 
-      &:after {
-        content: attr(data-title);
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        padding: 8px;
-        width: max-content;
-        position: absolute;
-        top: -32px;
-        background: $black;
-        color: $white;
-        font-size: 12px;
-        font-weight: $normal-weight;
-        border-radius: 4px;
-        font-family: var(--font-family);
-        pointer-events: none;
-      }
+      &[data-title] {
+        &:after {
+          content: attr(data-title);
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+          padding: 8px;
+          width: max-content;
+          position: absolute;
+          top: -32px;
+          background: $black;
+          color: $white;
+          font-size: 12px;
+          font-weight: $normal-weight;
+          border-radius: 4px;
+          font-family: var(--font-family);
+          pointer-events: none;
+        }
 
-      &:hover:after {
-        opacity: 1;
+        &:hover:after {
+          opacity: 1;
+        }
       }
     }
 
@@ -327,6 +329,12 @@
   right: 24px;
 }
 
+.settings-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
 .change-layout-options {
   position: absolute;
   left: 50%;
@@ -344,6 +352,13 @@
   &:hover {
     opacity: .7;
   }
+}
+
+.settings-options {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 64px;
 }
 
 @media (max-width: $desktop-width) {

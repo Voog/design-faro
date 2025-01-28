@@ -29,8 +29,8 @@
 .category-blocks:hover > .block-edit-buttons > * {
   display: block;
 }
-.block-wrapper:hover > .block-edit-buttons > *:after,
-.category-blocks:hover > .block-edit-buttons > *:after {
+.block-wrapper:hover > .block-edit-buttons > *[data-title]:after,
+.category-blocks:hover > .block-edit-buttons > *[data-title]:after {
   content: attr(data-title);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -47,8 +47,8 @@
   font-family: var(--font-family);
   pointer-events: none;
 }
-.block-wrapper:hover > .block-edit-buttons > *:hover:after,
-.category-blocks:hover > .block-edit-buttons > *:hover:after {
+.block-wrapper:hover > .block-edit-buttons > *[data-title]:hover:after,
+.category-blocks:hover > .block-edit-buttons > *[data-title]:hover:after {
   opacity: 1;
 }
 .block-wrapper:hover > .block-edit-buttons .up-button:after,
@@ -275,6 +275,12 @@
   right: 24px;
 }
 
+.settings-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
 .change-layout-options {
   position: absolute;
   left: 50%;
@@ -290,6 +296,13 @@
 }
 .change-layout-options:hover {
   opacity: 0.7;
+}
+
+.settings-options {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 64px;
 }
 
 @media (max-width: 1440px) {

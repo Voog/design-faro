@@ -27,6 +27,59 @@
   ></button>
 {%- endcapture -%}
 
+{%- capture settings_options -%}
+  {% assign page_height = block_data.settings.page_height %}
+
+  {% if page_height == blank %}
+    {% assign page_height = true %}
+  {% endif %}
+
+  {% assign full_width = block_data.settings.full_width %}
+
+  {% if full_width == blank %}
+    {% assign full_width = false %}
+  {% endif %}
+
+  <div class="settings-options">
+    <div class="settings-checkbox">
+      <label>
+        <input
+          type="checkbox"
+          class="js-settings-checkbox"
+          data-key="{{ id }}"
+          data-setting="page_height"
+          {% if page_height %}
+          checked
+          {% endif %}
+        />
+
+        {{ "page_height" | lce }}
+      </label>
+    </div>
+
+    {% if layout_name == "column" -%}
+      <div class="settings-checkbox">
+        <label>
+          <input
+            type="checkbox"
+            class="js-settings-checkbox"
+            data-key="{{ id }}"
+            data-setting="full_width"
+            {% if full_width %}
+            checked
+            {% endif %}
+          />
+
+          {{ "full_width" | lce }}
+        </label>
+      </div>
+    {% endif -%}
+  </div>
+
+  {% assign page_height = null %}
+  {% assign full_width = null %}
+{%- endcapture -%}
+
 {%- capture change_layout_options -%}
   {%- if allowed_layouts.size > 1 -%}
     <div class="change-layout-options" data-title="{{ 'change_content_layout' | lce }}">
@@ -74,6 +127,7 @@
         {{ move_buttons }}
         {{ delete_button }}
         {{ change_layout_options }}
+        {{ settings_options }}
       </div>
     {%- endif %}
 
