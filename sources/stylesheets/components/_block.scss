@@ -131,10 +131,13 @@
           }
         }
 
-        &.visible .content-formatted {
-          transform: translateX(0);
-          opacity: 1;
-          overflow: visible;
+        &.visible {
+          overflow: auto;
+
+          .content-formatted {
+            transform: translateX(0);
+            opacity: 1;
+          }
         }
       }
     }
@@ -162,10 +165,13 @@
           transform: translateY(40px);
         }
 
-        &.visible .content-formatted {
-          transform: translateY(0);
-          opacity: 1;
-          overflow: visible;
+        &.visible {
+          overflow: auto;
+
+          .content-formatted {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       }
     }
@@ -191,14 +197,16 @@
           transform: translateY(40px);
         }
 
-        &.visible .content-formatted {
-          transform: translateY(0);
-          opacity: 1;
-          overflow: visible;
+        &.visible {
+          overflow: auto;
+
+          .content-formatted {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       }
     }
-
   }
 
   &.split_60_40 {
@@ -223,10 +231,13 @@
           }
         }
 
-        &.visible .content-formatted {
-          transform: translateX(0);
-          opacity: 1;
-          overflow: visible;
+        &.visible {
+          overflow: auto;
+
+          .content-formatted {
+            transform: translateX(0);
+            opacity: 1;
+          }
         }
       }
     }
@@ -335,6 +346,18 @@
   }
 }
 
+@media (max-width: $desktop-width) {
+  .block {
+    &.split_40_60,
+    &.split_staggered,
+    &.split_60_40 {
+      .wrapper {
+        width: calc(100vw - 128px);
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
   .block {
     padding: 24px;
@@ -344,7 +367,8 @@
     &.split_staggered,
     &.split_60_40 {
       .wrapper {
-        grid-template-columns: 1fr;
+        width: 100%;
+        grid-template-columns: calc(100vw - 48px);
       }
 
       .publicmode & {
