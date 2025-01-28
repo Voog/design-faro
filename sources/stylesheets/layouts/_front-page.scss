@@ -47,6 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    max-width: $max-page-width;
 
     .content-formatted {
       width: 100%;
@@ -58,6 +59,10 @@
     .hero {
       width: 50%;
     }
+  }
+
+  .split-section {
+    max-width: $max-page-width;
   }
 
   .split_dominant_right {
@@ -93,14 +98,11 @@
   }
 }
 
-@media screen and (max-width: $tablet-width) {
+@media (max-width: $desktop-width) {
   .front-page {
     .front-page-wrapper {
-      padding: 24px;
-    }
-
-    .hero {
-      min-height: auto;
+      padding: 0;
+      max-width: calc(100vw - 48px);
     }
 
     .split_dominant_right,
@@ -110,8 +112,26 @@
       }
 
       .split-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: calc(100vw - 48px);
       }
+    }
+
+    .column {
+      .split-section {
+        max-width: calc(100vw - 48px);
+      }
+    }
+
+    .hero {
+      max-width: calc(100vw - 48px);
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .front-page {
+    .hero {
+      min-height: auto;
     }
 
     .column .split-section {
