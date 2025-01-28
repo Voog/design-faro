@@ -66,7 +66,7 @@
 
 {%- if editmode or block_has_content %}
   <div
-    class="block-wrapper{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
+    class="block-wrapper{% if layout_name == 'split_50_50_full' %} block-wrapper-split{% endif %}{% if wrapper_class %} {{ wrapper_class }}{% endif %}"
     data-block-key="{{ id }}"
   >
     {%- if editmode %}
