@@ -50,6 +50,13 @@
       "value": {
         "content_areas": "2"
       }
+    },
+    {
+      "key": "split_50_50_full",
+      "value": {
+        "content_areas": "2",
+        "separate_bg_pickers": true
+      }
     }
   ],
   "categories_page_block_layouts": [

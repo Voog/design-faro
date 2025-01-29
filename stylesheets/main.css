@@ -3,6 +3,11 @@
 .category-blocks {
   position: relative;
 }
+.block-wrapper.block-wrapper-split,
+.category-blocks.block-wrapper-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .block-wrapper .block-edit-buttons,
 .category-blocks .block-edit-buttons {
   width: 100%;
@@ -70,11 +75,6 @@
 }
 .block-wrapper:last-child .block-edit-buttons .down-button {
   display: none;
-}
-
-.category-blocks .block-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .block {
@@ -322,7 +322,7 @@
     order: 1;
     height: unset;
   }
-  .category-blocks .block-wrapper {
+  .block-wrapper.block-wrapper-split {
     grid-template-columns: 1fr;
   }
 }

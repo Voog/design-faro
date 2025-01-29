@@ -2,6 +2,11 @@
 .category-blocks {
   position: relative;
 
+  &.block-wrapper-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .block-edit-buttons {
     width: 100%;
     height: 100%;
@@ -75,11 +80,6 @@
       display: none;
     }
   }
-}
-
-.category-blocks .block-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .block {
@@ -403,7 +403,7 @@
     }
   }
 
-  .category-blocks .block-wrapper {
+  .block-wrapper.block-wrapper-split {
     grid-template-columns: 1fr;
   }
 }
