@@ -1,6 +1,18 @@
 {%- assign id = block_data.key -%}
 {%- assign content_area_count = layout_data.content_areas | default: 1 -%}
 
+{%- assign page_height = block_data.settings.page_height -%}
+
+{% if page_height == null -%}
+  {%- assign page_height = true -%}
+{% endif -%}
+
+{% assign full_width = block_data.settings.full_width -%}
+
+{% if full_width == null -%}
+  {%- assign full_width = false -%}
+{% endif -%}
+
 {%- capture move_buttons -%}
   <button
     class="move-button up-button js-move-button"
@@ -25,6 +37,44 @@
     data-key="{{ id }}"
     data-wrapper-class="{{ wrapper_class }}"
   ></button>
+{%- endcapture -%}
+
+{%- capture settings_options -%}
+  <div class="settings-options">
+    <div class="settings-checkbox">
+      <label>
+        <input
+          type="checkbox"
+          class="js-settings-checkbox"
+          data-key="{{ id }}"
+          data-setting="page_height"
+          {% if page_height %}
+          checked
+          {% endif %}
+        />
+
+        {{ "full_height" | lce }}
+      </label>
+    </div>
+
+    {% if layout_name == "column" -%}
+      <div class="settings-checkbox">
+        <label>
+          <input
+            type="checkbox"
+            class="js-settings-checkbox"
+            data-key="{{ id }}"
+            data-setting="full_width"
+            {% if full_width %}
+            checked
+            {% endif %}
+          />
+
+          {{ "max_width" | lce }}
+        </label>
+      </div>
+    {% endif -%}
+  </div>
 {%- endcapture -%}
 
 {%- capture change_layout_options -%}
@@ -74,6 +124,7 @@
         {{ move_buttons }}
         {{ delete_button }}
         {{ change_layout_options }}
+        {{ settings_options }}
       </div>
     {%- endif %}
 
@@ -97,7 +148,9 @@
           content_class: content_class,
           id: id,
           layout_name: layout_name,
-          separate_bg_pickers: layout_data.separate_bg_pickers
+          separate_bg_pickers: layout_data.separate_bg_pickers,
+          full_width: full_width,
+          page_height: page_height
         -%}
       {% endfor %}
     {%- else -%}
@@ -117,7 +170,9 @@
         content_class: content_class,
         id: id,
         layout_name: layout_name,
-        separate_bg_pickers: layout_data.separate_bg_pickers
+        separate_bg_pickers: layout_data.separate_bg_pickers,
+        full_width: full_width,
+        page_height: page_height
       %}
     {% endif %}
   </div>

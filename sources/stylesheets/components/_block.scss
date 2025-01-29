@@ -8,43 +8,41 @@
   }
 
   .block-edit-buttons {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 2;
     background-color: transparent;
-    transition: background-color .3s ease-in-out;
-
-    > * {
-      display: none;
-    }
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: background-color, opacity .3s ease-in-out;
+    width: 100%;
+    z-index: 2;
   }
 
   &:hover > .block-edit-buttons {
     background-color: rgba($grey-1, .5);
+    opacity: 1;
 
     > * {
-      display: block;
+      &[data-title] {
+        &:after {
+          content: attr(data-title);
+          opacity: 0;
+          transition: opacity .3s ease-in-out;
+          padding: 8px;
+          width: max-content;
+          position: absolute;
+          top: -32px;
+          background: $black;
+          color: $white;
+          font-size: 12px;
+          font-weight: $normal-weight;
+          border-radius: 4px;
+          font-family: var(--font-family);
+          pointer-events: none;
+        }
 
-      &:after {
-        content: attr(data-title);
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        padding: 8px;
-        width: max-content;
-        position: absolute;
-        top: -32px;
-        background: $black;
-        color: $white;
-        font-size: 12px;
-        font-weight: $normal-weight;
-        border-radius: 4px;
-        font-family: var(--font-family);
-        pointer-events: none;
-      }
-
-      &:hover:after {
-        opacity: 1;
+        &:hover:after {
+          opacity: 1;
+        }
       }
     }
 
@@ -83,9 +81,12 @@
 }
 
 .block {
-  min-height: calc(100vh - 128px);
   padding: 64px;
   position: relative;
+
+  &.page-height {
+    min-height: calc(100vh - 128px);
+  }
 
   .voog-bg-picker-btn {
     top: 64px;
@@ -153,6 +154,12 @@
       flex: 1;
       z-index: 3;
       width: 100%;
+    }
+
+    &.full-width {
+      .wrapper {
+        max-width: 100%;
+      }
     }
 
     .publicmode & {
@@ -245,7 +252,10 @@
 
   &.split_50_50_full {
     padding: 0;
-    min-height: calc(100vh - var(--header-height));
+
+    &.page-height {
+      min-height: calc(100vh - var(--header-height));
+    }
 
     .wrapper {
       display: flex;
@@ -327,6 +337,12 @@
   right: 24px;
 }
 
+.settings-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
 .change-layout-options {
   position: absolute;
   left: 50%;
@@ -346,6 +362,17 @@
   }
 }
 
+.settings-options {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+
+  .settings-checkbox {
+    display: inline-block;
+  }
+}
+
 @media (max-width: $desktop-width) {
   .block {
     &.split_40_60,
@@ -361,7 +388,10 @@
 @media screen and (max-width: $mobile-width) {
   .block {
     padding: 24px;
-    min-height: calc(100vh - 48px);
+
+    &.page-height {
+      min-height: calc(100vh - 48px);
+    }
 
     &.split_40_60,
     &.split_staggered,

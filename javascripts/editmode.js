@@ -397,12 +397,32 @@
       });
     };
 
+    const bindBlockSettingsButton = ({bodyBlocks, dataKey}) => {
+      $('.js-settings-checkbox').on('change', e => {
+        const targetKey = e.target.dataset.key;
+        const settingKey = e.target.dataset.setting;
+        const currentBlock = bodyBlocks.find(block => String(block.key) === String(targetKey));
+
+        const $currentBlockElement = $(`[data-block-key="${targetKey}"]`);
+
+        currentBlock.settings = currentBlock.settings || {};
+        currentBlock.settings[settingKey] = e.target.checked;
+
+        pageData.set(dataKey, bodyBlocks);
+
+        $currentBlockElement.find('.block').each((_, block) => {
+          $(block).toggleClass(settingKey.replace(/_/g, '-'), e.target.checked);
+        });
+      });
+    };
+
     const bindBlockActions = ({bodyBlocks, dataKey, deleteConfirmation}) => {
       $(document).ready(() => {
         bindBlockAdd({bodyBlocks, dataKey});
         bindBlockDelete({bodyBlocks, dataKey, deleteConfirmation});
         bindBlockReorder({bodyBlocks, dataKey});
         bindBlockLayoutChange({bodyBlocks, dataKey});
+        bindBlockSettingsButton({bodyBlocks, dataKey});
       });
     };
 
