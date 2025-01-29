@@ -20,7 +20,7 @@
     }
   }
 
-  &:hover > .block-edit-buttons {
+  &:hover > .block-edit-buttons, &.active > .block-edit-buttons {
     background-color: rgba($grey-1, .5);
 
     > * {

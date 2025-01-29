@@ -377,6 +377,24 @@
   };
 
   const bindBlockLayoutChange = ({bodyBlocks, dataKey}) => {
+    $('.js-blocks-wrapper').on('mouseenter', e => {
+      const $block = $(e.target).closest('.js-blocks-wrapper').first();
+
+      $block.addClass('active');
+    });
+
+    $('.js-change-layout-select').on('click', e => {
+      const $block = $(e.target).closest('.js-blocks-wrapper').first();
+
+      $block.addClass('active');
+    })
+
+    $('.js-blocks-wrapper').on('mouseleave', e => {
+      const $block = $(e.target).closest('.js-blocks-wrapper').first();
+
+      $block.removeClass('active');
+    });
+
     $('.js-change-layout-select').on('change', e => {
       const targetKey = $(e.target).find(':selected').data('key');
       const newLayout = e.target.value;
