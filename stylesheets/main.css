@@ -10,30 +10,21 @@
 }
 .block-wrapper .block-edit-buttons,
 .category-blocks .block-edit-buttons {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
   background-color: transparent;
-  transition: background-color 0.3s ease-in-out;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: background-color, opacity 0.3s ease-in-out;
+  width: 100%;
+  z-index: 2;
 }
-.block-wrapper .block-edit-buttons > *,
-.category-blocks .block-edit-buttons > * {
-  display: none;
-}
-.block-wrapper:hover > .block-edit-buttons, .block-wrapper.active > .block-edit-buttons,
-.category-blocks:hover > .block-edit-buttons,
-.category-blocks.active > .block-edit-buttons {
+.block-wrapper:hover > .block-edit-buttons,
+.category-blocks:hover > .block-edit-buttons {
   background-color: rgba(247, 247, 242, 0.5);
+  opacity: 1;
 }
-.block-wrapper:hover > .block-edit-buttons > *, .block-wrapper.active > .block-edit-buttons > *,
-.category-blocks:hover > .block-edit-buttons > *,
-.category-blocks.active > .block-edit-buttons > * {
-  display: block;
-}
-.block-wrapper:hover > .block-edit-buttons > *[data-title]:after, .block-wrapper.active > .block-edit-buttons > *[data-title]:after,
-.category-blocks:hover > .block-edit-buttons > *[data-title]:after,
-.category-blocks.active > .block-edit-buttons > *[data-title]:after {
+.block-wrapper:hover > .block-edit-buttons > *[data-title]:after,
+.category-blocks:hover > .block-edit-buttons > *[data-title]:after {
   content: attr(data-title);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -50,31 +41,26 @@
   font-family: var(--font-family);
   pointer-events: none;
 }
-.block-wrapper:hover > .block-edit-buttons > *[data-title]:hover:after, .block-wrapper.active > .block-edit-buttons > *[data-title]:hover:after,
-.category-blocks:hover > .block-edit-buttons > *[data-title]:hover:after,
-.category-blocks.active > .block-edit-buttons > *[data-title]:hover:after {
+.block-wrapper:hover > .block-edit-buttons > *[data-title]:hover:after,
+.category-blocks:hover > .block-edit-buttons > *[data-title]:hover:after {
   opacity: 1;
 }
-.block-wrapper:hover > .block-edit-buttons .up-button:after, .block-wrapper.active > .block-edit-buttons .up-button:after,
-.category-blocks:hover > .block-edit-buttons .up-button:after,
-.category-blocks.active > .block-edit-buttons .up-button:after {
+.block-wrapper:hover > .block-edit-buttons .up-button:after,
+.category-blocks:hover > .block-edit-buttons .up-button:after {
   left: 0;
 }
-.block-wrapper:hover > .block-edit-buttons .delete-button:after, .block-wrapper.active > .block-edit-buttons .delete-button:after,
-.category-blocks:hover > .block-edit-buttons .delete-button:after,
-.category-blocks.active > .block-edit-buttons .delete-button:after {
+.block-wrapper:hover > .block-edit-buttons .delete-button:after,
+.category-blocks:hover > .block-edit-buttons .delete-button:after {
   right: 0;
 }
-.block-wrapper:hover > .block-edit-buttons .down-button:after, .block-wrapper.active > .block-edit-buttons .down-button:after,
-.category-blocks:hover > .block-edit-buttons .down-button:after,
-.category-blocks.active > .block-edit-buttons .down-button:after {
+.block-wrapper:hover > .block-edit-buttons .down-button:after,
+.category-blocks:hover > .block-edit-buttons .down-button:after {
   top: 32px;
   right: 0;
   transform: rotate(180deg);
 }
-.block-wrapper:hover > .block-edit-buttons .change-layout-options:after, .block-wrapper.active > .block-edit-buttons .change-layout-options:after,
-.category-blocks:hover > .block-edit-buttons .change-layout-options:after,
-.category-blocks.active > .block-edit-buttons .change-layout-options:after {
+.block-wrapper:hover > .block-edit-buttons .change-layout-options:after,
+.category-blocks:hover > .block-edit-buttons .change-layout-options:after {
   left: 0;
 }
 
