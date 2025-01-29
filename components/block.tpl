@@ -1,17 +1,17 @@
 {%- assign id = block_data.key -%}
 {%- assign content_area_count = layout_data.content_areas | default: 1 -%}
 
-{% assign page_height = block_data.settings.page_height %}
+{%- assign page_height = block_data.settings.page_height -%}
 
-{% if page_height == null %}
-  {% assign page_height = true %}
-{% endif %}
+{% if page_height == null -%}
+  {%- assign page_height = true -%}
+{% endif -%}
 
-{% assign full_width = block_data.settings.full_width %}
+{% assign full_width = block_data.settings.full_width -%}
 
-{% if full_width == null %}
-  {% assign full_width = false %}
-{% endif %}
+{% if full_width == null -%}
+  {%- assign full_width = false -%}
+{% endif -%}
 
 {%- capture move_buttons -%}
   <button
