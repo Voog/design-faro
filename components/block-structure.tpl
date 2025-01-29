@@ -58,8 +58,10 @@
     {{ background_key }}-picker-area
     js-background-type
     {{ bg_type }}
-    {% if content_class -%}{{ content_class }}{%- endif -%}
-    {% if animated -%}animated js-animated-block{%- endif -%}
+    {% if page_height %}page-height{% endif %}
+    {% if full_width %}full-width{% endif %}
+    {% if content_class -%}{{ content_class }}{%- endif %}
+    {% if animated -%}animated js-animated-block{%- endif %}
   "
   data-block-key="{{ id }}"
 >

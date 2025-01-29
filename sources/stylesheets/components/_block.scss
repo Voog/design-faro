@@ -85,9 +85,12 @@
 }
 
 .block {
-  min-height: calc(100vh - 128px);
   padding: 64px;
   position: relative;
+
+  &.page-height {
+    min-height: calc(100vh - 128px);
+  }
 
   .voog-bg-picker-btn {
     top: 64px;
@@ -155,6 +158,12 @@
       flex: 1;
       z-index: 3;
       width: 100%;
+    }
+
+    &.full-width {
+      .wrapper {
+        max-width: 100%;
+      }
     }
 
     .publicmode & {
@@ -247,7 +256,10 @@
 
   &.split_50_50_full {
     padding: 0;
-    min-height: calc(100vh - var(--header-height));
+
+    &.page-height {
+      min-height: calc(100vh - var(--header-height));
+    }
 
     .wrapper {
       display: flex;
@@ -358,7 +370,11 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 64px;
+  bottom: 24px;
+
+  .settings-checkbox {
+    display: inline-block;
+  }
 }
 
 @media (max-width: $desktop-width) {
@@ -376,7 +392,10 @@
 @media screen and (max-width: $mobile-width) {
   .block {
     padding: 24px;
-    min-height: calc(100vh - 48px);
+
+    &.page-height {
+      min-height: calc(100vh - 48px);
+    }
 
     &.split_40_60,
     &.split_staggered,

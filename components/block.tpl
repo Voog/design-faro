@@ -1,6 +1,18 @@
 {%- assign id = block_data.key -%}
 {%- assign content_area_count = layout_data.content_areas | default: 1 -%}
 
+{% assign page_height = block_data.settings.page_height %}
+
+{% if page_height == null %}
+  {% assign page_height = true %}
+{% endif %}
+
+{% assign full_width = block_data.settings.full_width %}
+
+{% if full_width == null %}
+  {% assign full_width = false %}
+{% endif %}
+
 {%- capture move_buttons -%}
   <button
     class="move-button up-button js-move-button"
@@ -28,18 +40,6 @@
 {%- endcapture -%}
 
 {%- capture settings_options -%}
-  {% assign page_height = block_data.settings.page_height %}
-
-  {% if page_height == blank %}
-    {% assign page_height = true %}
-  {% endif %}
-
-  {% assign full_width = block_data.settings.full_width %}
-
-  {% if full_width == blank %}
-    {% assign full_width = false %}
-  {% endif %}
-
   <div class="settings-options">
     <div class="settings-checkbox">
       <label>
@@ -53,7 +53,7 @@
           {% endif %}
         />
 
-        {{ "page_height" | lce }}
+        {{ "full_height" | lce }}
       </label>
     </div>
 
@@ -70,14 +70,11 @@
             {% endif %}
           />
 
-          {{ "full_width" | lce }}
+          {{ "max_width" | lce }}
         </label>
       </div>
     {% endif -%}
   </div>
-
-  {% assign page_height = null %}
-  {% assign full_width = null %}
 {%- endcapture -%}
 
 {%- capture change_layout_options -%}
@@ -151,7 +148,9 @@
           content_class: content_class,
           id: id,
           layout_name: layout_name,
-          separate_bg_pickers: layout_data.separate_bg_pickers
+          separate_bg_pickers: layout_data.separate_bg_pickers,
+          full_width: full_width,
+          page_height: page_height
         -%}
       {% endfor %}
     {%- else -%}
@@ -171,7 +170,9 @@
         content_class: content_class,
         id: id,
         layout_name: layout_name,
-        separate_bg_pickers: layout_data.separate_bg_pickers
+        separate_bg_pickers: layout_data.separate_bg_pickers,
+        full_width: full_width,
+        page_height: page_height
       %}
     {% endif %}
   </div>
