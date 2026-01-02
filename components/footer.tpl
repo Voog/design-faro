@@ -15,23 +15,39 @@
   {%- endfor -%}
 {%- endunless -%}
 
-{%- if editmode or footer_has_content %}
+{%- assign show_voog_ref = false -%}
+
+{% if site.branding.enabled and page.path == blank -%}
+  {% assign show_voog_ref = true %}
+{% endif -%}
+
+{%- if editmode or footer_has_content or show_voog_ref %}
   <footer class="footer">
     <div class="footer-content">
-      {%- assign footer_content_title = "cross_site_footer" | lce -%}
-      {%- assign footer_content_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
+      {% if editmode or footer_has_content -%}
+        {%- assign footer_content_title = "cross_site_footer" | lce -%}
+        {%- assign footer_content_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
 
-      {%- for index in (1..4) -%}
-        {%- assign footer_content_name = "footer-col-" | append: index -%}
+        {%- for index in (1..4) -%}
+          {%- assign footer_content_name = "footer-col-" | append: index -%}
 
-        <div class="content-formatted">
-          {% xcontent
-            name=footer_content_name
-            title=footer_content_title
-            title_tooltip=footer_content_title_tooltip
-          %}
+          <div class="content-formatted">
+            {% xcontent
+              name=footer_content_name
+              title=footer_content_title
+              title_tooltip=footer_content_title_tooltip
+            %}
+          </div>
+        {%- endfor -%}
+      {% endif -%}
+
+      {%- if show_voog_ref -%}
+        <div class="footer-voog-ref content-formatted">
+          {% loginblock %}
+            {{ "footer_login_link" | lc }}
+          {% endloginblock %}
         </div>
-      {%- endfor -%}
+      {%- endif -%}
     </div>
   </footer>
 {%- endif -%}

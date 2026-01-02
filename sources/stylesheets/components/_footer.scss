@@ -16,6 +16,17 @@
     align-self: center;
     grid-template-columns: 2fr repeat(3, 1fr);
     gap: 5%;
+
+    .footer-voog-ref {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      justify-self: center;
+      margin-top: 48px;
+
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -28,6 +39,10 @@
 
       .content-formatted:first-child {
         grid-column: 1 / -1;
+      }
+
+      .footer-voog-ref {
+        grid-row: unset;
       }
     }
   }

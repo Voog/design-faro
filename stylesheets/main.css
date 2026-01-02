@@ -452,6 +452,15 @@ body.edy-checkout-button-visible {
   grid-template-columns: 2fr repeat(3, 1fr);
   gap: 5%;
 }
+.footer .footer-content .footer-voog-ref {
+  grid-column: 1/-1;
+  grid-row: 2;
+  justify-self: center;
+  margin-top: 48px;
+}
+.footer .footer-content .footer-voog-ref a {
+  text-decoration: none;
+}
 
 @media screen and (max-width: 900px) {
   .footer {
@@ -462,6 +471,9 @@ body.edy-checkout-button-visible {
   }
   .footer .footer-content .content-formatted:first-child {
     grid-column: 1/-1;
+  }
+  .footer .footer-content .footer-voog-ref {
+    grid-row: unset;
   }
 }
 .header {
