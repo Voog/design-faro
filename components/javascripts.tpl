@@ -33,4 +33,14 @@
     </script>
     {%- include "bg-picker-scripts" -%}
   {% endeditorjsblock %}
+
+  <script type="text/javascript">
+    (function () {
+      window.edy = window.edy || {};
+      edy.push([
+        'texteditorStyles',
+        {name: '{{ "button" | lc: editor_locale | escape }}', tagname: 'a', attribute: {href: '#'}, classname: 'custom-btn', toggle: true},
+      ]);
+    })();
+  </script>
 {% endif %}
