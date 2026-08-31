@@ -248,14 +248,6 @@
       });
     };
 
-    var bindCustomTexteditorStyles = function () {
-      window.edy = window.edy || [];
-      edy.push([
-        'texteditorStyles',
-        {name: 'Button', tagname: 'a', attribute: {href: '#'}, classname: 'custom-btn', toggle: true},
-      ]);
-    };
-
     var handleDocument = function () {
       if ($('.form_field-cms input').length) {
         if ($('.form_field-cms input').val().length >= 1) {
@@ -427,7 +419,6 @@
     };
 
     var init = function () {
-      bindCustomTexteditorStyles();
       bindCustomDataItem();
       handleDocument();
     };
